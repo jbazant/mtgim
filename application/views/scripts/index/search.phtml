@@ -1,0 +1,26 @@
+<div id="searchResults">
+    <div data-role="navbar">
+        <ul>
+            <?php foreach ($this->adapters as $index => $shop): ?>
+                <li>
+                    <a href="#results-<?php echo $shop['adapter'] ?>" data-ajax="false"
+                        <?php
+                            // pozor, tahle nula je i v app.coffee
+                            if (0 == $index): echo 'class="ui-btn-active ui-state-persist"'; endif;
+                        ?>
+                    ><?php echo $shop['shortName'] ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
+    <?php foreach ($this->adapters as $shop): ?>
+        <div id="results-<?php echo $shop['adapter'] ?>"
+             class="result-holder"
+             data-shop-id="<?php echo $shop['adapter'] ?>"
+        >
+            <h2><?php echo $shop['longName'] ?></h2>
+            <ul class="results" data-role="listview"></ul>
+        </div>
+    <?php endforeach; ?>
+</div>

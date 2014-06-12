@@ -1,0 +1,583 @@
+<HTML>
+<HEAD>
+	<TITLE>Černý Rytíř</TITLE>
+	<meta content="text/html; charset=windows-1250" http-equiv=Content-Type> 
+	<meta name="keywords" content="Magic, Magic: the Gathering, Pokémon, Pán prstenů, Warhammer, RPG, Dračí Doupě (DrD), Dungeons and Dragons, Vampire, hry, Harry Potter, Star Wars" lang="cs">
+	<meta name="keywords" content="Magic, Magic: the Gathering, Pokémon, Lord of the Rings, Warhammer, RPG, Dungeons and Dragons, Vampire, hry, Harry Potter, Star Wars" lang="en">
+</HEAD>
+<SCRIPT type="text/javascript">
+
+<!--
+
+// zjistí typ prohlížeče a nabídne jim řešení
+sirka = screen.width;
+
+function novyobr(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+}}
+
+function zmenobr() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<zmenobr.arguments.length; i+=2) {
+			document[zmenobr.arguments[i]].src = zmenobr.arguments[i+1];
+}}}
+
+
+function doplnudaje() {
+alert("Před odesláním objednávky je potřeba vyplnit všechny kontaktní údaje.");
+}
+
+var preloadFlag = false;
+function Nactiobrazky() {
+	if (document.images) {
+		obchod_over = novyobr("images/obchodlobchod-over.gif");
+		turnaje_over = novyobr("images/obchodlturnaje-over.gif");
+		magic_over = novyobr("images/obchodlmagic-over.gif");
+		lotr_over = novyobr("images/obchodlotr-over.gif");
+		rpg_over = novyobr("images/obchodrpg-over.gif");
+		miniatury_over = novyobr("images/obchodminiatury-over.gif");
+		mageknight_over = novyobr("images/obchodmageknight-over.gif");
+		ostatni_over = novyobr("images/obchodostatni-over.gif");
+		preloadFlag = true;
+}}
+
+function Kartickoveokno( odkaz ) {
+
+			params = "toolbar=0,";
+			params += "location=0,";
+			params += "directories=0,";
+			params += "status=0,";
+			params += "menubar=0,";
+			params += "scrollbars=0,";
+			params += "resizable=0,";
+			noveokno = window.open( odkaz, "KartickoveOkno" , params);
+
+            if (!noveokno.opener) {
+                  noveokno.opener = window;
+              }
+}
+
+function Turnajoveokno( id ) {
+
+              params = "toolbar=0,";
+              params += "location=0,";
+              params += "directories=0,";
+              params += "status=0,";
+              params += "menubar=0,";
+              params += "scrollbars=1,";
+              params += "resizable=0,";
+              params += "width=450,";
+              params += "height=300";
+
+             noveokno = window.open("oknoturnaj.php3?ukazturnaj="+id,"Turnaj" , params);
+
+              if (!noveokno.opener) {
+                  noveokno.opener = window;
+              }
+}
+
+// -->
+</SCRIPT>
+<link href="css/index.css" rel="stylesheet" type="text/css"><BODY bgcolor="#000000" leftMargin="0" topMargin="0" ONLOAD="Nactiobrazky();"><script language="JavaScript">
+<!--
+if ( (( sirka >= 1024 ) && ( 1024 < 1024 )) || (( sirka < 1024 ) && ( 1024 >= 1024 )) ) {
+
+		document.write('<form name="form_rozliseni" action="index.php3?akce=3&rozliseni='+sirka+'" method="post">');
+
+		document.write('</form>');
+
+		document.forms.form_rozliseni.submit();
+
+		}
+//-->
+</script>
+<table width="1003" bgcolor="#6D6D5E" border="0" cellpadding="0" cellspacing="0" align="center"><tr><td colspan="3">
+
+
+
+
+<script type="text/javascript">
+<!--
+
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.all && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		tlacitko_rs_over = newImage("images/hornimenu/tlacitko-ob-rs-1024-over.jpg");
+		tlacitko_rs_down = newImage("images/hornimenu/tlacitko-ob-rs-1024-down.jpg");
+		tlacitko_so_over = newImage("images/hornimenu/tlacitko-ob-so-1024-over.jpg");
+		tlacitko_so_down = newImage("images/hornimenu/tlacitko-ob-so-1024-down.jpg");
+		tlacitko_ob_over = newImage("images/hornimenu/tlacitko-ob-ob-1024-over.jpg");
+		tlacitko_ob_down = newImage("images/hornimenu/tlacitko-ob-ob-1024-down.jpg");
+		tlacitko_ce_over = newImage("images/hornimenu/tlacitko-ob-ce-1024-over.jpg");
+		tlacitko_ce_down = newImage("images/hornimenu/tlacitko-ob-ce-1024-down.jpg");
+		tlacitko_reg_over = newImage("images/hornimenu/tlacitko-ob-reg-1024-over.jpg");
+		tlacitko_zmena_over = newImage("images/hornimenu/tlacitko-ob-zmena-1024-over.jpg");
+		preloadFlag = true;
+	}
+}
+
+// -->
+</script>
+
+<table width="1003" height="83" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="2">
+		<img src="images/hornimenu/tlacitko-ob-rs-1024-bez.jpg" width="167" height="26" border="0"></td>		<td rowspan="3"><a href="index.php3?akce=0"><img src="images/hornimenu/hornimenu-ob-1024.jpg" border="0" 
+						width="639" height="83"></a></td>
+		<td rowspan="2" background="images/hornimenu/hornimenu-ob-2-1024.jpg" width="52" height="54"></td>
+<form action="index.php3?akce=3" method="post">
+<td rowspan="2" background="images/hornimenu/hornimenu-ob-3-1024.jpg" width="89" height="54">
+<input name="uzivjmeno" type="text" size="10" maxlength="30" value="">
+<input type="password" name="uzivheslo" size="10" maxlength="30" value="">
+<input type="hidden" name="login" value="LOG IN"></td>
+<td rowspan="2">
+<input type="image" src="images/hornimenu/tlacitko-ob-login-1024.jpg" width="56" height="54" border="0" alt="Přihlášení"></td>
+</form>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<img src="images/hornimenu/tlacitko-ob-so-1024-bez.jpg" width="167" height="28" border="0"></td>	</tr>
+	<tr>
+		<td rowspan="2">
+		<img src="images/hornimenu/tlacitko-ob-ob-1024-down.jpg" width="84" height="29" border="0" alt="Obchod"></td>		<td rowspan="2">
+		<a href="index.php3"
+						onmouseover="changeImages('tlacitko_ce', 'images/hornimenu/tlacitko-ob-ce-1024-over.jpg'); return true;"
+						onmouseout="changeImages('tlacitko_ce', 'images/hornimenu/tlacitko-ob-ce-1024.jpg'); return true;"><img name="tlacitko_ce" src="images/hornimenu/tlacitko-ob-ce-1024.jpg" width="83" height="29" border="0" alt="Černý rytíř"></a></td>		<td colspan="3"><a href="index.php3?akce=3&registracniudaje=1"onmouseover="changeImages('tlacitko_registrace', 'images/hornimenu/tlacitko-ob-reg-1024-over.jpg'); return true;"onmouseout="changeImages('tlacitko_registrace', 'images/hornimenu/tlacitko-ob-reg-1024.jpg'); return true;"><img name="tlacitko_registrace" src="images/hornimenu/tlacitko-ob-reg-1024.jpg" width="197" height="29" border="0" alt="Registrace"></a></td>	</tr>
+</table></td></tr>
+<tr><td align="left" valign="top" background="images/obchodpodkladlevy.jpg">
+<table width="145" cellpadding="0" cellspacing="0"><tr><td>
+<form method="post" action="index.php3?akce=995">
+
+
+<table cellpadding="0" cellspacing="0">
+<tr><form method="post" action="index.php3?akce=995">
+<td><img src="images/hledejvobchode1.gif" border="0"></td>
+<td rowspan="2"><input type="image" src="images/hledejvobchode3.gif" border="0"></td></tr>
+<tr><td><input name="vyhledejkomplet" type="text" value="" size="14">
+</td></form></tr></table>
+
+
+
+<img src="images/spacer.gif" width="11" height="16" border="0"><a href="index.php3?akce=1" class="menubold">Novinky<br></a>
+
+
+<img src="images/spacer.gif" width="11" height="16" border="0"><a href="index.php3?akce=2" class="menubold">Výprodej<br></a>
+
+
+<img src="images/spacer.gif" width="11" height="16" border="0"><a href="index.php3?akce=3" class="menubold">Kusovky Magic<br></a> 
+
+<!-- Magic the Gathering-->	
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=150" class="menubold">Magic the Gathering</a><br> 
+	
+	
+<!-- Pokémon-->	
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=120" class="menubold">Pokémon</a><br> 
+
+<!-- Yu-Gi-Oh-->	
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=260" class="menubold">Yu-Gi-Oh</a><br> 
+
+
+
+<!-- Karetni hry-->
+
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=7" class="menubold">Karetní hry</a><br> 
+	
+	
+	
+<!-- Menu Doplňky-->
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=60" class="menubold">Doplňky a obaly</a><br>
+<!--Menu Infinity-->
+<img src="images/spacer.gif" width="11" height="16" border="0"><a href="index.php3?akce=105" class="menubold">Infinity<br></a>
+
+
+	
+<!--Menu Warhammer-->
+ <img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=29" class="menubold">Warhammer<br></a>
+	
+<!--Menu Warhammer 40.000-->
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=242" class="menubold">Warhammer 40.000<br></a>
+	
+		
+
+
+<!-- Rozbalovaci menu Hry s miniaturami -->
+
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=19" class="menubold">Hry s miniaturami</a><br>
+		
+	
+
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=200" class="menubold">Barvy a modelářství<br></a>
+
+<!-- Menu Deskové hry-->
+
+
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=77" class="menubold">Společenské hry</a><br> 
+
+
+	
+<!-- Menu Hry na hrdiny-->
+
+<img src="images/spacer.gif" width="1" height="16" border="0"><img src="images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=55" class="menubold">Hry na hrdiny</a><br> 
+
+
+<br>
+<a href="index.php3?akce=3&magicvykup=1&submit=Vyhledej" class="menubold">
+&nbsp;&nbsp;&nbsp;&nbsp;Výkup kusovek<br></a>
+<br>  
+
+
+<a href="index.php3?akce=1012" class="menubold">&nbsp;&nbsp;&nbsp;&nbsp;Turnaje Praha</a><br>	
+<a href="index.php3?akce=1002" class="menubold">&nbsp;&nbsp;&nbsp;&nbsp;Turnaje Brno</a><br>
+<br>
+	
+
+
+
+<a href="index.php3?akce=896" class="menubold">&nbsp;&nbsp;&nbsp;&nbsp;Dodací podmínky</a><br>  
+
+
+
+</td></tr>
+</table></td>
+<td align="center" valign="top" bgcolor="#6D6D5E"><table width="733" cellpadding="5" cellspacing="0" align="center"><tr><td valign="top">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function ukazrozhledani()
+{
+	document.getElementById('tabrozhledani1').style.display = "inline";
+	document.getElementById('tabrozhledani2').style.display = "inline";
+	document.getElementById('tabrozhledani3').style.display = "inline";
+	document.getElementById('tabrozhledani4').style.display = "inline";
+
+	document.getElementById('ukaz').style.display = "none";
+	document.getElementById('zrusit').style.display = "inline";
+	document.kusovkymagic.ukazrozsirenehledani.checked = true;
+}
+function schovrozhledani()
+{
+	document.getElementById('tabrozhledani1').style.display = "none";
+	document.getElementById('tabrozhledani2').style.display = "none";
+	document.getElementById('tabrozhledani3').style.display = "none";
+	document.getElementById('tabrozhledani4').style.display = "none";
+
+	document.getElementById('ukaz').style.display = "inline";
+	document.getElementById('zrusit').style.display = "none";
+	document.kusovkymagic.ukazrozsirenehledani.checked = false;
+}
+
+function testMaxRecords()
+{
+	if (document.kusovkymagic.listformat.checked ==true) 
+	{
+		document.kusovkymagic.poczob.value=20;
+	}
+	document.kusovkymagic.poczob.disabled=document.kusovkymagic.listformat.checked;
+}
+
+function kontrolapoctu( kususkladem )
+{
+	if ( self.document.forms.objednejkusovku.kusu.value > kususkladem )
+		alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze ' + kususkladem + ' kusů.');return true;
+	return true;
+}
+
+// -->
+</SCRIPT>
+
+<form action="index.php3?akce=3" method="post" name="kusovkymagic"><table width="496" align="center" bgcolor="#6D6D5E" cellpadding="5" cellspacing="0" border="1"
+						bordercolor="#000000" class="kusovkytext">				<tr>
+					<td colspan="4">
+				<table border="0" cellspacing="0" width="496" align="center" class="kusovkytext">
+					<tr bgcolor="#989883">
+						<tr><td colspan="4">
+				<select name="edice_magic" size="1">
+<option value="libovolna"selected>Libovolná edice</option>
+<option value="standard">Standard</option>
+<option value="extended">Extended</option>
+<option value="mbs">Mirrodin Besieged</option>
+<option>--------------------------------------</option><option value="dd">Duel Deck</option>
+<option value="ftv">From the Vault</option>
+<option value="M2011">Magic 2011</option>
+<option value="M2011_f">Magic 2011 (foil)</option>
+<option value="M2010">Magic 2010</option>
+<option value="10th">10th Edition</option>
+<option value="8th_9th">8th-9th Edition</option>
+<option value="3rd_7th">3rd-7th Edition</option>
+<option value="beta">Alpha/Beta</option>
+<option value="alara_reborn">Alara Reborn</option>
+<option value="alliances">Alliances</option>
+<option value="antiquities">Antiquities</option>
+<option value="apocalypse">Apocalypse</option>
+<option value="arabian">Arabian Nights</option>
+<option value="bok">Betrayers of Kamigawa</option><option value="coldsnap">Coldsnap</option>
+<option value="conflux">Conflux</option>
+<option value="darksteel">Darksteel</option>
+<option value="dissension">Dissension</option>
+<option value="eventide">Eventide</option>
+<option value="exodus">Exodus</option>
+<option value="fallenempires">Fallen Empires</option>
+<option value="fifthdawn">Fifth Dawn</option>
+<option value="future_sight">Future Sight</option>
+<option value="guildpact">Guildpact</option>
+<option value="homelands">Homelands</option>
+<option value="kamigawa">Champions of Kamigawa</option>
+<option value="iceage">Ice Age</option>
+<option value="invasion">Invasion</option>
+<option value="judgement">Judgement</option>
+<option value="legends">Legends</option>
+<option value="legion">Legion</option><option value="lorwyn">Lorwyn</option><option value="mercadian">Mercadian Masques</option>
+<option value="mirage">Mirage</option>
+<option value="morningtide">Morningtide</option><option value="mirrodin">Mirrodin</option>
+<option value="mbs">Mirrodin Besieged</option>
+<option value="mbs_f">Mirrodin Besieged (foil)</option>
+<option value="nemesis">Nemesis</option>
+<option value="odyssey">Odyssey</option>
+<option value="onslaught">Onslaught</option>
+<option value="planeshift">Planeshift</option>
+<option value="planarchaos">Planar Chaos</option>
+<option value="portal">Portal</option>
+<option value="portal2">Portal 2</option>
+<option value="promo">Promo</option>
+<option value="prophecy">Prophecy</option>
+<option value="ravnica">Ravnica</option>
+<option value="roe">Rise of the Eldrazi</option>
+<option value="roe_f">Rise of the Eldrazi (foil)</option>
+<option value="som">Scars of Mirrodin</option>
+<option value="som_f">Scars of Mirrodin (foil)</option>
+<option value="scourge">Scourge</option>
+<option value="sok">Saviors of Kamigawa</option>
+<option value="shadowmoor">Shadowmoor</option>
+<option value="alara">Shards of Alara</option>
+<option value="stronghold">Stronghold</option>
+<option value="tempest">Tempest</option>
+<option value="timespiral">Time Spiral</option>
+<option value="timeshifted">Timeshifted</option>
+<option value="dark">The Dark</option>
+<option value="torment">Torment</option>
+<option value="unglued">Unglued</option>
+<option value="unhinged">Unhinged</option>
+<option value="unlimited">Unlimited</option>
+<option value="urzasdestiny">Urza's Destiny</option>
+<option value="urzaslegacy">Urza's Legacy</option>
+<option value="urzassaga">Urza's Saga</option>
+<option value="visions">Visions</option>
+<option value="weatherlight">Weatherlight</option>
+<option value="worldwake">Worldwake</option>
+<option value="worldwake_f">Worldwake (foil)</option>
+<option value="zendikar">Zendikar</option>
+<option value="zendikar_f">Zendikar (foil)</option>
+				</select>
+				</td><td>
+
+
+				<span id="ukaz"><input type="button" onclick="ukazrozhledani();" value="Rozšířené hledání"></span>
+				<span id="zrusit" STYLE="display: none"><input type="button" onclick="schovrozhledani();" value="Skryj rozšířené hledání"></span>
+				<input type="checkbox" STYLE="display: none" name="ukazrozsirenehledani">
+						</td>
+					</tr>
+				</table></td></tr>
+
+					<tr bgcolor="#989883" valign="top">
+						<td>Barva</td>
+						<td><input type="checkbox" name="red">
+							<img src="images/kusovky/r.gif" width="11" height="11" border="0">červená<br>
+							<input type="checkbox" name="blue">
+							<img src="images/kusovky/u.gif" width="11" height="11" border="0">modrá<br>
+							<input type="checkbox" name="multi">multicolor
+						</td>
+						<td><input type="checkbox" name="green">
+							<img src="images/kusovky/g.gif" width="11" height="11" border="0">zelená<br>
+							<input type="checkbox" name="black">
+							<img src="images/kusovky/b.gif" width="11" height="11" border="0">černá<br>
+							<input type="checkbox" name="land">země
+						</td>
+						<td><input type="checkbox" name="white">
+							<img src="images/kusovky/w.gif" width="11" height="11" border="0">bílá<br>
+							<input type="checkbox" name="artifact">artefakt<br>
+							<input type="checkbox" name="colorless">colorless
+						</td>
+					</tr>
+
+					<tr>
+						<td valign="top">Rarita</td>
+						<td><input type="checkbox" name="common">common<br>
+						   <input type="checkbox" name="mythic">mythic</td>
+						<td valign="top"><input type="checkbox" name="uncommon">uncommon</td>
+						<td valign="top"><input type="checkbox" name="rare">rare</td>
+						</tr>
+
+					<tr bgcolor="#989883" valign="top">
+						<td>Typ karty</td>
+						<td><input type="checkbox" name="sorcery">sorcery<br>
+							<input type="checkbox" name="instant">instant
+						</td>
+						<td><input type="checkbox" name="enchant">enchantment<br>
+							<input type="checkbox" name="creature">creature
+						</td>
+						<td><input type="checkbox" name="artifacttyp">artifact<br>
+							<input type="checkbox" name="landtyp">land
+						</td>
+					</tr>
+					<tr bgcolor="#989883" id="tabrozhledani1">
+						<td align="left">Typ&nbsp;(stačí&nbsp;část):</td>
+						<td colspan="3"><input type="text" name="jinytyp" size="40" maxlength="50" value=""></td>
+					</tr>
+					<tr>
+						<td align="right">Cena min:&nbsp;&nbsp;</td>
+						<td><input type="text" name="cenamin" size="4" maxlength="5" value="1">
+					max: <input type="text" name="cenamax" size="4" maxlength="5" value="99999"></td>
+						<td colspan="2"><input type="checkbox" name="magicvykup">Vyhledat pro výkup</td>
+					</tr>
+					<tr id="tabrozhledani2" bgcolor="#989883">
+						<td align="right">Casting Cost min:&nbsp;&nbsp;</td>
+						<td colspan="3"><input type="text" name="ccmin" size="4" maxlength="4" value="0">
+						max: <input type="text" name="ccmax" size="4" maxlength="4" value="99"></td>
+					</tr>
+					<tr id="tabrozhledani4" bgcolor="#989883">
+						<td align="right">Kusů požadujeme min:&nbsp;&nbsp;</td>
+						<td colspan="3">
+							<input type="text" name="pozmin" size="4" maxlength="4" value="0">
+							max: <input type="text" name="pozmax" size="4" maxlength="4" value="99">
+						</td>
+					</tr>
+					<tr id="tabrozhledani3" bgcolor="#989883">
+						<td align="right">Text karty (stačí část):&nbsp;&nbsp;</td>
+						<td colspan="3"><input type="text" name="textkarty" size="40" maxlength="50" value=""></td>
+					</tr>
+
+				</td>
+				</tr>
+				<tr bgcolor="#000000"><td colspan="4"></td></tr>
+				<tr>
+					<td align="right">
+						<a name="vyhledavani_jmeno"></a>Název&nbsp;karty&nbsp;(stačí&nbsp;část):
+					</td>
+					<td colspan="3">
+						<input type="text" name="jmenokarty" size="40" maxlength="50" value="Bant Sojourners">
+					</td>
+				</tr>
+				</table>
+
+				<table  border="2" cellspacing="10" width="496" align="center" class="kusovkytext">
+					<tr>
+						<td><input type="submit" name="submit" value="Vyhledej"></td>
+
+						<td align="left">Počet na stránce <input type="text" name="poczob" size="3" maxlength="3" value="30"></td>
+						<td><input type="checkbox" name="listformat" value="pic"  onChange="javascript:testMaxRecords()">Vypsat s obrázky</td>
+					</tr>
+				</table></form>
+
+<SCRIPT type="text/javascript">
+<!--
+schovrozhledani();
+//-->
+</SCRIPT>
+	<table width="496" align="center" cellpadding="5" cellspacing="0" border="1" bordercolor="#000000" class="kusovkytext">
+		<tr>
+			<td valign="middle">Jméno karty</td>
+			<td>Barva</td>
+			<td>Mana cost</td>
+			<td>Typ</td>
+			<td>Rarita</td>
+			<td>Edice</td>
+			<td>Skladem</td>
+			<td>Cena</td>
+			<td colspan="2">Objednat kusů</td>
+
+		</tr>
+		<tr bgcolor="000000">
+			<td colspan="11" height="1"></td>
+		</tr>
+		<tr bgcolor="#989883">
+			<td><a href="javascript:Kartickoveokno( 'ukazobrazekkusovek.php3?jmenosouboru=./images/kusovkymagic/new/ARB/006.jpg' )" title="(2/4) When you cycle Bant Sojourners or it´s put into a graveyard from play, you may put a 1/1 white Soldier creature token into play. Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.) ">Bant Sojourners </a></td>
+			<td>Multicolored</td>
+			<td><img src='images/kusovky/1.gif'><img src='images/kusovky/g.gif'><img src='images/kusovky/w.gif'><img src='images/kusovky/u.gif'> </td>
+			<td>Creature — Human Soldier </td>
+			<td>Common</td>
+			<td>Alara Reborn</td>
+
+			<td align="center">58</td>
+			<td>3&nbsp;Kč</td>
+<form action="index.php3?akce=3&limit=0&sklademmin=0&sklademmax=9999&cenamin=1&cenamax=99999&jmenokarty=Bant Sojourners&edice_magic=libovolna&poczob=30&jinytyp=&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku21592" onSubmit="if ( self.document.forms.objednejkusovku21592.kusu.value > 58 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 58 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="321592">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<td><a href="index.php3?akce=3&registracniudaje=1"><img src="images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit figurku do košíku"></a></td>
+		</form>
+		</tr>		<tr bgcolor="#6D6D5E">
+			<td><a href="javascript:Kartickoveokno( 'ukazobrazekkusovek.php3?jmenosouboru=./images/kusovkymagic/new/ARB/006.jpg' )" title="(2/4) When you cycle Bant Sojourners or it´s put into a graveyard from play, you may put a 1/1 white Soldier creature token into play. Cycling {2}{W} ({2}{W}, Discard this card: Draw a card.) ">Bant Sojourners (foil)</a></td>
+			<td>Multicolored</td>
+			<td><img src='images/kusovky/1.gif'><img src='images/kusovky/g.gif'><img src='images/kusovky/w.gif'><img src='images/kusovky/u.gif'> </td>
+			<td>Creature — Human Soldier </td>
+			<td>Common</td>
+			<td>Alara Reborn_f</td>
+
+			<td align="center">3</td>
+			<td>7&nbsp;Kč</td>
+<form action="index.php3?akce=3&limit=0&sklademmin=0&sklademmax=9999&cenamin=1&cenamax=99999&jmenokarty=Bant Sojourners&edice_magic=libovolna&poczob=30&jinytyp=&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku21845" onSubmit="if ( self.document.forms.objednejkusovku21845.kusu.value > 3 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 3 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="321845">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<td><a href="index.php3?akce=3&registracniudaje=1"><img src="images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit figurku do košíku"></a></td>
+		</form>
+		</tr>	</table>
+	<br>
+
+
+</td></tr>
+</table></td>
+<td align="center" valign="top" bgcolor="#6D6D5E"><table width="135" align="center" cellpadding="0" cellspacing="0"><tr><td><img src="images/spacer.gif width = "120" height="5"><br>
+<table width="130" cellspacing="5" border="1" bordercolor="#000000" bgcolor="#989883"><tr>
+<td align="center"><span class="kosikbold">KARETNÍ TIP</span></td></tr><tr><td><a href ="index.php3?akce=3&jmenokarty=Lord of the Undead&submit=Vyhledej&rozsirenehledani=1" title="2/2 Other Zombie creatures get +1/+1.  1B, T Return target Zombie card from your graveyard to your hand. " class="turnaje">Lord of the Undead<span class="turnaje">&nbsp;- 120&nbsp;Kč</a><br>
+<a href ="index.php3?akce=3&jmenokarty=Ravenous Baloth (DCI - Judge)&submit=Vyhledej&rozsirenehledani=1" title="4/4 Sacrifice a Beast: You gain 4 life." class="turnaje">Ravenous Baloth (DCI - Judge)<span class="turnaje">&nbsp;- 120&nbsp;Kč</a><br>
+<a href ="index.php3?akce=3&jmenokarty=Ajani Vengeant (Prerelease)&submit=Vyhledej&rozsirenehledani=1" title="3<br>+1: Target permanent doesn´t untap during its controller´s next untap step.<br>-2: Ajani Vengeant deals 3 damage to target creature or player and you gain 3 life.<br>-7: Destroy all lands target player controls." class="turnaje">Ajani Vengeant (Prerelease)<span class="turnaje">&nbsp;- 130&nbsp;Kč</a><br>
+<a href ="index.php3?akce=3&jmenokarty=Tropical Island&submit=Vyhledej&rozsirenehledani=1" title="" class="turnaje">Tropical Island<span class="turnaje">&nbsp;- 1480&nbsp;Kč</a><br>
+<a href ="index.php3?akce=3&jmenokarty=Natural Order&submit=Vyhledej&rozsirenehledani=1" title="As an additional cost to play Natural Order, sacrifice a green creature. Search your library for a green creature card and put that card into play. Then shuffle your library." class="turnaje">Natural Order<span class="turnaje">&nbsp;- 720&nbsp;Kč</a><br>
+<a href ="index.php3?akce=3&cenamin=100&cenamax=999&kususkladem=0&submit=Vyhledej" title="Další karty" class="turnaje"><b>Další >></b></a><br></td></tr></table><img src="images/spacer.gif" width = "100" height="5" border="0"><table width="130" cellspacing="5"  border="1" bordercolor="#000000"
+				bgcolor="#989883"><tr>
+<td align="center"><span class="kosikbold">TIP ČERNÉHO RYTÍŘE</span></td></tr><tr><td><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=77#zbozi_id_14157" ><img src="images/obchod//swdesk.jpg" width="100" border="0"></a></td></tr></table></td></tr><tr><td><a href="index.php3?akce=77" class="novinkybold">Smallworld</a><br><a href="index.php3?akce=77" class="novinkynormal">Cena : 999 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=242#zbozi_id_13131" ><img src="images/obchod//assaultbox.jpg" width="100" border="0"></a></td></tr></table></td></tr><tr><td><a href="index.php3?akce=242" class="novinkybold">Warhammer 40,000 Assault on Black Reach</a><br><a href="index.php3?akce=242" class="novinkynormal">Cena : 1500 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=152#zbozi_id_15047" ><img src="images/obchod//2010gb.jpg" width="100" border="0"></a></td></tr></table></td></tr><tr><td><a href="index.php3?akce=152" class="novinkybold">Magic 2011 Intro Pack - Reign of Vampirism</a><br><a href="index.php3?akce=152" class="novinkynormal">Cena : 299 Kč</a></td></tr></table><img src="images/spacer.gif" width = "100" height="5" border="0"><table width="130" cellspacing="5"  border="1" bordercolor="#000000"
+				bgcolor="#989883"><tr>
+<td align="center"><span class="kosikbold">NOVINKY V&nbsp;OBCHODĚ</span></td></tr><tr><td><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=252#zbozi_id_15617" ><img src="images/obchod//codexgrey.jpg" width="100" border="0"></a></td></tr></table></td></tr><tr><td><a href="index.php3?akce=252" class="novinkybold">Codex Grey Knights 2011</a><br><a href="index.php3?akce=252" class="novinkynormal">Cena : 499 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=57#zbozi_id_15600" ><img src="images/obchod//ddfortunr.jpg" width="100" border="0"></a></td></tr></table></td></tr><tr><td><a href="index.php3?akce=57" class="novinkybold">D&D 4th Edition - Fortune Cards - Shadow over Nentir Vale</a><br><a href="index.php3?akce=57" class="novinkynormal">Cena : 99 Kč</a></td></tr></table></td></tr></table></td></tr>
+<tr><td bgcolor="#000000" colspan="3"><img src="images/spacer.gif" width="500" height="3"></td></tr>
+<tr><td colspan="3" bgcolor="#999999"><table cellpadding="3" align="center"><tr><td>
+<span class="spodnilista"><a href = "http://www.cernyrytir.cz/index.php3?akce=896"><b>ON-LINE OBCHOD: </b></a> Za Poříčskou branou 21, 186 00 Praha 8, <span style="position:relative; top: 4;"><img src="images/email_eshop.gif"></span>,  tel. 731 164 496, ICQ 386-264-060.<br>
+<a href="index.php3?akce=899"><b>OBCHOD PRAHA: </b></a> Za Poříčskou branou 21,186 00 Praha 8, <span style="position:relative; top: 4;"><img src="images/email_praha.gif"></span>, tel. 733 517 617, ICQ 354-755-058, otevřeno po - ne 12 - 20.<br>
+<a href="index.php3?akce=897"><b>OBCHOD BRNO: </b></a> Chládkova 3, 616 00 Brno<span style="position:relative; top: 4;"><img src="images/email_brno.gif"></span>, tel. 733 517 608, ICQ 227-222-664, otevřeno po - so 12 - 18:30.</span></td></tr>
+</table></td></tr>
+</table>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-484566-14";
+urchinTracker();
+</script>
+
+
+</BODY>
+</HTML>
+

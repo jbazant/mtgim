@@ -1,0 +1,53 @@
+<?php
+    // apple touch icons
+    $apple = array(
+        array('size' => ''),
+        array('size' => '57'),
+        array('size' => '72'),
+        array('size' => '76'),
+        array('size' => '114'),
+        array('size' => '120'),
+        array('size' => '144'),
+        array('size' => '152'),
+    );
+?>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php echo $this->headLink() ?>
+
+    <title><?php echo $this->appName ?></title>
+
+    <link rel="shortcut icon" href="<?php echo $this->baseUrl('/images/icons/favicon.ico') ?>" type="image/x-icon" />
+
+    <?php echo $this->PartialLoop('partials/appleTouch.phtml', $apple) ?>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vyhledávání cen MtG karet z mobilu" />
+    <meta property="og:description" content="Vyhledávání karet sběratelské hry Magic: the Gathering v&nbsp;českých internetových obchodech z&nbsp;pohodlí vašeho mobilu." />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:site_name" content="<?php echo $this->appName ?>"/>
+    <meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'] ?>" />
+    <meta property="og:image" content="http://<?php echo $_SERVER['SERVER_NAME'] . $this->baseUrl('/images/cards-black-fb.png') ?>" />
+
+    <meta property="fb:app_id" content="<?php echo $this->fbAppId ?>" />
+
+    <meta name="description" content="Vyhledávání karet sběratelské hry Magic: the Gathering v&nbsp;českých internetových obchodech z&nbsp;pohodlí vašeho mobilu." />
+</head>
+<body>
+<div id="fb-root"></div>
+<div data-role="page" id="<?php echo $this->pageId ?>" data-theme="a">
+    <?php echo $this->partial('partials/topbar.phtml', $this) ?>
+
+    <div role="main" class="ui-content">
+        <?php echo $this->layout()->content; ?>
+    </div>
+
+    <?php echo $this->partial('partials/bottombar.phtml', $this) ?>
+    <?php echo $this->partial('partials/menubar.phtml', $this) ?>
+</div>
+<?php echo $this->headScript() ?>
+</body>
+</html>

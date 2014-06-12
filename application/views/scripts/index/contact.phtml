@@ -1,0 +1,38 @@
+<?php
+    /** @var array $this->formErrors */
+    /** @var bool $this->showForm */
+?>
+<?php if ($this->showForm): ?>
+    <h1>Kontaktujte nás</h1>
+
+    <p>Máte na nás nějaké připomínky, otázky, nebo nabídky? Kontaktujte nás pomocí formuláře níže.</p>
+
+    <form id="contactform" method="POST" action="<?php echo $this->baseUrl('/index/contact') ?>">
+
+        <?php echo $this->partial('partials/formErrors.phtml', $this) ?>
+
+        <label for="f_user_email">E-mail</label>
+        <input type="email" name="f_user_email" id="f_user_email" placeholder="Email" required="required" value="" />
+
+        <label for="f_user_phone">Telefon (nepovinné)</label>
+        <input type="number" name="f_user_phone" id="f_user_phone" placeholder="Telefon" value="" />
+
+        <label for="f_message">Sdělení</label>
+        <textarea name="f_message" id="f_message" required="required"></textarea>
+
+        <div class="anti_spam_holder">
+            <label for="anti_spam_check">Kontrolní pole</label>
+            <input type="text" id="anti_spam_check" name="anti_spam_check" />
+            <p>Toto pole by mělo být vyplněno automaticky. Pokud tomu tak není. Vepiště do něj "anti-spam kontrola".</p>
+        </div>
+
+        <?php echo $this->partial('partials/formErrors.phtml', $this) ?>
+
+        <input type="submit" name="find" id="find" value="Odeslat" data-transition="slide" />
+    </form>
+
+<?php else: ?>
+    <h1>Zpráva odeslána</h1>
+    <p>Děkujeme za zaslání zprávy. Brzy Vás budeme kontaktovat.</p>
+    <a href="<?php echo $this->baseUrl('/') ?>" data-role="button" data-transition="slide" data-direction="reverse">Zpět na&nbsp;úvod</a>
+<?php endif;?>

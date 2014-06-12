@@ -1,0 +1,16 @@
+<h2><?php echo $this->message ?></h2>
+
+<a href="<?php echo $this->baseUrl('/') ?>" data-role="button" data-transition="slide" data-direction="reverse">Zpět na&nbsp;úvod</a>
+
+<?php if (isset($this->exception)): ?>
+    <h4>Exception information:</h4>
+    <p>
+        <b>Message:</b> <?php echo $this->exception->getMessage() ?>
+    </p>
+
+    <h4>Stack trace:</h4>
+    <pre><?php echo $this->exception->getTraceAsString() ?></pre>
+
+    <h4>Request Parameters:</h4>
+    <pre><?php echo var_export($this->request->getParams(), true) ?></pre>
+<?php endif ?>

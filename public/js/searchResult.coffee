@@ -1,0 +1,147 @@
+##
+#  Trida pro obsluhu collapsible s vysledky hledani
+#
+#  @param holder html collapsible div
+##
+class window.SearchResult
+  constructor: (@holder, @form) ->
+    ## pomocna promenna pro nastaveni rychlosti efektu
+    @fadeSpeed = 'fast'
+
+    ## collapsible jquery div
+    @jHolder = $ @holder
+
+    ## typ adapteru
+    @adapter = @jHolder.attr 'data-shop-id'
+
+    ## listview s vysledky jquery ul
+    @list = @jHolder.find '.results'
+
+    ## priznak, zda-li je collapsible nactene
+    @loaded = false
+
+    ## input pole s vyhledavanym retezcem
+    @searchInput = @form.find '#cardname'
+
+    ## hledany text
+    @searchText = @searchInput.val()
+
+    # navesit se na formular a pri submitu nacist hodnotu, sbalit se a mazat @list
+    @form.on 'submit', @formSubmitCallback
+
+    # priznak, ze je prave zobrazen
+    @isActive = false
+
+    return
+
+
+  ##
+  #  Obsluha pri rozbaleni collapsible
+  ##
+  expandCallback: () =>
+    # pouze pokud jiz neni nacteny
+    if not @loaded
+      @loaded = true
+
+      # zobrazim uzivateli at si pocka
+      @list.append @createLiDivider 'Načítám ...'
+      @list.listview 'refresh'
+
+      # donactu data
+      $.ajax(
+        url: jsParams.baseUrl + '/search/basic/format/json'
+        type: 'POST'
+        dataType: 'json'
+        data:
+          cardname: @searchText
+          adapter: @adapter
+
+      ).done((data) =>
+        @list.empty()
+        @list.append @createLiDivider "Nalezeno #{data.total} záznamů."
+
+        $.each data.results, (index, value) =>
+          @list.append @createLiItem value
+
+        @list.listview 'refresh'
+
+      ).fail (data) =>
+        @list.empty()
+        @list.append @createLiDivider "Chyba! Zkuste opakovat požadavek později."
+        @list.listview 'refresh'
+        @loaded = false
+
+      return
+
+
+  ##
+  #  pomocna funkce pro vytvareni listview divideru
+  ##
+  createLiDivider: (text) ->
+    $ '<li />',
+      'data-role': 'list-divider'
+      'text': text
+
+
+  ##
+  #  pomocna funkce pro vytvareni jedne polozky vysledku
+  ##
+  createLiItem: (item) ->
+    amountFlag = if item.amount is 0 then ''
+    $('<li />')
+      .append(
+        $('<p />')
+          .append($('<span />',
+            'class': 'name'
+            'text': item.name
+          )).append($('<span />',
+            'class': 'price'
+            'text': item.value + ' Kč' # todo format number
+          ))
+      ).append(
+        $('<p />')
+          .append($('<span />',
+            'class': 'expansion'
+            'text': item.expansion
+          )).append($('<span />',
+            'class': 'count' + if item.amount is 0 then ' empty' else ''
+            'text': item.amount + ' ks' # todo format number
+          ))
+      )
+
+
+  ##
+  # Akce divu vysledku pri znovuodeslani formulare pro vyhledavani
+  ##
+  formSubmitCallback: (e) =>
+    @loaded = false
+    e.preventDefault()
+
+    formSubmitBaseAction = () =>
+      @loaded = false
+      @list.empty()
+      @searchText = @searchInput.val()
+
+    if @isActive
+      @jHolder.fadeOut @fadeSpeed, () =>
+        formSubmitBaseAction()
+        @expandCallback()
+        @jHolder.fadeIn @fadeSpeed
+    else
+      formSubmitBaseAction()
+
+    return
+
+  ##
+  # Nastavi tento vypis vysledku jako aktivni
+  ##
+  setActive: () =>
+    @isActive = true
+    @expandCallback()
+
+
+  ##
+  # Zrusi priznak "aktivni" pro tento vypis vysledku
+  ##
+  resetActive: () =>
+    @isActive = false

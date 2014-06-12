@@ -1,0 +1,12 @@
+<?php
+    if (!empty($this->size)) {
+        $s = $this->size . 'x' . $this->size;
+        $url = sprintf('/images/icons/apple-touch-icon-%s.png', $s);
+        $sizes = 'sizes="' . $s . '" ';
+    }
+    else {
+        $sizes = '';
+        $url = '/images/icons/apple-touch-icon.png';
+    }
+?>
+<link rel="apple-touch-icon" <?php echo $sizes ?>href="<?php echo $this->baseUrl($url) ?>" />

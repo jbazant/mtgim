@@ -1,0 +1,31 @@
+<?php if ($this->showOldAlert): ?>
+    <div class="ui-body ui-body-b ui-corner-all warning-box ui-overlay-shadow">
+        <p>
+            Používáte spouštěč, který odkazuje na&nbsp;adresu, na&nbsp;které aplikace již nebeží.
+            Prosím vytvořte svůj spouštěč znovu. Návod jak&nbsp;vytvořit spouštěč naleznete v&nbsp;sekci
+            <a href="<?php echo $this->baseUrl('/info/tips') ?>"
+               data-transition="slide"
+            >Tipy a triky</a>.
+        </p>
+    </div>
+<?php endif; ?>
+<form id="searchform" method="POST" action="<?php echo $this->baseUrl('/index/search') ?>">
+    <input type="search" name="cardname" id="cardname" placeholder="Karta" value="" />
+    <input type="submit" name="find" id="find" value="Hledej" data-transition="slide" data-icon="search" />
+</form>
+
+<div class="front-info">
+    <p>Aplikace slouží pro&nbsp;vyhledávání karet v&nbsp;obchodě <a href="http://www.cernyrytir.cz">www.cernyrytir.cz</a> z&nbsp;pohodlí vašeho mobilu.</p>
+    <p>Při&nbsp;vyhledávání je vždy zobrazeno maximálně prvních 30&nbsp;výsledků.</p>
+
+    <p class="ui-mini" >
+        <a class="ui-btn ui-btn-icon-left ui-icon-star ui-corner-all"
+           href="<?php echo $this->baseUrl('/info/tips') ?>"
+           data-transition="slide"
+        >
+            Tipy a triky
+        </a>
+    </p>
+</div>
+
+

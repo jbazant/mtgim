@@ -1,0 +1,762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
+<head>
+  <title>MysticShop - deskové hry, jednotlivé karty a doplňky pro Magic: The Gathering, World of Warcraft, Pokémon Yu-Gi-Oh!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Language" content="cs" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta name="author" content="Karel Smutný" />
+  <meta name="copyright" content="&copy; 2005 - 2009 Karel Smutný" />
+  <meta name="keywords" content="mysticshop, magic, eshop, mtg, gathering, karty, kusovky, deskovky, deskové hry, obaly, alba, hry" />
+  <meta name="description" content="MysticShop - elektronický obchod s kusovými kartami Magic: The Gathering, doplňky a deskovými hrami" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="google-site-verification" content="7xnEwCVdpjmltjy9qAJHr0r9cbrerQrI4khcDYmrmag" />
+  <meta property="fb:app_id" content="100646060006511" />		
+  <link rel="stylesheet" href="ms.css" type="text/css" />
+  </head><body>
+<script type="text/javascript">
+  <!--
+function cardWindow(ids) {
+  params = "resizable=no,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes";
+  window.open('cardpict.php?ids=' + ids, '', params);
+}
+
+function convertedCheck(id) {
+  convertedInput = document.getElementById('converted');
+  costRelationInput = document.getElementById(id + '-relation');
+  costRelationInput.disabled = !convertedInput.checked;
+}
+var ext = false;
+function extsearch() {
+  var display = 'block';
+  if (ext) display = 'none';
+  document.getElementById('pricediv').style.display = display;
+  document.getElementById('languagediv').style.display = display;
+  document.getElementById('artistdiv').style.display = display;
+  document.getElementById('manacostdiv').style.display = display;
+  document.getElementById('powerdiv').style.display = display;
+  document.getElementById('toughnessdiv').style.display = display;
+  document.getElementById('qualitydiv').style.display = display;
+  document.getElementById('specialdiv').style.display = display;
+  document.getElementById('typetextdiv').style.display = display;
+  document.getElementById('textdiv').style.display = display;
+  document.getElementById('cmdextsearch').value = ext ? 'Rozšířené hledání' : 'Základní hledání';
+  ext = !ext;
+}
+
+var extcm = false;
+function colormodehelp() {
+  var display = 'block';
+  if (extcm) display = 'none';
+  document.getElementById('colorhelp1').style.display = display;
+  document.getElementById('colorhelp2').style.display = display;
+  extcm = !extcm;
+}
+
+var exteh = false;
+function encyclopediahelp() {
+  var display = 'block';
+  if (exteh) display = 'none';
+  document.getElementById('encyclopediahelp1').style.display = display;
+  exteh = !exteh;
+}
+
+var extft = false;
+function fulltexthelp() {
+  var display = 'block';
+  if (extft) display = 'none';
+  document.getElementById('fulltexthelp1').style.display = display;
+  document.getElementById('fulltexthelp2').style.display = display;
+  extft = !extft;
+}
+
+function resetform() {
+  document.getElementById('set').value = 0;
+  document.getElementById('block').checked = 0;
+  document.getElementById('white').checked = 0;
+  document.getElementById('blue').checked = 0;
+  document.getElementById('black').checked = 0;
+  document.getElementById('red').checked = 0;
+  document.getElementById('green').checked = 0;
+  document.getElementById('split').checked = 0;
+  document.getElementById('multicolor').checked = 0;
+  document.getElementById('halfmana').checked = 0;
+  document.getElementById('mythic').checked = 0;
+  document.getElementById('rare').checked = 0;
+  document.getElementById('uncommon').checked = 0;
+  document.getElementById('common').checked = 0;
+  document.getElementById('special').checked = 0;
+  document.getElementById('basic-land').checked = 0;
+  document.getElementById('non-basic-land').checked = 0;
+  document.getElementById('creature').checked = 0;
+  document.getElementById('artifact').checked = 0;
+  document.getElementById('legend').checked = 0;
+  document.getElementById('sorcery').checked = 0;
+  document.getElementById('instant').checked = 0;
+  document.getElementById('enchantment').checked = 0;
+  document.getElementById('planeswalker').checked = 0;
+  document.getElementById('tribal').checked = 0;
+  document.forms['searchform'].quality[0].checked = 0;
+  document.forms['searchform'].quality[1].checked = 0;
+  document.forms['searchform'].quality[2].checked = 0;
+  document.getElementById('foil').checked = 0;
+  document.getElementById('misprint').checked = 0;
+  document.getElementById('signed').checked = 0;
+  document.getElementById('minprice').value = '';
+  document.getElementById('maxprice').value = '';
+  document.getElementById('language').value = 0;
+  document.getElementById('artist').value = '';
+  document.getElementById('manacost').value = '';
+  document.getElementById('converted').checked = 0;
+  document.getElementById('power').value = '';
+  document.getElementById('toughness').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('typetext').value = '';
+  document.getElementById('text').value = '';
+  document.getElementById('fulltext').checked = 0;
+  convertedCheck('manacost');
+}
+
+  -->
+</script>
+<div id="all">
+<div id="header">
+  <div id="logo"></div>
+  <div id="menu">
+    <ul id="mainmenu">
+      <li id="first"><p><a href="index.php">MysticShop</a></p></li>
+      <li><p><a href="popis.php?idc=10">Karetní hry</a></p></li>
+	    <li><p><a href="popis.php?idc=14">Deskové hry</a></p></li>
+	    <li><p><a href="popis.php?idc=15">RPG</a></p></li>
+	    <li><p><a href="popis.php?idc=16">Warhammer</a></p></li>
+	    <li><p><a href="herna.php">Herna</a></p></li>
+	    <li><p><a href="podminky.php">Jak nakupovat</a></p></li>
+	    <li><p><a href="kontakt.php">Kontakt</a></p></li>
+    </ul>
+  </div>
+</div>  <div id="main">
+    <div id="lc">
+<div class="box-head">
+  <p>Bonusový program</p>
+</div>
+<div class="box-border">
+<div class="box-content">
+<div class="box-item">
+  <p><a href="kartazakaznika.php">Karta zákazníka</a></p>
+</div>
+<!--  
+<div class="box-item">
+  <p><a href="rrpprogram.php">RRP program</a></p>
+</div>
+-->
+</div>
+</div>
+<div class="box-head">
+  <p>Katalog zboží</p>
+</div>
+<div class="box-border">
+<div class="box-content">
+<div class="box-item">
+  <p><a href="katalog.php">Do katalogu zboží</a></p>
+</div>
+</div>
+</div>
+<div class="box-head">
+  <p>Magic: TG Kusovky</p>
+</div>
+<div class="box-border">
+<div class="box-content">
+<div class="box-item">
+  <p><a href="mtgshop.php?mode=shop">
+  <b>Prodej karet</b>
+  </a></p>
+</div>
+<div class="box-item">
+  <p><a href="mtgshop.php?mode=buyout">
+  Výkup karet  </a></p>
+</div>
+</div>
+</div>
+<div class="box-border">
+<div class="box-content">
+<div id="ordersets">
+  <a href="mtgshop.php?sbs=name">abecedně</a> |
+  <a href="mtgshop.php?sbs=date">od nejnovější</a>
+</div>
+<div class="box-mtgset"><p><img src="img/sets/dci-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=promo">Promo karty</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/mbs-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=104">Mirrodin Besieged</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/som-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=102">Scars of Mirrodin</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/m11-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=99">Magic 2011</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/eldrazi-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=98">Rise of the Eldrazi</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/worldwake-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=96">Worldwake</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/zendikar-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=93">Zendikar</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/m10-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=91">Magic 2010</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/reborn-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=90">Alara Reborn</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/conflux-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=88">Conflux</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/alara-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=86">Shards of Alara</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/eve-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=84">Eventide</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/shm-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=82">Shadowmoor</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/mor-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=81">Morningtide</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/lrw-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=80">Lorwyn</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/10e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=79">Tenth Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/fut-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=78">Future Sight</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/planar-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=77">Planar Chaos</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/timespiral-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=74">Time Spiral</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/timeshifted-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=75">Time Spiral Timeshifted</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/coldsnap-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=72">Coldsnap</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/dissension-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=71">Dissension</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/guildpact-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=69">Guildpact</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/ravnica-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=57">Ravnica: City of Guilds</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/9e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=1">Ninth Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/sok-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=2">Saviors of Kamigawa</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/unhinged-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=5">Unhinged</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/bok-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=3">Betrayers of Kamigawa</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/chk-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=4">Champions of Kamigawa</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/fd-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=6">Fifth Dawn</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/darksteel-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=7">Darksteel</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/mirrodin-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=8">Mirrodin</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/8e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=47">Eighth Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/scourge-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=9">Scourge</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/legions-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=10">Legions</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/onslaught-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=11">Onslaught</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/judgment-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=12">Judgment</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/torment-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=13">Torment</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/odyssey-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=14">Odyssey</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/7e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=48">Seventh Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/apocalypse-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=15">Apocalypse</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/planeshift-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=16">Planeshift</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/p3k-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=41">Portal Three Kingdoms</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/invasion-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=17">Invasion</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/prophecy-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=18">Prophecy</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/nemesis-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=19">Nemesis</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/mm-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=20">Mercadian Masques</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/6e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=49">Classic Sixth Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/portal2-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=40">Portal Second Age</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/ud-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=21">Urza's Destiny</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/ul-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=22">Urza's Legacy</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/uz-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=23">Urza's Saga</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/exodus-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=24">Exodus</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/unglued-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=44">Unglued</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/portal-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=39">Portal</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/stronghold-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=25">Stronghold</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/tempest-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=26">Tempest</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/5e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=50">Fifth Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/weatherlight-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=27">Weatherlight</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/visions-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=28">Visions</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/mirage-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=29">Mirage</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/alliances-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=30">Alliances</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/ia-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=32">Ice Age</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/4e-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=51">Fourth Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/chronicles-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=38">Chronicles</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/homelands-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=31">Homelands</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/fe-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=33">Fallen Empires</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/revised-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=52">Revised Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/dark-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=34">The Dark</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/antiquities-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=36">Antiquities</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/legends-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=35">Legends</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/an-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=37">Arabian Nights</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/unlimited-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=53">Unlimited Edition</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/beta-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=54">Limited Edition Beta</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/alpha-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=55">Limited Edition Alpha</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/beatdown-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=46">Beatdown Box Set</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/br-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=45">Battle Royale Box Set</a></p></div>
+    <div class="box-mtgset"><p><img src="img/sets/starter-c.gif" alt="I" />&nbsp;<a href="mtgshop.php?ids=42">Starter 1999</a></p></div>
+</div>
+</div>
+    </div>
+    <div id="mc">
+      <div id="content">
+      <form id="searchform" method="post" action="mtgshop.php">
+        <fieldset id="search">
+          <legend>Prodej karet</legend>
+          <div>
+            <label>Edice</label>
+            <select  class="midinput" id="set" name="set" size="1">
+              <option value="0" selected="selected">Všechny</option>
+              <option value="last_block">Aktuální Blok</option>
+              <option value="standard">Standard</option>
+              <option value="extended">Extended</option>
+              <option value="vintage">Vintage</option>
+              <option value="common">------- běžné edice -------</option>
+              <option value="104">Mirrodin Besieged</option>
+              <option value="102">Scars of Mirrodin</option>
+              <option value="99">Magic 2011</option>
+              <option value="98">Rise of the Eldrazi</option>
+              <option value="96">Worldwake</option>
+              <option value="93">Zendikar</option>
+              <option value="91">Magic 2010</option>
+              <option value="90">Alara Reborn</option>
+              <option value="88">Conflux</option>
+              <option value="86">Shards of Alara</option>
+              <option value="84">Eventide</option>
+              <option value="82">Shadowmoor</option>
+              <option value="81">Morningtide</option>
+              <option value="80">Lorwyn</option>
+              <option value="79">Tenth Edition</option>
+              <option value="78">Future Sight</option>
+              <option value="77">Planar Chaos</option>
+              <option value="74">Time Spiral</option>
+              <option value="75">Time Spiral Timeshifted</option>
+              <option value="72">Coldsnap</option>
+              <option value="71">Dissension</option>
+              <option value="69">Guildpact</option>
+              <option value="57">Ravnica: City of Guilds</option>
+              <option value="1">Ninth Edition</option>
+              <option value="2">Saviors of Kamigawa</option>
+              <option value="5">Unhinged</option>
+              <option value="3">Betrayers of Kamigawa</option>
+              <option value="4">Champions of Kamigawa</option>
+              <option value="6">Fifth Dawn</option>
+              <option value="7">Darksteel</option>
+              <option value="8">Mirrodin</option>
+              <option value="47">Eighth Edition</option>
+              <option value="9">Scourge</option>
+              <option value="10">Legions</option>
+              <option value="11">Onslaught</option>
+              <option value="12">Judgment</option>
+              <option value="13">Torment</option>
+              <option value="14">Odyssey</option>
+              <option value="48">Seventh Edition</option>
+              <option value="15">Apocalypse</option>
+              <option value="16">Planeshift</option>
+              <option value="41">Portal Three Kingdoms</option>
+              <option value="17">Invasion</option>
+              <option value="18">Prophecy</option>
+              <option value="19">Nemesis</option>
+              <option value="20">Mercadian Masques</option>
+              <option value="49">Classic Sixth Edition</option>
+              <option value="40">Portal Second Age</option>
+              <option value="21">Urza's Destiny</option>
+              <option value="22">Urza's Legacy</option>
+              <option value="23">Urza's Saga</option>
+              <option value="24">Exodus</option>
+              <option value="44">Unglued</option>
+              <option value="39">Portal</option>
+              <option value="25">Stronghold</option>
+              <option value="26">Tempest</option>
+              <option value="50">Fifth Edition</option>
+              <option value="27">Weatherlight</option>
+              <option value="28">Visions</option>
+              <option value="29">Mirage</option>
+              <option value="30">Alliances</option>
+              <option value="32">Ice Age</option>
+              <option value="51">Fourth Edition</option>
+              <option value="38">Chronicles</option>
+              <option value="31">Homelands</option>
+              <option value="33">Fallen Empires</option>
+              <option value="52">Revised Edition</option>
+              <option value="34">The Dark</option>
+              <option value="36">Antiquities</option>
+              <option value="35">Legends</option>
+              <option value="37">Arabian Nights</option>
+              <option value="53">Unlimited Edition</option>
+              <option value="54">Limited Edition Beta</option>
+              <option value="55">Limited Edition Alpha</option>
+              <option value="46">Beatdown Box Set</option>
+              <option value="45">Battle Royale Box Set</option>
+              <option value="42">Starter 1999</option>
+              <option value="promo">------- promo edice -------</option>
+              <option value="58">APAC Lands</option>
+              <option value="60">Arena</option>
+              <option value="70">Arena Unhinged</option>
+              <option value="73">Champs</option>
+              <option value="89">Duel Decks: Divine vs Demonic</option>
+              <option value="101">Duel Decks: Elspeth vs. Tezzeret</option>
+              <option value="94">Duel Decks: Garruk vs Liliana</option>
+              <option value="87">Duel Decks: Jace vs Chandra</option>
+              <option value="97">Duel Decks: Phyrexia vs The Coalition</option>
+              <option value="59">Euro Lands</option>
+              <option value="61">FNM</option>
+              <option value="100">From the Vault: Relics</option>
+              <option value="85">From the Vault:Dragons</option>
+              <option value="92">From the Vault:Exiled</option>
+              <option value="76">Gateway</option>
+              <option value="63">Guru Lands</option>
+              <option value="65">Judge Gifts</option>
+              <option value="64">Junior Super Series</option>
+              <option value="67">Magic Rewards</option>
+              <option value="62">Ostatní promo karty</option>
+              <option value="103">Premium deck: Fire & Lightning</option>
+              <option value="95">Premium deck: Slivers</option>
+              <option value="66">Release Promos</option>
+              <option value="83">Tokeny</option>
+              <option value="68">Vanguards</option>
+            </select>
+<input type="checkbox" id="block" name="block" value="1" />Celý blok
+          </div>
+          <div id="colordiv">
+            <label>Barva</label>
+            <p class="alone"><span class="check"><input type="checkbox" id="white" name="white" value="1" /><img src="img/mana/W.gif" alt="" /> bílá</span>
+<span class="check"><input type="checkbox" id="green" name="green" value="1" /><img src="img/mana/G.gif" alt="" /> zelená</span>
+<span class="check"><input type="checkbox" id="black" name="black" value="1" /><img src="img/mana/B.gif" alt="" /> černá</span>
+<span class="check"><input type="checkbox" id="blue" name="blue" value="1" /><img src="img/mana/U.gif" alt="" /> modrá</span>
+<span class="check"><input type="checkbox" id="red" name="red" value="1" /><img src="img/mana/R.gif" alt="" /> červená</span>
+<span class="check"><input type="checkbox" id="multicolor" name="multicolor" value="1" /><img src="img/mana/G.gif" alt="" /><img src="img/mana/R.gif" alt="" /> multicolor</span>
+<span class="check"><input type="checkbox" id="halfmana" name="halfmana" value="1" /><img src="img/mana/ub.gif" alt="" /> hybridní mana</span>
+<span class="check"><input type="checkbox" id="split" name="split" value="1" /><img src="img/mana/W.gif" alt="" />/<img src="img/mana/G.gif" alt="" /> split</span>
+</p>
+<div class="clearer"></div>
+
+          </div>
+          <div id="colormodediv">
+            <label>&nbsp;</label>
+            <input type="checkbox" id="colormode" name="colormode" value="1" />Vyhledat jen karty, které jsou VŠECH barev ze zadané kombinace [<a href="javascript: colormodehelp();">?</a>]
+          </div>
+<p id="colorhelp1" class="help">
+Ponecháte-li předchozí políčko <b>nezaškrtnuté</b>, vyhledávač vrátí karty, které jsou <b>alespoň jedné ze zaškrtnutých barev</b> (vyberete-li např. bílou, červenou a zelenou, najdete bílé, červené, zelené, bílo-zelené, červeno-zelené, červeno-bílé a červeno-zeleno-bílé karty). Výsledek lze omezit na multicolory, karty s hybridní manou či split karty.</p>
+<p id="colorhelp2" class="help">
+Po <b>zaškrtnutí</b> políčka vrátí vyhledávač jen takové karty, které jsou <b>všech a pouze zaškrtnutých barev</b> (vyberete-li např. bílou, červenou a zelenou, najdete jen červeno-zeleno-bílé karty).</p>
+          <div>
+            <label>Rarita</label>
+            <p class="alone"><span class="check"><input type="checkbox" id="mythic" name="mythic" value="1" /><img src="img/sets/alara-m.gif" class="set" alt="" /> mythic</span>
+<span class="check"><input type="checkbox" id="rare" name="rare" value="1" /><img src="img/sets/timespiral-r.gif" class="set" alt="" /> rare</span>
+<span class="check"><input type="checkbox" id="uncommon" name="uncommon" value="1" /><img src="img/sets/timespiral-u.gif" class="set" alt="" /> uncommon</span>
+<span class="check"><input type="checkbox" id="common" name="common" value="1" /><img src="img/sets/timespiral-c.gif" class="set" alt="" /> common</span>
+<span class="check"><input type="checkbox" id="special" name="special" value="1" /><img src="img/sets/timeshifted-c.gif" class="set" alt="" /> special</span>
+</p>
+<div class="clearer"></div>
+
+          </div>
+          <div>
+            <label>Typ</label>
+            <p class="alone"><span class="check"><input type="checkbox" id="basic-land" name="basic-land" value="1" /><img src="img/mana/land.jpg" alt="" /> basic land</span>
+<span class="check"><input type="checkbox" id="creature" name="creature" value="1" /><img src="img/mana/creature.jpg" alt="" /> creature</span>
+<span class="check"><input type="checkbox" id="instant" name="instant" value="1" /><img src="img/mana/instant.jpg" alt="" /> instant</span>
+<span class="check"><input type="checkbox" id="enchantment" name="enchantment" value="1" /><img src="img/mana/enchantment.jpg" alt="" /> enchantment</span>
+<span class="check"><input type="checkbox" id="non-basic-land" name="non-basic-land" value="1" /><img src="img/mana/land.jpg" alt="" /> non-basic land</span>
+<span class="check"><input type="checkbox" id="artifact" name="artifact" value="1" /><img src="img/mana/artifact.jpg" alt="" /> artifact</span>
+<span class="check"><input type="checkbox" id="sorcery" name="sorcery" value="1" /><img src="img/mana/sorcery.jpg" alt="" /> sorcery</span>
+<span class="check"><input type="checkbox" id="legend" name="legend" value="1" />legend</span>
+<span class="check"><input type="checkbox" id="planeswalker" name="planeswalker" value="1" />planeswalker</span>
+<span class="check"><input type="checkbox" id="tribal" name="tribal" value="1" />tribal</span>
+</p>
+<div class="clearer"></div>
+
+          </div>
+          <div id="qualitydiv">
+            <label>Kvalita nejhůře</label>
+            <p class="alone"><span class="check"><input name="quality" type="radio" value="1" /><span class="mint">mint/nearmint</span></span>
+<span class="check"><input name="quality" type="radio" value="2" /><span class="excellent">excellent</span></span>
+<span class="check"><input name="quality" type="radio" value="3" /><span class="played">played</span></span>
+</p>
+
+          </div>
+          <div id="specialdiv">
+            <label>Další vlastnosti</label>
+            <p class="alone"><span class="check"><input type="checkbox" id="foil" name="foil" value="1" /><span class="foil">foil</span></span>
+<span class="check"><input type="checkbox" id="misprint" name="misprint" value="1" />misprint</span>
+<span class="check"><input type="checkbox" id="signed" name="signed" value="1" />podepsaná</span>
+</p>
+<div class="clearer"></div>
+
+          </div>
+          <div id="pricediv">
+            <label>Cena</label>
+            <b>min</b>&nbsp;<input type="text" class="mininput" id="minprice" name="minprice" value="" />&nbsp;<b>max</b>&nbsp;<input type="text" class="mininput" id="maxprice" name="maxprice" value="" />&nbsp;<b>Kč</b>
+          </div>
+          <div id="languagediv">
+            <label>Jazyk</label>
+            <select  id="language" name="language" size="1">
+              <option value="english">Anglický</option>
+              <option value="asian">Asijský</option>
+              <option value="german">Německý</option>
+              <option value="russian">Ruský</option>
+              <option value="other">Ostatní</option>
+              <option value="0" selected="selected">všechny</option>
+            </select>
+
+          </div>
+          <div id="manacostdiv">
+            <label>Sesílací cena</label>
+            <select  class="mininput" id="manacost-relation" name="manacost-relation" size="1">
+              <option value="&gt;">></option>
+              <option value="=">=</option>
+              <option value="&lt;"><</option>
+            </select>
+<input type="text" class="shortinput" id="manacost" name="manacost" value="" /><input type="checkbox" id="converted" name="converted" onclick="convertedCheck('manacost');" value="1" />Konvertovaná cena
+          </div>
+          <div id="powerdiv">
+            <label>Síla</label>
+            <select  class="mininput" id="power-relation" name="power-relation" size="1">
+              <option value="&gt;" selected="selected">></option>
+              <option value="=">=</option>
+              <option value="&lt;"><</option>
+            </select>
+<input type="text" class="shortinput" id="power" name="power" value="" />
+          </div>
+          <div id="toughnessdiv">
+            <label>Odolnost</label>
+            <select  class="mininput" id="toughness-relation" name="toughness-relation" size="1">
+              <option value="&gt;" selected="selected">></option>
+              <option value="=">=</option>
+              <option value="&lt;"><</option>
+            </select>
+<input type="text" class="shortinput" id="toughness" name="toughness" value="" />
+          </div>
+          <div id="artistdiv">
+            <label>Ilustrátor</label>
+            <input type="text" class="midinput" id="artist" name="artist" value="" />&nbsp;stačí např. jen příjmení
+          </div>
+          <div id="namediv">
+            <label>Název karty</label>
+            <input type="text" class="midinput" id="name" name="name" value="badlands" />&nbsp;stačí jen část
+          </div>
+          <div id="typetextdiv">
+            <label>Typ přesněji</label>
+            <input type="text" class="midinput" id="typetext" name="typetext" value="" />&nbsp;např. Zombie
+          </div>
+          <div id="textdiv">
+            <label>Text karty</label>
+            <input type="text" class="longinput" id="text" name="text" value="" /><input type="checkbox" id="fulltext" name="fulltext" value="1" />Fulltext [<a href="javascript: fulltexthelp();">?</a>]
+          </div>
+<p id="fulltexthelp1" class="help">
+Zaškrtnutím políčka <b>fulltext</b> vyhledáváte ve fulltextovém režimu. Vyhledávač vrátí všechny karty, jejichž text obsahuje některá ze zadaných slov (velmi častá slova může ignorovat). Chcete-li, aby nalezené karty dané slovo určitě obsahovaly, označte ho znakem +. Chcete-li, aby ho naopak neobsahovaly,  označte ho znakem -. Připojením znaku * na konec slova najdete karty, jejichž text obsahuje slova začínající vámi označeným řetezcem. Hledáte-li celou frázi, dejte ji do uvozovek.</p>
+<p id="fulltexthelp2" class="help">
+<b>Příklad</b> <i>+flying +trample -vigilance prot*</i> najde všechny karty obsahující slova <i>flying</i>, <i>trample</i>, mohou obsahovat slova začínající na <i>prot</i> (např. protection, protected) a neobsahují slovo <i>vigilance</i>.</p>
+          <div>
+            <label>&nbsp;</label>
+            <input type="checkbox" id="gatherer" name="gatherer" value="1" />Režim encyklopedie [<a href="javascript: encyclopediahelp();">?</a>]
+          </div>
+<p id="encyclopediahelp1" class="help">
+Režim encyklopedie ukazuje pouze karty ve stavu Mint. Pokud má sada např. 249 karet, pak se vám po zaškrtnutí této možnosti objeví všech 249 karet. Chybět budou případné karty ve stavu excellent, played, foily nebo cizojazyčné verze. Mód Encyklopedie využijete nejlépe, pokud chcete mít rychlý přehled o kartách, které sada obsahuje.</p>
+          <div>
+            <label>&nbsp;</label>
+            <input type="checkbox" id="nozeros" name="nozeros" value="1" />Nezobrazovat kusovky, které nejsou na skladě
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <input type="checkbox" id="pictures" name="pictures" value="1" />Výpis s obrázky
+          </div>
+          <div>
+            <label>Zobrazit karet</label>
+            <select  class="shortinput" id="limit" name="limit" size="1">
+              <option value="20">20</option>
+              <option value="50" selected="selected">50</option>
+              <option value="100">100</option>
+              <option value="250">250</option>
+              <option value="500">500</option>
+            </select>
+
+          </div>
+          <div>
+            <label class="emptylabel">&nbsp;</label>
+            <input class="lbutton" id="cmdsearch" name="cmdsearch" value="Vyhledej" type="submit" />&nbsp;
+<input class="lbutton" id="cmdreset" name="cmdreset" value="Reset" type="button" onclick="resetform();" />&nbsp;
+<input class="vlbutton" id="cmdextsearch" name="cmdextsearch" value="Rozšířené hledání" type="button" onclick="extsearch();" />
+          </div>
+        </fieldset>
+      </form>
+<script type="text/javascript">
+<!--
+  convertedCheck('manacost');
+-->
+</script>
+<p>
+Na našem skladě jsme našli podle Vašich kriterií <b>5</b> karet.</p>
+<div class="control">
+<div class="next">&nbsp;</div><div class="nav">&nbsp;</div><div class="prev">&nbsp;</div>  <form action="mtgshop.php" method="post">
+  <div class="limit">
+          <div>
+            <label>Zobrazit</label>
+            <select  class="shortinput" id="limit" name="limit" size="1">
+              <option value="20">20</option>
+              <option value="50" selected="selected">50</option>
+              <option value="100">100</option>
+              <option value="250">250</option>
+              <option value="500">500</option>
+            </select>
+&nbsp;<input class="button" id="cmdlimit" name="cmdlimit" value="OK" type="submit" />
+          </div>
+  </div>
+  </form>
+&nbsp;</div>
+  <form action="mtgshop.php" method="post">
+<table>
+  <thead>
+    <tr>
+<th></th>
+<th><a href="mtgshop.php?sb=n" title="Seřadit podle názvu">Název karty</a></th>
+<th><a href="mtgshop.php?sb=m" title="Seřadit podle barvy">Mana</a></th>
+<th><a href="mtgshop.php?sb=t" title="Seřadit podle typu">Typ karty</a></th>
+<th><a href="mtgshop.php?sb=r" title="Seřadit podle rarity">R</a></th>
+<th>Set</th>
+<th><a href="mtgshop.php?sb=q" title="Seřadit podle kvality">Poznámka</a></th>
+<th><a href="mtgshop.php?sb=c" title="Seřadit podle počtu kusů na skladě">Počet</a></th>
+<th><a href="mtgshop.php?sb=p" title="Seřadit podle ceny">Cena</a></th>
+<th>Objednat</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>    </tr>
+  </tfoot>
+  <tbody>
+    <tr class="oddrow">
+    <td class="number">1</td>
+    <td><a href="javascript:cardWindow(599);">Badlands</a></td>
+    <td class="mana"></td>
+    <td>Land — Mountain Swamp</td>
+    <td>R</td>
+    <td class="set"><img src="img/sets/alpha-r.gif" alt="Limited Edition Alpha" title="Limited Edition Alpha"/></td>
+    <td class="quality"><span class="mint">mint</span></td>
+    <td class="count">0</td>
+    <td class="price">5000,-</td>
+    <td class="order"></td>
+    </tr>
+    <tr>
+    <td class="number">2</td>
+    <td><a href="javascript:cardWindow(600);">Badlands</a></td>
+    <td class="mana"></td>
+    <td>Land — Mountain Swamp</td>
+    <td>R</td>
+    <td class="set"><img src="img/sets/beta-r.gif" alt="Limited Edition Beta" title="Limited Edition Beta"/></td>
+    <td class="quality"><span class="mint">mint</span></td>
+    <td class="count">0</td>
+    <td class="price">5000,-</td>
+    <td class="order"></td>
+    </tr>
+    <tr class="oddrow">
+    <td class="number">3</td>
+    <td><a href="javascript:cardWindow(601);">Badlands</a></td>
+    <td class="mana"></td>
+    <td>Land — Mountain Swamp</td>
+    <td>R</td>
+    <td class="set"><img src="img/sets/unlimited-r.gif" alt="Unlimited Edition" title="Unlimited Edition"/></td>
+    <td class="quality"><span class="mint">mint</span></td>
+    <td class="count">0</td>
+    <td class="price">1100,-</td>
+    <td class="order"></td>
+    </tr>
+    <tr>
+    <td class="number">4</td>
+    <td><a href="javascript:cardWindow(602);">Badlands</a></td>
+    <td class="mana"></td>
+    <td>Land — Mountain Swamp</td>
+    <td>R</td>
+    <td class="set"><img src="img/sets/revised-r.gif" alt="Revised Edition" title="Revised Edition"/></td>
+    <td class="quality"><span class="mint">mint</span></td>
+    <td class="count">0</td>
+    <td class="price">1020,-</td>
+    <td class="order"></td>
+    </tr>
+    <tr class="oddrow">
+    <td class="number">5</td>
+    <td><a href="javascript:cardWindow(16145);">Badlands</a></td>
+    <td class="mana"></td>
+    <td>Land — Mountain Swamp</td>
+    <td>R</td>
+    <td class="set"><img src="img/sets/revised-r.gif" alt="Revised Edition" title="Revised Edition"/></td>
+    <td class="quality"><span class="excellent">excellent</span></td>
+    <td class="count">1</td>
+    <td class="price">918,-</td>
+    <td class="order"></td>
+    </tr>
+  </tbody>
+</table>
+<div class="control">
+<div class="next">&nbsp;</div><div class="nav">&nbsp;</div><div class="prev">&nbsp;</div>&nbsp;</div>
+  </form>
+      </div>
+    </div>
+    <div id="rc">
+<div class="box-head">
+<p>
+Přihlášení</p>
+</div>
+      <form class="login box-border" id="login" method="post" action="mtgshop.php">
+        <fieldset class="box-content">
+          <legend>Přihlášení</legend>
+          <div>
+            <label>Email</label>
+            <input type="text" class="shortinput" id="username" name="username" value="" />
+          </div>
+          <div>
+            <label>Heslo</label>
+            <input type="password" class="shortinput" id="password" name="password" />
+          </div>
+<p id="register">
+<a href="registrace.php">Registrace</a></p>
+          <div>
+            <label class="emptylabel">&nbsp;</label>
+            <input class="sbutton" id="cmdlogin" name="cmdlogin" value="OK" type="submit" />
+          </div>
+        </fieldset>
+<div class="clearer">
+</div>
+      </form>
+<div class="box-head">
+  <p>Doporučujeme</p>
+</div>
+<div class="box-border">
+<div class="box-content">
+<div class="box-itemrec">
+<a href="katalog.php?idc=139&amp;idg=1786"><img src="./img/items/RES006.jpg" alt="Malifaux: Resurrectionists - Copycat killer" /></a>
+<p class="itemname"><a href="katalog.php?idc=139&amp;idg=1786">Malifaux: Resurrectionists - Copycat killer</a></p>
+<p class="itemprice">cena <b>132</b>,- Kč</p>
+<p class="origprice">běžná cena <b>139</b>,- Kč</p>
+</div>
+<div class="box-itemrec">
+<a href="katalog.php?idc=137&amp;idg=1739"><img src="./img/items/NEV003.jpg" alt="Malifaux: Neverborn - Waldgeist" /></a>
+<p class="itemname"><a href="katalog.php?idc=137&amp;idg=1739">Malifaux: Neverborn - Waldgeist</a></p>
+<p class="itemprice">cena <b>290</b>,- Kč</p>
+<p class="origprice">běžná cena <b>305</b>,- Kč</p>
+</div>
+<div class="box-itemrec">
+<a href="katalog.php?idc=148&amp;idg=2059"><img src="./img/items/COA024.jpg" alt="Infinity: Combined Army - Vector Operator (Hacker)" /></a>
+<p class="itemname"><a href="katalog.php?idc=148&amp;idg=2059">Infinity: Combined Army - Vector Operator (Hacker)</a></p>
+<p class="itemprice">cena <b>231</b>,- Kč</p>
+<p class="origprice">běžná cena <b>256</b>,- Kč</p>
+</div>
+<div class="box-itemrec">
+<a href="katalog.php?idc=148&amp;idg=2038"><img src="./img/items/COA003.jpg" alt="Infinity: Combined Army - Morat Infantry (HMG)" /></a>
+<p class="itemname"><a href="katalog.php?idc=148&amp;idg=2038">Infinity: Combined Army - Morat Infantry (HMG)</a></p>
+<p class="itemprice">cena <b>175</b>,- Kč</p>
+<p class="origprice">běžná cena <b>194</b>,- Kč</p>
+</div>
+<div class="box-itemrec">
+<a href="katalog.php?idc=122&amp;idg=1445"><img src="./img/items/163008.jpg" alt="Warhammer: Lizardmen Army book" /></a>
+<p class="itemname"><a href="katalog.php?idc=122&amp;idg=1445">Warhammer: Lizardmen Army book</a></p>
+<p class="itemprice">cena <b>440</b>,- Kč</p>
+</div>
+</div>
+</div>
+    </div>
+    <div class="clearer"></div>
+  </div>
+  <div id="footer">
+<p>Optimalizováno pro rozlišení 1280 * 1024<br />
+MysticShop s.r.o., U Skládky 7/1470, Praha 9 - tel.: +420 602 439 909<br />
+Otevřeno: po-pá 12:00 - 20:00, so-ne 10:00 - 20:00</p>
+</div>
+
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '100646060006511', status: true, cookie: true,
+             xfbml: true});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/cs_CZ/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17918787-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+// obecne redefinice
+.ui-page-theme-a {
+  a, a:visited {
+    color: #434343;
+    text-shadow: none;
+    //text-shadow: 0 1px 0 #ddd;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: #5d5d5d;
+  }
+
+  a:visited {
+    color: #5d5d5d;
+  }
+}
+
+// panel navigace
+#menubar {
+    background-color: #aea79e; // color of b swatch back
+
+    #menubar-header {
+        padding-left: .5625em;
+
+        a {
+            background-color: transparent;
+            display: inline-block;
+            border: none;
+        }
+        span {
+            padding-left: 0.3em;
+        }
+    }
+}
+@panelWidth: 10em;
+#menubar.ui-panel {
+    width: @panelWidth;
+
+
+
+}
+#menubar.ui-panel-closed {
+    width: 0;
+}
+
+.ui-panel-position-right.ui-panel-display-reveal {
+    right: 0;
+}
+
+.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open,
+.ui-panel-dismiss-position-right.ui-panel-dismiss-open {
+    right: @panelWidth;
+    left: -@panelWidth;
+}
+
+.ui-panel-animate.ui-panel-content-wrap-position-right.ui-panel-content-wrap-open.ui-panel-content-wrap-display-reveal {
+    right: 0;
+    left: 0;
+    -webkit-transform: translate3d(@panelWidth,0,0);
+    -moz-transform: translate3d(@panelWidth,0,0);
+    transform: translate3d(@panelWidth,0,0);
+}
+
+.form-errors {
+    color: darkred;
+}
+
+.warning-box {
+    border: 3px solid darkred;
+    background-color: lightgray;
+}
+
+// styly hlavicky
+.ui-header {
+  #bar-logo {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 0;
+    background: transparent url('../images/logo.png') no-repeat center center;
+
+    span {
+      display: none;
+    }
+  }
+ .ui-block {
+    margin: 0 50px;
+  }
+
+    #searchform {
+        margin-bottom: 0;
+
+        .ui-input-search {
+            margin: 3px;
+        }
+    }
+}
+// styly paticky
+.footer-copyw {
+    text-align: right;
+    padding: 0.5em;
+    margin: 0;
+    text-shadow: -1px -1px 0 black;
+    font-weight: normal;
+}
+.footer-fb {
+    float: left;
+    padding: 0.3em;
+    height: 20px;
+    width: 60px;
+}
+
+//uvodni stranka
+
+// styly stranky pro vyhledavani
+#page-search {
+    h1, .summary {
+      text-shadow: 0 1px 0 #444444;
+    }
+    h1 {
+        font-size: 1.1em;
+        margin: 0;
+        padding: 0;
+    }
+    .summary {
+        margin: 1em 0;
+        padding-bottom: 1em;
+    }
+    .name {
+        font-weight: bold;
+    }
+    .price, .count {
+        text-align: right;
+        float: right;
+
+        &.empty {
+            color: darkred;
+        }
+    }
+
+    .price {
+        font-weight: bold;
+    }
+
+    .close-collapsible-li {
+        padding: 0;
+        font-size: 0.9em;
+    }
+    .result-holder {
+        display: none;
+    }
+}

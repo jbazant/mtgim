@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="rotation-arrow.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="125.92535"
+     inkscape:cy="553.73573"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer"
+     style="display:inline">
+    <rect
+       style="fill:#cccccc"
+       id="rect2987"
+       width="669.73114"
+       height="342.44171"
+       x="18.182745"
+       y="247.2706"
+       rx="12.606705"
+       ry="8.8349228" />
+  </g>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g3774"
+       inkscape:export-filename="C:\Users\Jirka\Documents\kupuj magic\rotation-white.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(-100.0051,-3.0304576)">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Jirka\path3757.png"
+         sodipodi:open="true"
+         sodipodi:end="4.5655622"
+         sodipodi:start="0"
+         d="m 342.44173,421.01685 c 0,40.7261 -33.01503,73.74114 -73.74114,73.74114 -40.72611,0 -73.74114,-33.01504 -73.74114,-73.74114 0,-36.55932 26.78688,-67.59909 62.95283,-72.94771"
+         sodipodi:ry="73.741142"
+         sodipodi:rx="73.741142"
+         sodipodi:cy="421.01685"
+         sodipodi:cx="268.70059"
+         id="path3755"
+         style="fill:none;stroke:#ffffff;stroke-width:40;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path3757"
+         d="m 340.44171,382.63105 -41.41626,51.51779 83.84266,1.01015 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g3759"
+       transform="matrix(0,-0.99120694,-0.99120694,0,511.65223,990.59022)"
+       inkscape:export-filename="C:\Users\Jirka\Documents\kupuj magic\arrow2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       style="fill:#ffffff;stroke:#ffffff;stroke-opacity:1">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Jirka\Documents\kupuj magic\rotation-arrow.png"
+         sodipodi:open="true"
+         sodipodi:end="4.5655622"
+         sodipodi:start="0"
+         d="m 342.44173,421.01685 c 0,40.7261 -33.01503,73.74114 -73.74114,73.74114 -40.72611,0 -73.74114,-33.01504 -73.74114,-73.74114 0,-36.55932 26.78688,-67.59909 62.95283,-72.94771"
+         sodipodi:ry="73.741142"
+         sodipodi:rx="73.741142"
+         sodipodi:cy="421.01685"
+         sodipodi:cx="268.70059"
+         id="path3755-1"
+         style="fill:#ffffff;stroke:#ffffff;stroke-width:40;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         inkscape:export-filename="C:\Users\Jirka\Documents\kupuj magic\rotation-arrow.png"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path3757-7"
+         d="m 337.56223,371.76471 -61.73751,76.79546 124.98081,1.50579 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.490659px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g3774-4"
+       inkscape:export-filename="C:\Users\Jirka\Documents\kupuj magic\rotation-white2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(0,-0.98038516,-0.98038516,0,846.50309,676.52212)">
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\Jirka\path3757.png"
+         sodipodi:open="true"
+         sodipodi:end="4.5655622"
+         sodipodi:start="0"
+         d="m 342.44173,421.01685 c 0,40.7261 -33.01503,73.74114 -73.74114,73.74114 -40.72611,0 -73.74114,-33.01504 -73.74114,-73.74114 0,-36.55932 26.78688,-67.59909 62.95283,-72.94771"
+         sodipodi:ry="73.741142"
+         sodipodi:rx="73.741142"
+         sodipodi:cy="421.01685"
+         sodipodi:cx="268.70059"
+         id="path3755-0"
+         style="fill:none;stroke:#ffffff;stroke-width:40;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path3757-9"
+         d="m 340.44171,382.63105 -41.41626,51.51779 83.84266,1.01015 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
