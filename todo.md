@@ -1,8 +1,7 @@
 # TODO ASAP
 
 # Upload ASAP
-robots.txt
-view-scripts-info
+* fb obrazek
 
 # Wishlist
 * Úprava kontaktního forlmuláře na Zend Form + přidání nových elementů pro mobil
