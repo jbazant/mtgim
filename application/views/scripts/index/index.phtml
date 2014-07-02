@@ -10,13 +10,18 @@
     </div>
 <?php endif; ?>
 <form id="searchform" method="POST" action="<?php echo $this->baseUrl('/index/search') ?>">
-    <input type="search" name="cardname" id="cardname" placeholder="Karta" value="" />
+    <input type="search" name="cardname" id="cardname" placeholder="Karta" value="" tabindex="0" />
     <input type="submit" name="find" id="find" value="Hledej" data-transition="slide" data-icon="search" />
 </form>
 
 <div class="front-info">
-    <p>Aplikace slouží pro&nbsp;vyhledávání karet v&nbsp;obchodě <a href="http://www.cernyrytir.cz">www.cernyrytir.cz</a> z&nbsp;pohodlí vašeho mobilu.</p>
-    <p>Při&nbsp;vyhledávání je vždy zobrazeno maximálně prvních 30&nbsp;výsledků.</p>
+    <p>Aplikace slouží pro&nbsp;vyhledávání karet v&nbsp;internetových MtG obchodech z&nbsp;pohodlí vašeho mobilu.</p>
+    <p>Můžete vyhledávat v těchto obchodech:</p>
+    <ul>
+        <li><a href="http://www.cernyrytir.cz">www.cernyrytir.cz</a></li>
+        <li><a href="http://www.mysticshop.cz">www.mysticshop.cz</a></li>
+        <li><a href="http://www.najada.cz">www.najada.cz</a></li>
+    </ul>
 
     <p class="ui-mini" >
         <a class="ui-btn ui-btn-icon-left ui-icon-star ui-corner-all"

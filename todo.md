@@ -1,7 +1,17 @@
 # TODO ASAP
+KDYKOLIV - prepsat formular na zend form
+
+Opravit adaptery pro najadu (napr scalding)
+Pridat Rishadu
+Nasadit novou verzi
+
+Minimalizace jquery mobile - osekat o nepouzivanou funkcnost
+Minimalizace kodu pomoci uglyfi
+Nasadit novou verzi
+
+zalozit novou branch a zacit s prihlasovanim
 
 # Upload ASAP
-* fb obrazek
 
 # Wishlist
 * Úprava kontaktního forlmuláře na Zend Form + přidání nových elementů pro mobil

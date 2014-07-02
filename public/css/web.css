@@ -1,14 +1,8 @@
-.ui-page-theme-a a,
-.ui-page-theme-a a:visited {
-  color: #434343;
-  text-shadow: none;
-}
 .ui-page-theme-a a:hover {
   text-decoration: none;
-  color: #5d5d5d;
 }
-.ui-page-theme-a a:visited {
-  color: #5d5d5d;
+.clear {
+  clear: both;
 }
 #menubar {
   background-color: #aea79e;
@@ -110,6 +104,14 @@
 #page-search .count.empty {
   color: darkred;
 }
+#page-search .price.low,
+#page-search .count.low {
+  color: darkorange;
+}
+#page-search .price.ok,
+#page-search .count.ok {
+  color: darkgreen;
+}
 #page-search .price {
   font-weight: bold;
 }
@@ -117,6 +119,10 @@
   padding: 0;
   font-size: 0.9em;
 }
-#page-search .result-holder {
+#page-search .result-holder,
+#page-search .shop-results {
   display: none;
+}
+#page-search .ui-listview {
+  margin: 0;
 }

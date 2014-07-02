@@ -7,10 +7,27 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 
 	protected function _getParams($cardName)
 	{
+        switch($this->_foilType) {
+            case 'A':
+                $foil = -1;
+                break;
+
+            case 'F':
+                $foil = 1;
+                break;
+
+            case 'R':
+                $foil = 0;
+                break;
+
+            default:
+                throw new Exception ('Unknown foil type ' . $this->_foilType);
+        }
+
 		return array(
 			'Action' =>	'EShop.Search',
 			'Anchor' =>	'EShopSearchArticles',
-			'Foil' => -1,
+			'Foil' => $foil,
 			'From' => null,
 			'MagicCardSet' => -1,
 			'Search' =>	$cardName,
@@ -79,8 +96,8 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 					//'type' => $this->_cut($items[4]),
 					//'rarity' => $this->_cut($items[5]),
 					'expansion' => $this->_cut($items[6]),
-					'value' => $info_mint[1],
-					'amount' => $info_mint[2],
+					'value' => (int)$info_mint[1],
+					'amount' => (int)$info_mint[2],
 					'quality' => '',
 				);
 
@@ -90,8 +107,8 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 						//'type' => $this->_cut($items[4]),
 						//'rarity' => $this->_cut($items[5]),
 						'expansion' => $this->_cut($items[6]),
-						'amount' => $info_other[2],
-						'value' => $info_other[1],
+						'amount' => (int)$info_other[2],
+						'value' => (int)$info_other[1],
 						'quality' => 'jiné'
 					);
 				}

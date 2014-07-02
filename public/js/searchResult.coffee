@@ -1,9 +1,10 @@
 ##
 #  Trida pro obsluhu collapsible s vysledky hledani
-#
-#  @param holder html collapsible div
-##
 class window.SearchResult
+  ##
+  # Konstruktor
+  # @param holder html collapsible div
+  # @param form html form element
   constructor: (@holder, @form) ->
     ## pomocna promenna pro nastaveni rychlosti efektu
     @fadeSpeed = 'fast'
@@ -13,6 +14,9 @@ class window.SearchResult
 
     ## typ adapteru
     @adapter = @jHolder.attr 'data-shop-id'
+
+    ## foil typ
+    @foil = @jHolder.attr 'data-foil-id'
 
     ## listview s vysledky jquery ul
     @list = @jHolder.find '.results'
@@ -37,7 +41,6 @@ class window.SearchResult
 
   ##
   #  Obsluha pri rozbaleni collapsible
-  ##
   expandCallback: () =>
     # pouze pokud jiz neni nacteny
     if not @loaded
@@ -54,7 +57,8 @@ class window.SearchResult
         dataType: 'json'
         data:
           cardname: @searchText
-          adapter: @adapter
+          adapter:  @adapter
+          foil:     @foil
 
       ).done((data) =>
         @list.empty()
@@ -65,9 +69,9 @@ class window.SearchResult
 
         @list.listview 'refresh'
 
-      ).fail (data) =>
+      ).fail =>
         @list.empty()
-        @list.append @createLiDivider "Chyba! Zkuste opakovat požadavek později."
+        @list.append @createLiDivider "Chyba! Opakujte požadavek později."
         @list.listview 'refresh'
         @loaded = false
 
@@ -76,7 +80,6 @@ class window.SearchResult
 
   ##
   #  pomocna funkce pro vytvareni listview divideru
-  ##
   createLiDivider: (text) ->
     $ '<li />',
       'data-role': 'list-divider'
@@ -85,34 +88,38 @@ class window.SearchResult
 
   ##
   #  pomocna funkce pro vytvareni jedne polozky vysledku
-  ##
   createLiItem: (item) ->
-    amountFlag = if item.amount is 0 then ''
+    colorClass = if item.amount is 0
+        'empty'
+      else if item.amount < 4
+        'low'
+      else
+        'ok'
+
     $('<li />')
       .append(
         $('<p />')
           .append($('<span />',
-            'class': 'name'
-            'text': item.name
-          )).append($('<span />',
             'class': 'price'
             'text': item.value + ' Kč' # todo format number
+          )).append($('<span />',
+            'class': 'name'
+            'text': item.name
           ))
       ).append(
         $('<p />')
           .append($('<span />',
+            'class': 'count ' + colorClass
+            'text': item.amount + ' ks' # todo format number
+          )).append($('<span />',
             'class': 'expansion'
             'text': item.expansion
-          )).append($('<span />',
-            'class': 'count' + if item.amount is 0 then ' empty' else ''
-            'text': item.amount + ' ks' # todo format number
           ))
       )
 
 
   ##
   # Akce divu vysledku pri znovuodeslani formulare pro vyhledavani
-  ##
   formSubmitCallback: (e) =>
     @loaded = false
     e.preventDefault()
@@ -134,7 +141,6 @@ class window.SearchResult
 
   ##
   # Nastavi tento vypis vysledku jako aktivni
-  ##
   setActive: () =>
     @isActive = true
     @expandCallback()
@@ -142,6 +148,5 @@ class window.SearchResult
 
   ##
   # Zrusi priznak "aktivni" pro tento vypis vysledku
-  ##
   resetActive: () =>
     @isActive = false

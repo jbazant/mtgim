@@ -6,8 +6,16 @@ class Application_Model_Form_Contact2 extends Zend_Form {
             ->setAction('/index/test')
             ->setMethod(self::METHOD_POST)
         ;
+        //todo doplnit formulari classu a potom bacha jak je napsany js selector
 
-        //todo nejak se zbavit obecneho decoraturu dt dd
+
+        $default_decorators = array(
+            array('ViewHelper'),
+            array('Errors'),
+            array('Description', array('tag' => 'p', 'class' => 'description')),
+            //array('HtmlTag', array('tag' => '')), // tenhle tag pouzit pouze pro antispam
+            array('Label'),
+        );
 
         $this->addElements(array(
             // email
@@ -19,6 +27,7 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                     'required' => TRUE,
                     'filters' => array('StringTrim'),
                     'validators' => array('email'),
+                    'decorators' => $default_decorators,
                 ),
             ),
 
@@ -31,6 +40,7 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                     'required' => FALSE,
                     'filters' => array('StringTrim'), //todo filter mezery
                     'validators' => array(), //todo validate telefon
+                    'decorators' => $default_decorators,
                 ),
             ),
 
@@ -41,17 +51,24 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                     'label' => 'Sdělení',
                     'required' => TRUE,
                     'filters' => array('StripTags', 'StringTrim'),
+                    'decorators' => $default_decorators,
                 ),
             ),
 
-            //todo nejak doplnit div decorator
             array(
                 'name' => 'anti_spam_check',
                 'type' => 'text',
                 'options' => array(
                     'label' => 'Kontrolní pole',
                     'required' => TRUE,
-                    'description' => 'Toto pole by mělo být vyplněno automaticky. Pokud tomu tak není. Vepiště do něj "anti-spam kontrola".'
+                    'description' => 'Toto pole by mělo být vyplněno automaticky. Pokud tomu tak není. Vepiště do něj "anti-spam kontrola".',
+                    'decorators' => array(
+                        array('ViewHelper'),
+                        array('Errors'),
+                        array('Description', array('tag' => 'p', 'class' => 'description')),
+                        array('HtmlTag', array('tag' => 'div', 'class' => 'anti_spam_holder')),
+                        array('Label'),
+                    ),
                 ),
             ),
 
@@ -61,9 +78,13 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                 'options' => array(
                     'label' => 'Odeslat',
                     'data-transition' => 'slide',
+                    'decorators' => array(
+                        array('ViewHelper'),
+                    ),
                 ),
             ),
         ));
+
     }
 
     //todo zpracovani formulare

@@ -13,7 +13,7 @@ final class Application_Model_Fake extends Baz_Http_ShopPost
 
     protected function _processData($rowData)
     {
-        for ($i = 0; $i < 3; ++$i) {
+        for ($i = 0; $i < 6; ++$i) {
             $result[] = array(
                 'name' => 'Testovaci karticka',
                 'expansion' => 'Return to Ravnica',

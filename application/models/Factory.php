@@ -13,40 +13,54 @@ class Application_Model_Factory
 {
 	/**
 	 * 
-	 * @param Baz_Http_ShopPost $server
+	 * @param string $server
+     * @param string|null $foil
+     * @return Baz_Http_ShopPost
 	 */
-	public static function getModel($server)
+	public static function getModel($server, $foil = NULL)
 	{
+        /** @var Baz_Http_ShopPost $adapter */
+
 		switch ($server) {
 			case 'cernyrytir':
-				return new Application_Model_CernyRytir();
-
-            case 'cernyrytir_basic':
-                $a = new Application_Model_CernyRytir();
-                $a->setFoilType('R');
-                return $a;
-
-            case 'cernyrytir_foil':
-                $a = new Application_Model_CernyRytir();
-                $a->setFoilType('F');
-                return $a;
+				$adapter = new Application_Model_CernyRytir();
+                break;
 
 			case 'mystic':
-				return new Application_Model_MysticShop();
+				$adapter = new Application_Model_MysticShop();
+                break;
 
 			case 'najada':
-				return new Application_Model_Najada();
+				$adapter = new Application_Model_Najada();
+                break;
+
+            case 'rishada':
+                $adapter = new Application_Model_Rishada();
+                break;
 
             case 'fake':
-                return new Application_Model_Fake();
+                $adapter = new Application_Model_Fake();
+                break;
 
             case 'fakecr':
                 require_once(__DIR__ . '/pom.php');
-                return new LocalCernyRytir();
+                $adapter = new LocalCernyRytir();
+                break;
 
 			default:
 				return null;
-		} 
+		}
+
+        if (!empty($foil)) {
+            if ('basic' == $foil) {
+                $adapter->setFoilType('R');
+            }
+            elseif('foil' == $foil) {
+                $adapter->setFoilType('F');
+            }
+        }
+
+        return $adapter;
 	}
 
 }

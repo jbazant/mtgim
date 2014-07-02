@@ -3,8 +3,9 @@ require_once('Baz/Http/ShopPost.php');
 
 final class Application_Model_MysticShop extends Baz_Http_ShopPost
 {
-	protected $_url = 'http://mysticshop.cz/mtgshop.php'; 
-	
+	protected $_url = 'http://mysticshop.cz/mtgshop.php';
+
+
 	protected function _getParams($cardName)
 	{
 		return array(
@@ -23,6 +24,7 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 			'toughness' => null,
 			'toughness-relation' =>	'>',
 			'typetext' => null,
+            'foil' => $this->_foilType == 'F' ? 1 : null,
 		);
 	}
 	
@@ -50,7 +52,7 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 			foreach ($matches[1] as $item) {
 				$val = trim($item, " \t,.");
 				
-				if ('mint' == $val) {
+				if ('mint' == $val || 'NM' == $val) {
 					$ret[] = 'nearmint';
 				} elseif ('' != $val) {
 					$ret[] = $val;
@@ -107,17 +109,20 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 					throw new Zend_Exception('Invalid string supplied for value');
 				}
 				
-				$rarity = $this->_translateRarity(trim($this->_cut($items[4])));
-				
-				$result[] = array(
-					'name' => $name[2],
-					//'type' => $this->_cut($items[3]),
-					//'rarity' => $rarity,
-					'expansion' => $expansion[1],
-					'amount' => $this->_cut($items[7]),
-					'value' => $value,
-					'quality' => $this->_extractQuality($items[6]),
-				);
+				//$rarity = $this->_translateRarity(trim($this->_cut($items[4])));
+
+                $quality = $this->_extractQuality($items[6]);
+
+                if ('R' !== $this->_foilType || FALSE === stristr($quality, 'foil')) {
+                    $result[] = array(
+                        'name' => $name[2],
+                        //'rarity' => $rarity,
+                        'expansion' => $expansion[1],
+                        'amount' => (int)$this->_cut($items[7]),
+                        'value' => (int)$value,
+                        'quality' => $this->_extractQuality($items[6]),
+                    );
+                }
 			}
 			
 			$this->_setData($result);
@@ -125,5 +130,26 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 		
 		return true;
 	}
+
+
+    /**
+     * Urci, zda-li je dana karta pozadovaneho foil typu
+     * @param string $type
+     * @return bool
+     */
+    protected function _isRequestedFoilType($type) {
+        if ('A' == $this->_foilType) {
+            return TRUE;
+        }
+        elseif ('R' == $this->_foilType && 'foil' != $type) {
+            return TRUE;
+        }
+        elseif ('F' == $this->_foilType && 'foil' == $type) {
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
 }
 

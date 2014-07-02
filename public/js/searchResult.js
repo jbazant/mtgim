@@ -13,6 +13,7 @@
       this.fadeSpeed = 'fast';
       this.jHolder = $(this.holder);
       this.adapter = this.jHolder.attr('data-shop-id');
+      this.foil = this.jHolder.attr('data-foil-id');
       this.list = this.jHolder.find('.results');
       this.loaded = false;
       this.searchInput = this.form.find('#cardname');
@@ -33,7 +34,8 @@
           dataType: 'json',
           data: {
             cardname: this.searchText,
-            adapter: this.adapter
+            adapter: this.adapter,
+            foil: this.foil
           }
         }).done((function(_this) {
           return function(data) {
@@ -45,9 +47,9 @@
             return _this.list.listview('refresh');
           };
         })(this)).fail((function(_this) {
-          return function(data) {
+          return function() {
             _this.list.empty();
-            _this.list.append(_this.createLiDivider("Chyba! Zkuste opakovat požadavek později."));
+            _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
             _this.list.listview('refresh');
             return _this.loaded = false;
           };
@@ -63,20 +65,20 @@
     };
 
     SearchResult.prototype.createLiItem = function(item) {
-      var amountFlag;
-      amountFlag = item.amount === 0 ? '' : void 0;
+      var colorClass;
+      colorClass = item.amount === 0 ? 'empty' : item.amount < 4 ? 'low' : 'ok';
       return $('<li />').append($('<p />').append($('<span />', {
-        'class': 'name',
-        'text': item.name
-      })).append($('<span />', {
         'class': 'price',
         'text': item.value + ' Kč'
+      })).append($('<span />', {
+        'class': 'name',
+        'text': item.name
       }))).append($('<p />').append($('<span />', {
+        'class': 'count ' + colorClass,
+        'text': item.amount + ' ks'
+      })).append($('<span />', {
         'class': 'expansion',
         'text': item.expansion
-      })).append($('<span />', {
-        'class': 'count' + (item.amount === 0 ? ' empty' : ''),
-        'text': item.amount + ' ks'
       })));
     };
 

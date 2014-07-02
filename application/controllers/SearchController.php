@@ -22,10 +22,11 @@ class SearchController extends Zend_Controller_Action {
     public function basicAction() {
         $cardname = trim($this->_request->getParam('cardname'));
         $adapterName = $this->_request->getParam('adapter');
+        $foilType = $this->_request->getParam('foil');
 
         if (!empty($cardname) && !empty($adapterName)) {
             //get adapter
-            $adapter = Application_Model_Factory::getModel($adapterName);
+            $adapter = Application_Model_Factory::getModel($adapterName, $foilType);
         }
 
         if (isset($adapter) && $adapter->doCardRequest($cardname)) {

@@ -33,6 +33,23 @@ abstract class Baz_Http_ShopPost
 	 * @var unknown_type
 	 */
 	protected $_method = Zend_Http_Client::POST;
+
+    /** @var string $_foilTope F|R|A foil/normal/oboji */
+    protected $_foilType = 'A';
+
+    /**
+     * Nastavi pozdadovany typ karty foil/normal/oboji
+     * @param string $val F|R|A
+     * @throws Exception
+     */
+    public function setFoilType($val) {
+        if (!in_array($val, array('A', 'R', 'F'))) {
+            throw new Exception('Invalid foil type');
+        }
+        else {
+            $this->_foilType = $val;
+        }
+    }
 	
 	/**
 	 * Konstruktor, vytvori default Zend_Http_Client a nastvi metodu podle $this->_method

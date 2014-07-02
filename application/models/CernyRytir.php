@@ -13,22 +13,6 @@ class Application_Model_CernyRytir extends Baz_Http_ShopPost {
     /** @var string $encodeFrom kodovani stranek */
 	protected $_encodeFrom = 'cp1250';
 
-    protected $_foilType = 'A';
-
-    /**
-     * Nastavi pozdadovany typ karty foil/normal/oboji
-     * @param string $val F|R|A
-     * @throws Exception
-     */
-    public function setFoilType($val) {
-        if (!in_array($val, array('A', 'R', 'F'))) {
-            throw new Exception('Invalid foil type');
-        }
-        else {
-            $this->_foilType = $val;
-        }
-    }
-
     /**
      * POST parametry formulare pro vyhledavani karet
      * @param string $cardName

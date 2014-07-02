@@ -32,16 +32,17 @@ class IndexController extends Baz_Controller_Action {
             $this->view->cardname = $cardname;
 
             $this->view->adapters = array(
-                array('adapter' => 'cernyrytir_basic', 'shortName' => 'Obyčejné', 'longName' => 'Pouze obyčejné'),
-                array('adapter' => 'cernyrytir_foil', 'shortName' => 'Foily', 'longName' => 'Pouze foily'),
-                //array('adapter' => 'mystic', 'shortName' => 'Mystic Shop', 'longName' => 'Mystic-Shop'),
-                //array('adapter' => 'najada', 'shortName' => 'Najáda', 'longName' => 'Najáda'),
+                $this->_getSearchResultArr('cernyrytir', 'Černý Rytíř'),
+                $this->_getSearchResultArr('mystic', 'Mystic Shop'),
+                //$this->_getSearchResultArr('najada', 'Najáda'),
             );
 
             // pouze pokud mam povoleny test, tak zobrazim i fake adapter
             if (Zend_Registry::get('config')->mtgim->isTest == 1) {
-                $this->view->adapters[] =
-                    array('adapter' => 'fake', 'shortName' => 'fake', 'longName' => 'Fake development adapter');
+                $this->view->adapters[] = $this->_getSearchResultArr('fake', 'Fake Adapter', array(
+                    array('foil' => 'basic', 'type' => 'Fake'),
+                    array('foil' => 'foil', 'type' => 'Foil'),
+                ));
             }
         }
         else {
@@ -77,8 +78,35 @@ class IndexController extends Baz_Controller_Action {
      * Testovaci akce
      */
     public function testAction() {
-        $this->view->pageId = 'page-test';
+        if (Zend_Registry::get('config')->mtgim->isTest == 1) {
+            $this->view->pageId = 'page-test';
+            $this->view->contactForm = new Application_Model_Form_Contact2();
+        }
+        else {
+            $this->getHelper('redirector')->goto('index', 'index');
+        }
+    }
 
-        $this->view->contactForm = new Application_Model_Form_Contact2();
+    /**
+     * Pomocna funkce pro sestaveni pole s konfiguraci vysledku vyhledavani
+     *
+     * @param string $shopId
+     * @param string $shopName
+     * @param null|array $adapters
+     * @return array
+     */
+    private function _getSearchResultArr($shopId, $shopName, $adapters = NULL) {
+        if (empty($adapters)) {
+            $adapters = array(
+                array('foil' => 'basic', 'type' => 'Obyčejné'),
+                array('foil' => 'foil',  'type' => 'Foily'),
+            );
+        }
+
+        return array(
+            'adapter' => $shopId,
+            'name'    => $shopName,
+            'types'   => $adapters
+        );
     }
 }
