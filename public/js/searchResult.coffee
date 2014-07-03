@@ -96,6 +96,8 @@ class window.SearchResult
       else
         'ok'
 
+    displayedName = item.name + if item.quality then ' - ' + item.quality else ''
+
     $('<li />')
       .append(
         $('<p />')
@@ -104,7 +106,7 @@ class window.SearchResult
             'text': item.value + ' Kč' # todo format number
           )).append($('<span />',
             'class': 'name'
-            'text': item.name
+            'text': displayedName
           ))
       ).append(
         $('<p />')

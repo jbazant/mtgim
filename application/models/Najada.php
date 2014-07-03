@@ -13,7 +13,7 @@ class Application_Model_Najada extends Baz_Http_ShopPost
                 break;
 
             case 'F':
-                $foil = 1;
+                $foil = 2;
                 break;
 
             case 'R':
@@ -58,6 +58,9 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 		//get all results
 		$result = array();
 		$lastLine = false;
+
+        // pokud hledam foil, tak tak do quality pridavam slovo foil
+        $qualityMod = $this->_foilType == 'F' ? 'foil ' : '';
 		
 		while ($start = strpos($data, '<tr')) {
 			//parse row
@@ -78,30 +81,34 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 				//parse data
 				$name = explode('>',substr(trim($items[0]), 0, -4));
 				
-				$info = $this->_cut($items[7]);
+				$info = str_replace(' ', '', $this->_cut($items[7]));
 				preg_match(
 					'/.*"Nearmint"[^>]*>[^>]*>([0-9]+)<[^(]*[(][^>]*>([0-9]+)</',
 					$info,
 					$info_mint
 				);
-                $info = $this->_cut($items[8]);
+
+                $info = str_replace(' ', '', $this->_cut($items[8]));
 				preg_match(
 					'/.*"Ostatní"[^>]*>[^>]*>([0-9]+)<[^(]*[(][^>]*>([0-9]+)</',
 					$info,
 					$info_other
 				);
-				
-				$result[] = array(
-					'name' => $name[3],
-					//'type' => $this->_cut($items[4]),
-					//'rarity' => $this->_cut($items[5]),
-					'expansion' => $this->_cut($items[6]),
-					'value' => (int)$info_mint[1],
-					'amount' => (int)$info_mint[2],
-					'quality' => '',
-				);
 
-				if (/*isset($info_other[2]) && */0 != $info_other[2]) {
+                if (isset($info_mint[1])) {
+
+                    $result[] = array(
+                        'name' => $name[3],
+                        //'type' => $this->_cut($items[4]),
+                        //'rarity' => $this->_cut($items[5]),
+                        'expansion' => $this->_cut($items[6]),
+                        'value' => (int)$info_mint[1],
+                        'amount' => (int)$info_mint[2],
+                        'quality' => $qualityMod,
+                    );
+                }
+
+				if (0 != $info_other[2]) {
 					$result[] = array(
 						'name' => $name[3],
 						//'type' => $this->_cut($items[4]),
@@ -109,7 +116,7 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 						'expansion' => $this->_cut($items[6]),
 						'amount' => (int)$info_other[2],
 						'value' => (int)$info_other[1],
-						'quality' => 'jiné'
+						'quality' => $qualityMod . 'jiné'
 					);
 				}
 			}

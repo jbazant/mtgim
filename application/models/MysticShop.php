@@ -52,9 +52,9 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 			foreach ($matches[1] as $item) {
 				$val = trim($item, " \t,.");
 				
-				if ('mint' == $val || 'NM' == $val) {
-					$ret[] = 'nearmint';
-				} elseif ('' != $val) {
+				if (
+                    !in_array(strtolower($val), array('mint', 'nm', 'nearmint', ''))
+                ) {
 					$ret[] = $val;
 				}
 			}

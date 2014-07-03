@@ -34,7 +34,7 @@ class IndexController extends Baz_Controller_Action {
             $this->view->adapters = array(
                 $this->_getSearchResultArr('cernyrytir', 'Černý Rytíř'),
                 $this->_getSearchResultArr('mystic', 'Mystic Shop'),
-                //$this->_getSearchResultArr('najada', 'Najáda'),
+                $this->_getSearchResultArr('najada', 'Najáda'),
             );
 
             // pouze pokud mam povoleny test, tak zobrazim i fake adapter

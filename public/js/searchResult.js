@@ -65,14 +65,15 @@
     };
 
     SearchResult.prototype.createLiItem = function(item) {
-      var colorClass;
+      var colorClass, displayedName;
       colorClass = item.amount === 0 ? 'empty' : item.amount < 4 ? 'low' : 'ok';
+      displayedName = item.name + (item.quality ? ' - ' + item.quality : '');
       return $('<li />').append($('<p />').append($('<span />', {
         'class': 'price',
         'text': item.value + ' Kč'
       })).append($('<span />', {
         'class': 'name',
-        'text': item.name
+        'text': displayedName
       }))).append($('<p />').append($('<span />', {
         'class': 'count ' + colorClass,
         'text': item.amount + ' ks'
