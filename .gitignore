@@ -3,3 +3,6 @@
 /.buildpath
 /.project
 /application/configs/application.ini
+/.htaccess
+/todo.md
+.idea
