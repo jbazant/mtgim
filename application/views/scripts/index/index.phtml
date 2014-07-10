@@ -1,14 +1,17 @@
 <?php if ($this->showOldAlert): ?>
     <div class="ui-body ui-body-b ui-corner-all warning-box ui-overlay-shadow">
         <p>
-            Používáte spouštěč, který odkazuje na&nbsp;adresu, na&nbsp;které aplikace již nebeží.
+            Používáte spouštěč, který odkazuje na&nbsp;adresu, na&nbsp;které aplikace již neběží.
             Prosím vytvořte svůj spouštěč znovu. Návod jak&nbsp;vytvořit spouštěč naleznete v&nbsp;sekci
             <a href="<?php echo $this->baseUrl('/info/tips') ?>"
                data-transition="slide"
             >Tipy a triky</a>.
         </p>
+        <p>Pokaždé, když pro vstup na stránky použije magic.plasticport.cz, tak umře koťátko.</p>
+        <p>Přesměrování bude již brzy zrušeno. Začněte používat novou URL včas.</p>
     </div>
 <?php endif; ?>
+
 <form id="searchform" method="POST" action="<?php echo $this->baseUrl('/index/search') ?>">
     <input type="search" name="cardname" id="cardname" placeholder="Karta" value="" tabindex="0" />
     <input type="submit" name="find" id="find" value="Hledej" data-transition="slide" data-icon="search" />
@@ -21,6 +24,7 @@
         <li><a href="http://www.cernyrytir.cz">www.cernyrytir.cz</a></li>
         <li><a href="http://www.mysticshop.cz">www.mysticshop.cz</a></li>
         <li><a href="http://www.najada.cz">www.najada.cz</a></li>
+        <li><a href="http://www.rishada.cz">www.rishada.cz</a></li>
     </ul>
 
     <p class="ui-mini" >
@@ -32,5 +36,3 @@
         </a>
     </p>
 </div>
-
-

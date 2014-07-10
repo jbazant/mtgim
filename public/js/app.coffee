@@ -9,11 +9,11 @@ fbPageInit = ->
 
 ##
 #  Inicializace kontaktniho formulare
-contactFormInit = ->
-  $('#page-contact #contactform .anti_spam_holder')
+contactFormInit = (page) ->
+  $ '#contactform .anti_spam_holder', page
     .hide()
-    .find('#anti_spam_check')
-    .val('Anti-spam check')
+    .find '#anti_spam_check'
+    .val 'Anti-spam check'
 
 
 ##
@@ -22,9 +22,9 @@ $(document).bind 'pageshow', ->
   fbPageInit()
 
   page = $.mobile.activePage
-  switch page.attr('id')
+  switch page.attr 'id'
     when 'page-search'
-      currentPage = new SearchPage(page)
+      currentPage = new SearchPage page
 
     when 'page-contact'
       contactFormInit page
@@ -32,4 +32,7 @@ $(document).bind 'pageshow', ->
     when 'page-index'
       $('#cardname', page).focus()
 
+    # todo pryc
+    when 'page-test'
+      contactFormInit page
   return

@@ -42,9 +42,14 @@ class Application_Model_Factory
                 $adapter = new Application_Model_Fake();
                 break;
 
-            case 'fakecr':
+            case 'fake_cr':
                 require_once(__DIR__ . '/pom.php');
                 $adapter = new LocalCernyRytir();
+                break;
+
+            case 'fake_rishada':
+                require_once(__DIR__ . '/pom.php');
+                $adapter = new LocalRishada();
                 break;
 
 			default:

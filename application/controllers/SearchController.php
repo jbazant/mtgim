@@ -29,14 +29,19 @@ class SearchController extends Zend_Controller_Action {
             $adapter = Application_Model_Factory::getModel($adapterName, $foilType);
         }
 
-        if (isset($adapter) && $adapter->doCardRequest($cardname)) {
-            $data = $adapter->getData();
-            $this->view->results = $data;
-            $this->view->total = count($data);
+        try {
+            if (isset($adapter) && $adapter->doCardRequest($cardname)) {
+                $data = $adapter->getData();
+                $this->view->results = $data;
+                $this->view->total = count($data);
+                $this->view->success = TRUE;
+            }
+            else {
+                $this->view->success = FALSE;
+            }
         }
-        else {
-            $this->view->results = array();
-            $this->view->total  = 0;
+        catch (Exception $e) {
+            $this->view->success = FALSE;
         }
     }
 }

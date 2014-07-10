@@ -11,8 +11,8 @@
     }
   };
 
-  contactFormInit = function() {
-    return $('#page-contact #contactform .anti_spam_holder').hide().find('#anti_spam_check').val('Anti-spam check');
+  contactFormInit = function(page) {
+    return $('#contactform .anti_spam_holder', page).hide().find('#anti_spam_check').val('Anti-spam check');
   };
 
   $(document).bind('pageshow', function() {
@@ -28,6 +28,9 @@
         break;
       case 'page-index':
         $('#cardname', page).focus();
+        break;
+      case 'page-test':
+        contactFormInit(page);
     }
   });
 

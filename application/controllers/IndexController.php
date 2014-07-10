@@ -28,21 +28,23 @@ class IndexController extends Baz_Controller_Action {
 
         if (!empty($cardname)) {
             //get adapter
-            //$adapter = Application_Model_Factory::getModel('cernyrytir');
             $this->view->cardname = $cardname;
 
             $this->view->adapters = array(
                 $this->_getSearchResultArr('cernyrytir', 'Černý Rytíř'),
                 $this->_getSearchResultArr('mystic', 'Mystic Shop'),
                 $this->_getSearchResultArr('najada', 'Najáda'),
+                $this->_getSearchResultArr('rishada', 'Rishada'),
             );
 
-            // pouze pokud mam povoleny test, tak zobrazim i fake adapter
+            // pouze pokud mam povoleny test, tak zobrazim i fake adaptery
             if (Zend_Registry::get('config')->mtgim->isTest == 1) {
                 $this->view->adapters[] = $this->_getSearchResultArr('fake', 'Fake Adapter', array(
                     array('foil' => 'basic', 'type' => 'Fake'),
                     array('foil' => 'foil', 'type' => 'Foil'),
                 ));
+                $this->view->adapters[] = $this->_getSearchResultArr('fake_rishada', 'Fake Rishada');
+                $this->view->adapters[] = $this->_getSearchResultArr('fake_cr', 'Fake Černý Rytíř');
             }
         }
         else {
@@ -79,8 +81,20 @@ class IndexController extends Baz_Controller_Action {
      */
     public function testAction() {
         if (Zend_Registry::get('config')->mtgim->isTest == 1) {
+            $contactForm = new Application_Model_Form_Contact2();
+            $showForm = TRUE;
+            // todo tohle udelat doopravdy - isPost neexistuje
+            if ($this->_request->isPost()) {
+                // zpracuji formular
+                $showForm = !$contactForm->process($_POST);
+            }
+
             $this->view->pageId = 'page-test';
-            $this->view->contactForm = new Application_Model_Form_Contact2();
+            $this->view->showForm = $showForm;
+
+            if ($showForm) {
+                $this->view->contactForm = $contactForm;
+            }
         }
         else {
             $this->getHelper('redirector')->goto('index', 'index');

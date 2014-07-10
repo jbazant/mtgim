@@ -40,10 +40,14 @@
         }).done((function(_this) {
           return function(data) {
             _this.list.empty();
-            _this.list.append(_this.createLiDivider("Nalezeno " + data.total + " záznamů."));
-            $.each(data.results, function(index, value) {
-              return _this.list.append(_this.createLiItem(value));
-            });
+            if (data.success) {
+              _this.list.append(_this.createLiDivider("Nalezeno " + data.total + " záznamů."));
+              $.each(data.results, function(index, value) {
+                return _this.list.append(_this.createLiItem(value));
+              });
+            } else {
+              _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
+            }
             return _this.list.listview('refresh');
           };
         })(this)).fail((function(_this) {

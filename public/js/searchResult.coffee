@@ -62,10 +62,14 @@ class window.SearchResult
 
       ).done((data) =>
         @list.empty()
-        @list.append @createLiDivider "Nalezeno #{data.total} záznamů."
 
-        $.each data.results, (index, value) =>
-          @list.append @createLiItem value
+        if data.success
+          @list.append @createLiDivider "Nalezeno #{data.total} záznamů."
+
+          $.each data.results, (index, value) =>
+            @list.append @createLiItem value
+        else
+          @list.append @createLiDivider "Chyba! Opakujte požadavek později."
 
         @list.listview 'refresh'
 
