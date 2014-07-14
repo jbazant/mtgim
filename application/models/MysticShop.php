@@ -69,7 +69,8 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 	{
 		$dataPosition = strpos($rowData, 'Název karty</a>');
 		if (!$dataPosition) {
-			return false;
+            // pokud jsem nic nenasel, tak je to ok, pokud jsem dostal nejakou blbost, hlasim chybu
+            return (FALSE !== strpos($rowData, 'Podle Vámi zadaných kriterií nebyly nalezeny žádné karty.'));
 		}
 		
 		$begin = substr($rowData, $dataPosition);

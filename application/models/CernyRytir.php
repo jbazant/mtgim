@@ -43,7 +43,8 @@ class Application_Model_CernyRytir extends Baz_Http_ShopPost {
 
         // pokud jsem nenasel, vracim neuspech
 		if (!$dataPosition) {
-			return false;
+            // jeste zjistim, jetli se mi nepodarilo vykonat pozadavek, nebo jsem jen nic nenasel
+            return (FALSE !== strpos($rowData, 'Zvoleným kritériím neodpovídá žádná karta'));
 		}
 
         // odriznu nezajimavy konec

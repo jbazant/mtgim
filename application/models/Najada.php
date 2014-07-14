@@ -40,7 +40,8 @@ class Application_Model_Najada extends Baz_Http_ShopPost
 		$dataPosition = strpos($rowData, 'id="EShopSearchArticles"');
 		
 		if (!$dataPosition) {
-			return false;
+            // pokud jsem nic nenasel, tak je to ok, pokud jsem dostal nejakou blbost, hlasim chybu
+            return (FALSE !== strpos($rowData, 'Pro zobrazení karet změňte prosím požadovaná filtrovací kritéria.'));
 		}
 		
 		$begin = substr($rowData, $dataPosition);
