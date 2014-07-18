@@ -34,6 +34,7 @@ class window.SearchPage
       $('#cardname', @).blur()
       return
 
+    @cardPreview = new CardDetailPopup $('#cardImgPopup'), @page
 
   ##
   # Inicializace vyberu obchodu vcetne otevreni vysledku
@@ -66,7 +67,7 @@ class window.SearchPage
         p.resolve()
 
       # vratim slib
-      p
+      p.promise()
 
     # obsluha zobrazeni noveho vysledku
     newCallback = =>

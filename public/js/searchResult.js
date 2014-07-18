@@ -48,7 +48,10 @@
             } else {
               _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
             }
-            return _this.list.listview('refresh');
+            _this.list.listview('refresh');
+            if (data.success) {
+              return _this.list.trigger('resultsLoaded', _this.list);
+            }
           };
         })(this)).fail((function(_this) {
           return function() {
@@ -69,22 +72,40 @@
     };
 
     SearchResult.prototype.createLiItem = function(item) {
-      var colorClass, displayedName;
+      var cardActions, cardInfoLine1, cardInfoLine2, colorClass, displayedName;
       colorClass = item.amount === 0 ? 'empty' : item.amount < 4 ? 'low' : 'ok';
       displayedName = item.name + (item.quality ? ' - ' + item.quality : '');
-      return $('<li />').append($('<p />').append($('<span />', {
+      cardInfoLine1 = $('<p />').append($('<span />', {
         'class': 'price',
         'text': item.value + ' Kč'
       })).append($('<span />', {
         'class': 'name',
         'text': displayedName
-      }))).append($('<p />').append($('<span />', {
+      }));
+      cardInfoLine2 = $('<p />').append($('<span />', {
         'class': 'count ' + colorClass,
         'text': item.amount + ' ks'
       })).append($('<span />', {
         'class': 'expansion',
         'text': item.expansion
-      })));
+      }));
+      cardActions = $('<a />', {
+        'href': '#cardImgPopup',
+        'data-rel': 'popup',
+        'data-cardname': item.name,
+        'data-cardset': item.expansion,
+        'alt': 'Zobrazit obrázek karty',
+        'title': 'Zobrazit obrázek karty',
+        'text': 'Zobrazit kartu',
+        'class': 'detail-button ui-btn ui-btn-icon-notext ui-icon-info ui-mini ui-corner-all ui-btn-b'
+      });
+      return $('<li />').append($('<div />', {
+        'class': 'cardActions'
+      }).append(cardActions)).append($('<div />', {
+        'class': 'cardInfo'
+      }).append(cardInfoLine1).append(cardInfoLine2)).append($('<div />', {
+        'class': 'clear'
+      }));
     };
 
     SearchResult.prototype.formSubmitCallback = function(e) {
@@ -121,6 +142,96 @@
     };
 
     return SearchResult;
+
+  })();
+
+  window.CardDetailPopup = (function() {
+    function CardDetailPopup(holder, page) {
+      var onLinkClick, t;
+      this.holder = holder;
+      this.showCard = __bind(this.showCard, this);
+      t = this;
+      this.cardname = null;
+      this.cardset = null;
+      this.loadToken = 0;
+      this.loadingTag = $('<p />', {
+        'text': 'Nahrávám ...'
+      });
+      this.errorTag = $('<p />', {
+        'text': 'Kartu nelze zobrazit'
+      });
+      this.holder.popup('option', 'positionTo', 'window');
+      onLinkClick = function() {
+        var cardname, cardset, l;
+        l = $(this);
+        cardname = l.data('cardname');
+        cardset = l.data('cardset');
+        if (cardname !== t.cardname || cardset !== t.cardset) {
+          t.cardname = cardname;
+          t.cardset = cardset;
+          return t.showCard(cardname, cardset);
+        }
+      };
+      page.on('resultsLoaded', (function(_this) {
+        return function(e, list) {
+          return $('.detail-button', list).on('click', onLinkClick);
+        };
+      })(this));
+    }
+
+    CardDetailPopup.prototype.showCard = function(cardname, cardset) {
+      this.cardname = cardname;
+      this.cardset = cardset;
+      this.popupSetData(this.loadingTag);
+      return $.when(this.loadCard(++this.loadToken, this.cardname, this.cardset)).then(null, (function(_this) {
+        return function() {
+          return _this.loadCard(_this.loadToken, _this.cardname);
+        };
+      })(this)).then(null, (function(_this) {
+        return function() {
+          return _this.popupSetData(_this.errorTag);
+        };
+      })(this));
+    };
+
+    CardDetailPopup.prototype.loadCard = function(token, name, set) {
+      var encName, encSet, img, p, uri;
+      p = new $.Deferred();
+      encName = encodeURIComponent(name.replace('´', "'").split('//')[0].trim());
+      if (set) {
+        encSet = encodeURIComponent(set);
+        uri = "setname/" + encSet + "/" + encName + ".jpg";
+      } else {
+        uri = "card/" + encName + ".jpg";
+      }
+      img = $('<img />').load((function(_this) {
+        return function() {
+          if (token === _this.loadToken) {
+            _this.popupSetData(img);
+          }
+          return p.resolve();
+        };
+      })(this)).error((function(_this) {
+        return function() {
+          return p.reject();
+        };
+      })(this)).attr('src', 'http://mtgimage.com/' + uri);
+      return p.promise();
+    };
+
+    CardDetailPopup.prototype.popupSetData = function(data) {
+      var old;
+      old = this.holder.children().eq(1);
+      if (old) {
+        old.remove();
+      }
+      this.holder.append(data);
+      return this.holder.popup('reposition', {
+        y: '20px'
+      });
+    };
+
+    return CardDetailPopup;
 
   })();
 

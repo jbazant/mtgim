@@ -1,19 +1,49 @@
 <?php
+//todo kompletne komentare
 
 class Application_Model_Form_Contact2 extends Zend_Form {
     public function init() {
         $this
+            //todo tady potrebuji najit baseurl
             ->setAction('/index/test')
             ->setMethod(self::METHOD_POST)
+            ->setAttrib('id', 'contactform')
+            ->_addElements()
         ;
-        //todo doplnit formulari classu a potom bacha jak je napsany js selector
+    }
 
+    public function isValid($data) {
+        if (parent::isValid($data)) {
+            //todo sem patri specialni logika validace
+            return TRUE;
+        }
+        else {
+            return FALSE;
+        }
+    }
 
+    //todo zpracovani formulare
+    public function process($data) {
+        $res = $this->isValid($data);
+    }
+
+    /**
+     * Funkce se samotnou logikou formulare
+     * Sestavi a odesle email
+     */
+    protected function _validProcess() {
+
+    }
+
+    /**
+     * Inicializace elementu formulare vcetne validatoru
+     * @return Application_Model_Form_Contact2
+     */
+    protected function _addElements() {
         $default_decorators = array(
             array('ViewHelper'),
             array('Errors'),
             array('Description', array('tag' => 'p', 'class' => 'description')),
-            //array('HtmlTag', array('tag' => '')), // tenhle tag pouzit pouze pro antispam
             array('Label'),
         );
 
@@ -66,8 +96,8 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                         array('ViewHelper'),
                         array('Errors'),
                         array('Description', array('tag' => 'p', 'class' => 'description')),
-                        array('HtmlTag', array('tag' => 'div', 'class' => 'anti_spam_holder')),
                         array('Label'),
+                        array('HtmlTag', array('tag' => 'div', 'class' => 'anti_spam_holder')),
                     ),
                 ),
             ),
@@ -84,8 +114,6 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                 ),
             ),
         ));
-
+        return $this;
     }
-
-    //todo zpracovani formulare
 }

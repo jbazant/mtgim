@@ -126,3 +126,24 @@
 #page-search .ui-listview {
   margin: 0;
 }
+#page-search .ui-listview > .ui-li-static {
+  padding: 0 0 0 1em;
+}
+#page-search .cardActions {
+  float: right;
+  width: 35px;
+  height: 3.2em;
+  margin-left: 5px;
+  padding-left: 5px;
+}
+#page-search .cardActions a {
+  margin: 0.6em 0 0;
+  border-radius: 0.5em;
+}
+#cardImgPopup p {
+  padding: 5px 10px;
+  font-weight: bold;
+}
+#cardImgPopup-screen {
+  background-color: black;
+}

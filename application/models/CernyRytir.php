@@ -71,7 +71,10 @@ class Application_Model_CernyRytir extends Baz_Http_ShopPost {
                 continue;
             }
 
-            $name = trim(str_replace('</font></div>', '', $this->_getRowText($items[1])));
+            $nameStr = trim(str_replace('</font></div>', '', $this->_getRowText($items[1])));
+            $nameArr = explode(' - ', $nameStr);
+            $name = $nameArr[0];
+            $quality = array_key_exists(1, $nameArr) ? $nameArr[1] : '';
 
             $items = explode('</td>', $data[$i + 1]);
             $expansion = $this->_getRowText($items[0]);
@@ -85,7 +88,7 @@ class Application_Model_CernyRytir extends Baz_Http_ShopPost {
                 'expansion' => $expansion,
                 'amount'    => (int)$amount,
                 'value'     => (int)$value,
-                'quality'   => '',
+                'quality'   => $quality,
             );
         }
 

@@ -114,7 +114,9 @@ class Application_Model_Rishada extends Baz_Http_ShopPost {
             $items = explode('</td>', $row);
 
             // jmeno obsahuje jeste dalsi tagy
-            $name = explode('>',substr(trim($items[0]), 0, -4));
+            $name = explode('>', substr(trim($items[0]), 0, -4));
+            $ltPos = strpos($name[2], '<');
+            $cardname = $ltPos > 0 ? substr($name[2], 0, $ltPos) : $name[2];
 
             // Near mint nechci zobrazovat
             $quality = $this->_cut($items[3]);
@@ -127,7 +129,7 @@ class Application_Model_Rishada extends Baz_Http_ShopPost {
 
             // sestavim polozku
             $result[] = array(
-                'name' => html_entity_decode($name[2]),
+                'name' => html_entity_decode($cardname),
                 'expansion' => $this->_cut($items[1]),
                 'value' => (int)$value,
                 'amount' => (int)$this->_cut($items[6]),

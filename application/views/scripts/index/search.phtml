@@ -1,42 +1,44 @@
-<div id="searchResults">
-    <div>
-        <select id="shop-select">
-            <?php foreach ($this->adapters as $adapter): ?>
-                <option value="shop-results-<?php echo $adapter['adapter'] ?>"><?php echo $adapter['name'] ?></option>
-            <?php endforeach; ?>
-        </select>
-    </div>
+<div>
+    <select id="shop-select">
+        <?php foreach ($this->adapters as $adapter): ?>
+            <option value="shop-results-<?php echo $adapter['adapter'] ?>"><?php echo $adapter['name'] ?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
 
-    <?php
-        /* vysledky po jednotlivych obchodech */
-        foreach ($this->adapters as $index => $adapter):
-    ?>
-        <div id="shop-results-<?php echo $adapter['adapter'] ?>"
-             class="shop-results<?php if (0 == $index): echo ' active'; endif; ?>"
-             data-shop-id="<?php echo $adapter['adapter'] ?>"
-        >
-            <div data-role="navbar">
-                <ul>
-                    <?php foreach ($adapter['types'] as $index_shop => $shop): ?>
-                        <li<?php if (0 == $index_shop): echo ' class="first"'; endif;?>>
-                            <a href="#results-<?php echo $adapter['adapter'] . '-' . $shop['foil'] ?>" data-ajax="false">
-                                <?php echo $shop['type'] ?>
-                            </a>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-            <div class="clear"></div>
-
-            <?php foreach ($adapter['types'] as $index_shop => $shop): ?>
-                <div id="results-<?php echo $adapter['adapter'] . '-' . $shop['foil'] ?>"
-                     class="result-holder<?php if (0 == $index && 0 == $index_shop): echo ' active'; endif; ?>"
-                     data-shop-id="<?php echo $adapter['adapter'] ?>"
-                     data-foil-id="<?php echo $shop['foil'] ?>"
-                    >
-                    <ul class="results" data-role="listview"></ul>
-                </div>
-            <?php endforeach; ?>
+<?php
+    /* vysledky po jednotlivych obchodech */
+    foreach ($this->adapters as $index => $adapter):
+?>
+    <div id="shop-results-<?php echo $adapter['adapter'] ?>"
+         class="shop-results<?php if (0 == $index): echo ' active'; endif; ?>"
+         data-shop-id="<?php echo $adapter['adapter'] ?>"
+    >
+        <div data-role="navbar">
+            <ul>
+                <?php foreach ($adapter['types'] as $index_shop => $shop): ?>
+                    <li<?php if (0 == $index_shop): echo ' class="first"'; endif;?>>
+                        <a href="#results-<?php echo $adapter['adapter'] . '-' . $shop['foil'] ?>" data-ajax="false">
+                            <?php echo $shop['type'] ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
-    <?php endforeach; ?>
+        <div class="clear"></div>
+
+        <?php foreach ($adapter['types'] as $index_shop => $shop): ?>
+            <div id="results-<?php echo $adapter['adapter'] . '-' . $shop['foil'] ?>"
+                 class="result-holder<?php if (0 == $index && 0 == $index_shop): echo ' active'; endif; ?>"
+                 data-shop-id="<?php echo $adapter['adapter'] ?>"
+                 data-foil-id="<?php echo $shop['foil'] ?>"
+                >
+                <ul class="results" data-role="listview"></ul>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endforeach; ?>
+
+<div id="cardImgPopup" data-role="popup">
+    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 </div>

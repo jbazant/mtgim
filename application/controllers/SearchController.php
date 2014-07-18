@@ -38,10 +38,16 @@ class SearchController extends Zend_Controller_Action {
             }
             else {
                 $this->view->success = FALSE;
+                $this->view->reason = 'NO_VALID_DATA';
             }
         }
         catch (Exception $e) {
             $this->view->success = FALSE;
+            $this->view->reason = 'PARSE_ERROR';
+            if (Zend_Registry::get('config')->mtgim->isTest == 1) {
+                $this->view->message = $e->getMessage();
+                $this->view->trace = $e->getTraceAsString();
+            }
         }
     }
 }

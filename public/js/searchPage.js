@@ -23,6 +23,7 @@
       this.form.on('submit', function() {
         $('#cardname', this).blur();
       });
+      this.cardPreview = new CardDetailPopup($('#cardImgPopup'), this.page);
     }
 
     SearchPage.prototype.initShopSelect = function() {
@@ -43,7 +44,7 @@
           } else {
             p.resolve();
           }
-          return p;
+          return p.promise();
         };
       })(this);
       newCallback = (function(_this) {

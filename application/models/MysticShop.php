@@ -105,9 +105,11 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
 				
 				//parse value (cut ,-)
 				if (preg_match('/^([0-9]+)/', $this->_cut($items[8]), $matches)) {
-					$value = $matches[1];
+					$value = (int)$matches[1];
 				} else {
-					throw new Zend_Exception('Invalid string supplied for value');
+                    // obcas mysticshop vraci v cene i text, kaslem na to a dame tam 0
+                    $value = 0;
+					//throw new Zend_Exception('Invalid string supplied for value');
 				}
 				
 				//$rarity = $this->_translateRarity(trim($this->_cut($items[4])));
@@ -120,7 +122,7 @@ final class Application_Model_MysticShop extends Baz_Http_ShopPost
                         //'rarity' => $rarity,
                         'expansion' => $expansion[1],
                         'amount' => (int)$this->_cut($items[7]),
-                        'value' => (int)$value,
+                        'value' => $value,
                         'quality' => $this->_extractQuality($items[6]),
                     );
                 }
