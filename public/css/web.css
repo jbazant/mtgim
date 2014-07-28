@@ -123,10 +123,10 @@
 #page-search .shop-results {
   display: none;
 }
-#page-search .ui-listview {
+#page-search .result-holder .ui-listview {
   margin: 0;
 }
-#page-search .ui-listview > .ui-li-static {
+#page-search .result-holder .ui-listview > .ui-li-static {
   padding: 0 0 0 1em;
 }
 #page-search .cardActions {

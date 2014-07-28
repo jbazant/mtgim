@@ -1,5 +1,8 @@
 <?php
 
+require_once('Zend/Http/Client.php');
+
+
 abstract class Baz_Http_ShopPost
 {
 	/**
@@ -80,7 +83,7 @@ abstract class Baz_Http_ShopPost
 		$rawData = $this->_client->request()->getBody();
 		
 		//apply iconv if needed
-		if ($this->_encodeFrom) {
+		if ($this->_encodeFrom && $this->_encodeFrom !== 'utf-8') {
 			$rawData = iconv($this->_encodeFrom, 'utf-8', $rawData);
 		}
 		

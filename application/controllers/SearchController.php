@@ -32,9 +32,9 @@ class SearchController extends Zend_Controller_Action {
         try {
             if (isset($adapter) && $adapter->doCardRequest($cardname)) {
                 $data = $adapter->getData();
-                $this->view->results = $data;
-                $this->view->total = count($data);
                 $this->view->success = TRUE;
+                $this->view->total = count($data);
+                $this->view->results = $data;
             }
             else {
                 $this->view->success = FALSE;

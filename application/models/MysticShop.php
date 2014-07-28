@@ -1,7 +1,7 @@
 <?php
 require_once('Baz/Http/ShopPost.php');
 
-final class Application_Model_MysticShop extends Baz_Http_ShopPost
+class Application_Model_MysticShop extends Baz_Http_ShopPost
 {
 	protected $_url = 'http://mysticshop.cz/mtgshop.php';
 

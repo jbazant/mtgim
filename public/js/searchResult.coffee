@@ -185,23 +185,35 @@ class window.SearchResult
 
 ##
 # Trida pro zobrazovani popupu s nahledem karty
+# todo presunout do samostatneho souboru
 class window.CardDetailPopup
 
+  ##
+  # Konstruktor
+  # Zachytava kliky na link s tridou '.detail-button'
   constructor: (@holder, page) ->
+    # ulozim si self, je to pouzito v callbacku definovanem nize
     t = @
+
+    #informace o prave nactene karte
     @cardname = null
     @cardset  = null
+
+    # token zabranujici casove zavisle chybe pri rychlem klikane a pomalem nacitani obrazku
     @loadToken = 0
 
+    # Tag zobrazeny pred nactenim obrazku
     @loadingTag = $ '<p />',
       'text': 'Nahrávám ...'
 
+    # Tag zobrazeny, kdyz se nepodari nacist obrazek
     @errorTag = $ '<p />',
       'text': 'Kartu nelze zobrazit'
 
-
+    # nastaveni polohy poupu (vzdy do aktualne viditelneho okna)
     @holder.popup 'option', 'positionTo', 'window'
 
+    # definice callbacku kliku na tlacitko pro zobrazeni nahledu
     onLinkClick = () ->
       l = $ @
       cardname = l.data 'cardname'
@@ -212,16 +224,17 @@ class window.CardDetailPopup
         t.cardset  = cardset
         t.showCard cardname, cardset
 
+    # poslouchani eventu nahrani vysledku a nasledna inicializace tlacitek
     page.on 'resultsLoaded', (e, list) =>
       $ '.detail-button', list
         .on 'click', onLinkClick
       #e.preventDefault()
 
 
-
+  ##
+  # Logika nacitani a zobrazovani obrazku karty
   showCard: (@cardname, @cardset) =>
     @popupSetData @loadingTag
-    #@holder.popup 'open'
 
     # zkusim nahrat presnou moznost
     $.when @loadCard ++@loadToken, @cardname, @cardset
@@ -232,7 +245,9 @@ class window.CardDetailPopup
         @popupSetData @errorTag
 
 
-
+  ##
+  # Samotne sestaveni url nacitane karty a jeji nacteni
+  # @return $.Deferred.promise
   loadCard: (token, name, set) ->
     p = new $.Deferred()
 
@@ -258,11 +273,12 @@ class window.CardDetailPopup
 
     p.promise()
 
+  ##
+  # Pomocna funkce nastavujici obsah popup a jeho pozici
   popupSetData: (data) ->
-    # vycistim obsah
+    # vycistim obsah, pokud nejaky mam
     old = @holder.children().eq(1)
-    if old
-      old.remove()
+    if old then old.remove()
 
     #nastavim novy obsah
     @holder.append data
