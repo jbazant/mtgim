@@ -1,8 +1,8 @@
-/library/Zend
-/.settings
-/.buildpath
-/.project
-/application/configs/application.ini
-/.htaccess
-/todo.md
-.idea
+.settings/
+.idea/
+library/Zend/
+.buildpath
+.project
+application/configs/application.ini
+.htaccess
+todo.md
