@@ -2,4 +2,4 @@
 RewriteEngine on
 
 # Dispatch all requests to index.php
-RewriteRule ^(.*)$          /public/$1       [L]
+#RewriteRule ^(.*)$          /public/$1       [L]

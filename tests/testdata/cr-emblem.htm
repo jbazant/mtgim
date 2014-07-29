@@ -1,0 +1,989 @@
+<HTML>
+<HEAD>
+	<meta content="text/html; charset=windows-1250"  http-equiv="Content-Type"> 
+	<TITLE>Černý rytíř - svět fantastických her</TITLE>
+	<meta name="keywords" content="magic, magic: the gathering, mtg, pokémon, yu-gi-oh, pán prstenů, warhammer, RPG, dračí doupě, drd, dungeons and dragons, d&d, vampire, deskové hry, vtes, naruto" lang="cs">
+	<meta name="keywords" content="magic, magic: the Gathering, mtg, pokemon, yu-gi-oh, lord of the rings, warhammer, rpg, dungeons and dragons, vtes, star wars, naruto" lang="en">
+	<link rel="shortcut icon" href="http://www.cernyrytir.cz/images/cr.ico" type="image/x-icon" />	
+  <script type="text/javascript" src="http://www.cernyrytir.cz/highslide/highslide.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="http://www.cernyrytir.cz/highslide/highslide.css">
+	<script type="text/javascript">
+	hs.graphicsDir = 'http://www.cernyrytir.cz/highslide/graphics/';
+	hs.wrapperClassName = 'wide-border';
+	</script>
+
+
+</HEAD>
+<SCRIPT type="text/javascript">
+
+<!--
+
+// zjistí typ prohlížeče a nabídne jim řešení
+sirka = screen.width;
+
+function novyobr(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+}}
+
+function zmenobr() {
+	if (document.images && (preloadFlag == true)) {
+		for (var i=0; i<zmenobr.arguments.length; i+=2) {
+			document[zmenobr.arguments[i]].src = zmenobr.arguments[i+1];
+}}}
+
+
+function doplnudaje() {
+alert("Před odesláním objednávky je potřeba vyplnit všechny kontaktní údaje.");
+}
+
+var preloadFlag = false;
+function Nactiobrazky() {
+	if (document.images) {
+		obchod_over = novyobr("/images/obchodlobchod-over.gif");
+		turnaje_over = novyobr("/images/obchodlturnaje-over.gif");
+		magic_over = novyobr("/images/obchodlmagic-over.gif");
+		lotr_over = novyobr("/images/obchodlotr-over.gif");
+		rpg_over = novyobr("/images/obchodrpg-over.gif");
+		miniatury_over = novyobr("/images/obchodminiatury-over.gif");
+		mageknight_over = novyobr("/images/obchodmageknight-over.gif");
+		ostatni_over = novyobr("/images/obchodostatni-over.gif");
+		preloadFlag = true;
+}}
+
+function Kartickoveokno( odkaz ) {
+
+			params = "toolbar=0,";
+			params += "location=0,";
+			params += "directories=0,";
+			params += "status=0,";
+			params += "menubar=0,";
+			params += "scrollbars=0,";
+			params += "resizable=0,";
+			noveokno = window.open( odkaz, "KartickoveOkno" , params);
+
+            if (!noveokno.opener) {
+                  noveokno.opener = window;
+              }
+}
+
+function Turnajoveokno( id ) {
+
+              params = "toolbar=0,";
+              params += "location=0,";
+              params += "directories=0,";
+              params += "status=0,";
+              params += "menubar=0,";
+              params += "scrollbars=1,";
+              params += "resizable=0,";
+              params += "width=450,";
+              params += "height=300";
+
+             noveokno = window.open("oknoturnaj.php3?ukazturnaj="+id,"Turnaj" , params);
+
+              if (!noveokno.opener) {
+                  noveokno.opener = window;
+              }
+}
+
+// -->
+</SCRIPT>
+<link href="css/index.css" rel="stylesheet" type="text/css"><BODY bgcolor="#000000" leftMargin="0" topMargin="0" ONLOAD="Nactiobrazky();"><script language="JavaScript">
+<!--
+if ( (( sirka >= 1024 ) && ( 1024 < 1024 )) || (( sirka < 1024 ) && ( 1024 >= 1024 )) ) {
+
+		document.write('<form name="form_rozliseni" action="index.php3?akce=3&rozliseni='+sirka+'" method="post">');
+
+		document.write('</form>');
+
+		document.forms.form_rozliseni.submit();
+
+		}
+//-->
+</script>
+<table width="1003" bgcolor="#6D6D5E" border="0" cellpadding="0" cellspacing="0" align="center"><tr><td colspan="3">
+
+
+
+
+<script type="text/javascript">
+<!--
+
+
+function newImage(arg) {
+	if (document.images) {
+		rslt = new Image();
+		rslt.src = arg;
+		return rslt;
+	}
+}
+
+function changeImages() {
+	if (document.all && (preloadFlag == true)) {
+		for (var i=0; i<changeImages.arguments.length; i+=2) {
+			document[changeImages.arguments[i]].src = changeImages.arguments[i+1];
+		}
+	}
+}
+
+var preloadFlag = false;
+function preloadImages() {
+	if (document.images) {
+		tlacitko_rs_over = newImage("/images/hornimenu/tlacitko-ob-rs-1024-over.jpg");
+		tlacitko_rs_down = newImage("/images/hornimenu/tlacitko-ob-rs-1024-down.jpg");
+		tlacitko_so_over = newImage("/images/hornimenu/tlacitko-ob-so-1024-over.jpg");
+		tlacitko_so_down = newImage("/images/hornimenu/tlacitko-ob-so-1024-down.jpg");
+		tlacitko_ob_over = newImage("/images/hornimenu/tlacitko-ob-ob-1024-over.jpg");
+		tlacitko_ob_down = newImage("/images/hornimenu/tlacitko-ob-ob-1024-down.jpg");
+		tlacitko_ce_over = newImage("/images/hornimenu/tlacitko-ob-ce-1024-over.jpg");
+		tlacitko_ce_down = newImage("/images/hornimenu/tlacitko-ob-ce-1024-down.jpg");
+		tlacitko_reg_over = newImage("/images/hornimenu/tlacitko-ob-reg-1024-over.jpg");
+		tlacitko_zmena_over = newImage("/images/hornimenu/tlacitko-ob-zmena-1024-over.jpg");
+		preloadFlag = true;
+	}
+}
+
+// -->
+</script>
+
+<table width="1003" height="83" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="2">
+		<img src="/images/hornimenu/tlacitko-ob-rs-1024-bez.jpg" width="167" height="26" border="0"></td>		<td rowspan="3"><a href="index.php3?akce=0"><img src="/images/hornimenu/hornimenu-ob-1024.jpg" border="0" 
+						width="639" height="83"></a></td>
+		<td rowspan="2" background="/images/hornimenu/hornimenu-ob-2-1024.jpg" width="52" height="54"></td>
+<form action="index.php3?akce=3" method="post">
+<td rowspan="2" background="/images/hornimenu/hornimenu-ob-3-1024.jpg" width="89" height="54">
+<input name="uzivjmeno" type="text" size="10" maxlength="30" value="">
+<input type="password" name="uzivheslo" size="10" maxlength="30" value="">
+<input type="hidden" name="login" value="LOG IN"></td>
+<td rowspan="2">
+<input type="image" src="/images/hornimenu/tlacitko-ob-login-1024.jpg" width="56" height="54" border="0" alt="Přihlášení"></td>
+</form>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<img src="/images/hornimenu/tlacitko-ob-so-1024-bez.jpg" width="167" height="28" border="0"></td>	</tr>
+	<tr>
+		<td rowspan="2">
+		<img src="/images/hornimenu/tlacitko-ob-ob-1024-down.jpg" width="84" height="29" border="0" alt="Obchod"></td>		<td rowspan="2">
+		<a href="index.php3"
+						onmouseover="changeImages('tlacitko_ce', '/images/hornimenu/tlacitko-ob-ce-1024-over.jpg'); return true;"
+						onmouseout="changeImages('tlacitko_ce', '/images/hornimenu/tlacitko-ob-ce-1024.jpg'); return true;"><img name="tlacitko_ce" src="/images/hornimenu/tlacitko-ob-ce-1024.jpg" width="83" height="29" border="0" alt="Černý rytíř"></a></td>		<td colspan="3"><a href="index.php3?akce=3&registracniudaje=1"onmouseover="changeImages('tlacitko_registrace', '/images/hornimenu/tlacitko-ob-reg-1024-over.jpg'); return true;"onmouseout="changeImages('tlacitko_registrace', '/images/hornimenu/tlacitko-ob-reg-1024.jpg'); return true;"><img name="tlacitko_registrace" src="/images/hornimenu/tlacitko-ob-reg-1024.jpg" width="197" height="29" border="0" alt="Registrace"></a></td>	</tr>
+</table></td></tr>
+<tr><td align="left" valign="top" background="/images/obchodpodkladlevy.jpg">
+<table width="145" cellpadding="0" cellspacing="0"><tr><td>
+<form method="post" action="index.php3?akce=995">
+
+
+<table cellpadding="0" cellspacing="0">
+<tr><form method="post" action="index.php3?akce=995">
+<td><img src="/images/hledejvobchode1.gif" border="0"></td>
+<td rowspan="2"><input type="image" src="/images/hledejvobchode3.gif" border="0"></td></tr>
+<tr><td><input name="vyhledejkomplet" type="text" value="" size="14">
+</td></form></tr></table>
+
+
+<img src="/images/spacer.gif" width="1" height="16" border="0"><img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=3" class="menubold">Kusovky Magic<br></a> 
+
+<a href="index.php3?akce=3&edice_magic=M15&submit=Vyhledej" class="menu">Magic 2015</a><br>
+<a href="index.php3?akce=3&edice_magic=JOU&submit=Vyhledej" class="menu">Journey into Nyx</a><br>
+<a href="index.php3?akce=3&edice_magic=BNG&submit=Vyhledej" class="menu">Born of the Gods</a><br>
+<a href="index.php3?akce=3&edice_magic=THS&submit=Vyhledej" class="menu">Theros</a><br>
+<a href="index.php3?akce=3&edice_magic=M14&submit=Vyhledej" class="menu">Magic 2014</a><br>
+<a href="index.php3?akce=3&edice_magic=DGM&submit=Vyhledej" class="menu">Dragon´s Maze</a><br>
+<a href="index.php3?akce=3&edice_magic=GTC&submit=Vyhledej" class="menu">Gatecrash</a><br>
+<a href="index.php3?akce=3&edice_magic=RTR&submit=Vyhledej" class="menu">Return to Ravnica</a><br>
+<a href="index.php3?akce=3&edice_magic=CNS&submit=Vyhledej" class="menu">Conspiracy</a><img src="/images/spacer.gif" width="1" height="16" border="0"><br>
+<a href="index.php3?akce=3&edice_magic=MED&submit=Vyhledej" class="menu">Modern Event Deck</a><br>
+<a href="index.php3?akce=3&edice_magic=DDJvV&submit=Vyhledej" class="menu">DD: Jace vs. Vraska</a><br>
+<a href="index.php3?akce=3&edice_magic=MED&submit=Vyhledej" class="menu">Modern Event Deck</a><img src="/images/spacer.gif" width="1" height="16" border="0"><br>
+<a href="index.php3?akce=3&edice_magic=MMA&submit=Vyhledej" class="menu">Modern Masters</a><br>
+<a href="index.php3?akce=3&edice_magic=M13&submit=Vyhledej" class="menu">Magic 2013</a><br>
+<a href="index.php3?akce=3&edice_magic=AVR&submit=Vyhledej" class="menu">Avacyn Restored</a><br>
+<a href="index.php3?akce=3&edice_magic=DKA&submit=Vyhledej" class="menu">Dark Ascension</a><br>
+<a href="index.php3?akce=3&edice_magic=ISD&submit=Vyhledej" class="menu">Innistrad</a><br>
+<a href="index.php3?akce=3&edice_magic=M12&submit=Vyhledej" class="menu">Magic 2012</a><br>
+<a href="index.php3?akce=3&edice_magic=NPH&submit=Vyhledej" class="menu">New Phyrexia</a><br>
+<a href="index.php3?akce=3&edice_magic=MBS&submit=Vyhledej" class="menu">Mirrodin Besieged</a><br>
+<a href="index.php3?akce=3&edice_magic=SOM&submit=Vyhledej" class="menu">Scars of Mirrodin</a><br>
+<a href="index.php3?akce=3&edice_magic=M11&submit=Vyhledej" class="menu">Magic 2011</a><br>
+<a href="index.php3?akce=3&edice_magic=ROE&submit=Vyhledej" class="menu">Rise of the Eldrazi</a><br>
+<a href="index.php3?akce=3&edice_magic=WWK&submit=Vyhledej" class="menu">Worldwake</a><br>
+<a href="index.php3?akce=3&edice_magic=ZEN&submit=Vyhledej" class="menu">Zendikar</a><br>
+<a href="index.php3?akce=3&edice_magic=M10&submit=Vyhledej" class="menu">Magic 2010</a><br>
+ 
+
+<img src="/images/spacer.gif" width="15" height="16" border="0"><a href="index.php3?akce=101" class="menubold">Novinky<br></a>
+<img src="/images/spacer.gif" width="15" height="16" border="0"><a href="index.php3?akce=102" class="menubold">Akce<br></a>
+<img src="/images/spacer.gif" width="15" height="16" border="0"><a href="index.php3?akce=103" class="menubold">Výprodej<br></a>
+
+ <img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=mtg" class="menubold">Magic the Gathering</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=deskovky" class="menubold">Deskové hry</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=card" class="menubold">Karetní hry</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=pok" class="menubold">Pokémon</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=ygo" class="menubold">Yu-Gi-Oh</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=wow" class="menubold">World of Warcraft</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=doplnky" class="menubold">Doplňky a obaly</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=whf" class="menubold">Warhammer</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=wh40k" class="menubold">Warhammer 40.000</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=minis" class="menubold">Hry s miniaturami</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=infinity" class="menubold">Infinity</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=modelarstvi" class="menubold">Barvy a modelářství</a><br><img src="/images/spacer.gif" width="1" height="16" border="0">
+		<img src="/images/sipka.gif" width="10" height="6" border="0"><a href="index.php3?akce=100&sekce=rpg" class="menubold">Hry na hrdiny</a><br>
+<br>
+<a href="index.php3?akce=3&magicvykup=1" class="menubold">&nbsp;&nbsp;&nbsp;Výkup karet<br></a>
+<br>  
+<a href="index.php3?akce=1012" class="menubold">&nbsp;&nbsp;&nbsp;Turnaje Praha</a><br>	
+<a href="index.php3?akce=1002" class="menubold">&nbsp;&nbsp;&nbsp;Turnaje Brno</a><br>
+<br>
+<a href="index.php3?akce=896" class="menubold">&nbsp;&nbsp;&nbsp;Dodací podmínky</a><br>  
+
+
+
+
+</td></tr>
+</table></td>
+<td align="center" valign="top" bgcolor="#6D6D5E"><table width="733" cellpadding="5" cellspacing="0" align="center"><tr><td valign="top"><form action="index.php3?akce=3" method="post" name="kusovkymagic">
+	<table width="528" align="center" bgcolor="#6D6D5E" cellpadding="5" cellspacing="0" border="1" 	bordercolor="#000000" class="kusovkytext"> 
+	<tr> <td align="center">
+
+	<select name="edice_magic" size="1">
+	<option value="libovolna" selected>Libovolná edice</option>
+	<option value="standard" >Standard</option>
+	<option value="modern" >Modern</option>
+	<option>--------------</option>
+<option value="M15" >Magic 2015</option>
+<option value="CNS" >Conspiracy</option>
+<option value="MED" >Modern Event Deck</option>
+<option value="JOU" >Journey into Nyx</option>
+<option value="DDJvV" >DD: Jace vs. Vraska</option>
+<option value="BNG" >Born of the Gods</option>
+<option value="C13" >Commander 2013</option>
+<option value="THS" >Theros</option>
+<option value="M14" >Magic 2014</option>
+<option value="DGM" >Dragon´s Maze</option>
+<option value="GTC" >Gatecrash</option>
+<option value="RTR" >Return to Ravnica</option>
+<option>--------------</option><option value="10E" >10th Edition</option>
+<option value="3ED" >3rd Edition</option>
+<option value="4ED" >4th Edition</option>
+<option value="5ED" >5th Edition</option>
+<option value="6ED" >6th Edition</option>
+<option value="7ED" >7th Edition</option>
+<option value="8ED" >8th Edition</option>
+<option value="9ED" >9th Edition</option>
+<option value="ARB" >Alara Reborn</option>
+<option value="ALL" >Alliances</option>
+<option value="LEA" >Alpha</option>
+<option value="ATQ" >Antiquities</option>
+<option value="APC" >Apocalypse</option>
+<option value="ARN" >Arabian Nights</option>
+<option value="ARC" >Archenemy</option>
+<option value="AVR" >Avacyn Restored</option>
+<option value="LEB" >Beta</option>
+<option value="BOK" >Betrayers of Kamigawa</option>
+<option value="BNG" >Born of the Gods</option>
+<option value="CHK" >Champions of Kamigawa</option>
+<option value="CHR" >Chronicles</option>
+<option value="CSP" >Coldsnap</option>
+<option value="CMD" >Commander</option>
+<option value="C13" >Commander 2013</option>
+<option value="CMA" >Commander´s Arsenal</option>
+<option value="CON" >Conflux</option>
+<option value="CNS" >Conspiracy</option>
+<option value="DKA" >Dark Ascension</option>
+<option value="DST" >Darksteel</option>
+<option value="DDAvB" >DD: Ajani vs. Nicol Bolas</option>
+<option value="DDDvD" >DD: Divine vs. Demonic</option>
+<option value="DDEvT" >DD: Elspeth vs. Tezzeret</option>
+<option value="DDEvG" >DD: Elves vs. Goblins</option>
+<option value="DDGvL" >DD: Garruk vs. Liliana</option>
+<option value="DDHvM" >DD: Heroes vs. Monsters</option>
+<option value="DDIvG" >DD: Izzet vs. Golgari</option>
+<option value="DDJvC" >DD: Jace vs. Chandra</option>
+<option value="DDJvV" >DD: Jace vs. Vraska</option>
+<option value="DDKvD" >DD: Knights vs Dragons</option>
+<option value="DDPvC" >DD: Phyrexia vs. Coalition</option>
+<option value="DDSvT" >DD: Sorin vs. Tibalt</option>
+<option value="DDVvK" >DD: Venser vs. Koth</option>
+<option value="DIS" >Dissension</option>
+<option value="DGM" >Dragon´s Maze</option>
+<option value="EVE" >Eventide</option>
+<option value="EXO" >Exodus</option>
+<option value="FEM" >Fallen Empires</option>
+<option value="5DN" >Fifth Dawn</option>
+<option value="FBB" >Foreign Black Bordered</option>
+<option value="FTVD" >FTV: Dragons</option>
+<option value="FTVE" >FTV: Exiled</option>
+<option value="FTVL" >FTV: Legends</option>
+<option value="FTVRlm" >FTV: Realms</option>
+<option value="FTVRlc" >FTV: Relics</option>
+<option value="FTV20" >FTV: Twenty</option>
+<option value="FUT" >Future Sight</option>
+<option value="GTC" >Gatecrash</option>
+<option value="GPT" >Guildpact</option>
+<option value="HML" >Homelands</option>
+<option value="ICE" >Ice Age</option>
+<option value="ISD" >Innistrad</option>
+<option value="INV" >Invasion</option>
+<option value="JOU" >Journey into Nyx</option>
+<option value="JUD" >Judgment</option>
+<option value="LEG" >Legends</option>
+<option value="LGN" >Legions</option>
+<option value="LRW" >Lorwyn</option>
+<option value="M10" >Magic 2010</option>
+<option value="M11" >Magic 2011</option>
+<option value="M12" >Magic 2012</option>
+<option value="M13" >Magic 2013</option>
+<option value="M14" >Magic 2014</option>
+<option value="M15" >Magic 2015</option>
+<option value="MMQ" >Mercadian Masques</option>
+<option value="MIR" >Mirage</option>
+<option value="MRD" >Mirrodin</option>
+<option value="MBS" >Mirrodin Besieged</option>
+<option value="MED" >Modern Event Deck</option>
+<option value="MMA" >Modern Masters</option>
+<option value="MOR" >Morningtide</option>
+<option value="NMS" >Nemesis</option>
+<option value="NPH" >New Phyrexia</option>
+<option value="ODY" >Odyssey</option>
+<option value="ONS" >Onslaught</option>
+<option value="Parena" >P - Arena</option>
+<option value="Pbox" >P - Buy a Box</option>
+<option value="Pfnm" >P - Friday Night Magic</option>
+<option value="Pgd" >P - Gameday, Champs</option>
+<option value="Pgw" >P - Gateway</option>
+<option value="Pgp" >P - GP, PT, JSS</option>
+<option value="Pjudge" >P - Judge Rewards</option>
+<option value="Pmedia" >P - Media Inserts</option>
+<option value="P" >P - Miscellaneous</option>
+<option value="Preward" >P - Player Rewards</option>
+<option value="Prel" >P - Prerelease, Release</option>
+<option value="PDL" >PD: Fire and Lightning</option>
+<option value="PDG" >PD: Graveborn</option>
+<option value="PDS" >PD: Slivers</option>
+<option value="PLC" >Planar Chaos</option>
+<option value="HOP" >Planechase</option>
+<option value="PC2" >Planechase 2012</option>
+<option value="PLS" >Planeshift</option>
+<option value="POR" >Portal</option>
+<option value="P02" >Portal Second Age</option>
+<option value="PTK" >Portal Three Kingdoms</option>
+<option value="PCY" >Prophecy</option>
+<option value="RAV" >Ravnica</option>
+<option value="RTR" >Return to Ravnica</option>
+<option value="ROE" >Rise of the Eldrazi</option>
+<option value="SOK" >Saviors of Kamigawa</option>
+<option value="SOM" >Scars of Mirrodin</option>
+<option value="SCG" >Scourge</option>
+<option value="SHM" >Shadowmoor</option>
+<option value="ALA" >Shards of Alara</option>
+<option value="S99" >Starter 1999</option>
+<option value="STH" >Stronghold</option>
+<option value="TMP" >Tempest</option>
+<option value="DRK" >The Dark</option>
+<option value="THS" >Theros</option>
+<option value="TSP" >Time Spiral</option>
+<option value="TSB" >Timeshifted</option>
+<option value="TOR" >Torment</option>
+<option value="UGL" >Unglued</option>
+<option value="UNH" >Unhinged</option>
+<option value="2ED" >Unlimited</option>
+<option value="UDS" >Urza´s Destiny</option>
+<option value="ULG" >Urza´s Legacy</option>
+<option value="USG" >Urza´s Saga</option>
+<option value="VIS" >Visions</option>
+<option value="WTH" >Weatherlight</option>
+<option value="WWK" >Worldwake</option>
+<option value="ZEN" >Zendikar</option>
+</select>&nbsp;&nbsp;Rarita:<select name="rarita" size="1">
+				<option value="A"selected>vše</option>
+
+				<option value="M">mythic</option>
+
+				<option value="R">rare</option>
+	
+				<option value="U">uncommon</option>
+
+				<option value="C">common</option>
+	
+				<option value="T">token</option>
+	
+				<option value="L">land</option>
+	
+				</select>&nbsp;&nbsp;</select>&nbsp;Provedení:<select name="foil" size="1"><option value="A"selected>vše</option>
+<option value="R">bez foilů</option>
+<option value="F">jen foily</option>
+		</select></td></tr>
+			
+	<tr bgcolor="#989883" valign="top">
+	<td align="center">Barva:&nbsp;&nbsp;
+			<input type="checkbox" name="white">&nbsp<img src="/images/kusovky/w.gif" width="11" height="11" border="0">&nbsp;&nbsp&nbsp;
+			<input type="checkbox" name="blue">&nbsp<img src="/images/kusovky/u.gif" width="11" height="11" border="0">&nbsp;&nbsp&nbsp;
+			<input type="checkbox" name="black">&nbsp<img src="/images/kusovky/b.gif" width="11" height="11" border="0">&nbsp;&nbsp&nbsp;
+			<input type="checkbox" name="red">&nbsp<img src="/images/kusovky/r.gif" width="11" height="11" border="0">&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="green">&nbsp;<img src="/images/kusovky/g.gif" width="11" height="11" border="0">&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="multicolor">multicolor&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="colorless">colorless			
+	</td> </tr>
+
+				
+		
+		<tr><td align="center"  >
+		Jméno:&nbsp;<input type="text" name="jmenokarty" size="23" maxlength="50" value="emblem">&nbsp;&nbsp;
+		Řazení:&nbsp;<select name="triditpodle" size="1">
+				<option value="ceny" selected>cena</option>
+				<option value="jmena">jméno</option>
+				<option value="many">mana &uarr; </option>
+				<option value="manyd">mana &darr;</option>
+				</select>&nbsp; &nbsp;<input type="submit" name="submit" value="Vyhledej">&nbsp;&nbsp;
+
+<input type="submit" name="exp" value="+">				
+				
+
+		</td></tr></table></form>
+<SCRIPT type="text/javascript">
+<!--
+document.kusovkymagic.jmenokarty.focus();
+</SCRIPT>
+	<table width="528" align="center" cellpadding="3" cellspacing="0" border="1" bordercolor="#000000" class="kusovkytext">
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/dkasorinemblem.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/dkasorinemblem.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Sorin, Lord of Innistrad</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/dka.gif"> Dark Ascension</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">4&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">89&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku28877" onSubmit="if ( self.document.forms.objednejkusovku28877.kusu.value > 4 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 4 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="328877">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/dkasorinemblem.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/dkasorinemblem.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Sorin, Lord of Innistrad - lightly played</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/dka.gif"> Dark Ascension</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">1&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">79&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku47834" onSubmit="if ( self.document.forms.objednejkusovku47834.kusu.value > 1 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 1 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="347834">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/emblemelspetht.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/emblemelspetht.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Elspeth, Knight-Errant</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/mma.gif"> Modern Masters</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">0&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">75&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku36575" onSubmit="alert('V okamžiku, kdy bude karta skladem, budete upozorněni e-mailem.');"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="336575">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="hlidejzbozi" value="Hlidat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/tlacitkookolight.gif" alt="Hlídejkartu" border="0" onclick="alert('Pokud máte zájem o zaslání informačního e-mailu v případě výskytu dané karty, je potřeba se nejdříve zaregistrovat, nebo přihlásit.');"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/CNS/221.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/CNS/221.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Dack Fayden</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/cns.gif"> Conspiracy</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">1&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">69&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku47260" onSubmit="if ( self.document.forms.objednejkusovku47260.kusu.value > 1 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 1 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="347260">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/emblemelspetht22.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/emblemelspetht22.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Elspeth, Knight-Errant // Token - Soldier</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/med.gif"> Modern Event Deck</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">55&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku46748" onSubmit="if ( self.document.forms.objednejkusovku46748.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="346748">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/M15/224.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/M15/224.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Ajani Steadfast</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/m15.gif"> Magic 2015</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">39&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku47692" onSubmit="if ( self.document.forms.objednejkusovku47692.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="347692">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/M15/223.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/M15/223.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Garruk, Apex Predator</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/m15.gif"> Magic 2015</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">39&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku47691" onSubmit="if ( self.document.forms.objednejkusovku47691.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="347691">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/PPrelRs/150.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/PPrelRs/150.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Kiora, the Crashing Wave</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/bng.gif"> Born of the Gods</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">13&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">25&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku44651" onSubmit="if ( self.document.forms.objednejkusovku44651.kusu.value > 13 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 13 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="344651">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/domriradeemblem.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/domriradeemblem.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Domri Rade</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/gtc.gif"> Gatecrash</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">19&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku35414" onSubmit="if ( self.document.forms.objednejkusovku35414.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="335414">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/avrtamiyoemblem.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/avrtamiyoemblem.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Tamiyo, the Moon Sage</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/avr.gif"> Avacyn Restored</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">19&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku28880" onSubmit="if ( self.document.forms.objednejkusovku28880.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="328880">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/005.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/005.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Elspeth, Sun´s Champion</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/ths.gif"> Theros</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">20&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">12&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku43376" onSubmit="if ( self.document.forms.objednejkusovku43376.kusu.value > 20 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 20 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="343376">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/vvkemblemkoth.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/vvkemblemkoth.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Koth of the Hammer</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/ddi.gif"> DD: Venser vs. Koth</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">3&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">12&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku28878" onSubmit="if ( self.document.forms.objednejkusovku28878.kusu.value > 3 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 3 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="328878">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/vvkemblemvenser.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/vvkemblemvenser.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Venser, the Sojourner</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/ddi.gif"> DD: Venser vs. Koth</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">3&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">12&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku28879" onSubmit="if ( self.document.forms.objednejkusovku28879.kusu.value > 3 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 3 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="328879">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/m14garukemb.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/m14garukemb.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Garruk, Caller of Beasts</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/m14.gif"> Magic 2014</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">9&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku37316" onSubmit="if ( self.document.forms.objednejkusovku37316.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="337316">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/FUT/100.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/FUT/100.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title="Enchant creature you control
+Creatures you control have haste."><font style="font-weight : bolder;">Emblem of the Warmind - foil</font></div></td>
+		<td valign="bottom"  align="right"><img src='/images/kusovky/1.gif'><img src='/images/kusovky/r.gif'>&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/fut.gif"> Future Sight</td>
+		
+		<td align="right" colspan ="2" >Enchantment — Aura&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Uncommon</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">1&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">9&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku16346" onSubmit="if ( self.document.forms.objednejkusovku16346.kusu.value > 1 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 1 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="316346">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/EVE/171.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/EVE/171.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title="Whenever you cast a spell, equipped creature gets +2/+2 until end of turn.
+Equip {2}"><font style="font-weight : bolder;">Leering Emblem</font></div></td>
+		<td valign="bottom"  align="right"><img src='/images/kusovky/2.gif'>&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/eve.gif"> Eventide</td>
+		
+		<td align="right" colspan ="2" >Artifact — Equipment&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Rare</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">8&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">9&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku20265" onSubmit="if ( self.document.forms.objednejkusovku20265.kusu.value > 8 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 8 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="320265">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/m13emblemliliana.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/m13emblemliliana.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Liliana of the Dark Realms</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/m13.gif"> Magic 2013</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">7&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku29125" onSubmit="if ( self.document.forms.objednejkusovku29125.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="329125">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#6D6D5E">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/tokens/m14emblemliliana.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/tokens/m14emblemliliana.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title=""><font style="font-weight : bolder;">Emblem - Liliana of the Dark Realms</font></div></td>
+		<td valign="bottom"  align="right">&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/m14.gif"> Magic 2014</td>
+		
+		<td align="right" colspan ="2" >&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#6D6D5E">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Token</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">6&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">7&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku37315" onSubmit="if ( self.document.forms.objednejkusovku37315.kusu.value > 6 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 6 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="337315">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+
+		<tr bgcolor="#989883">
+		<td width="2%" rowspan="3" valign="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+ <a href="/images/kusovkymagic/FUT/100.jpg" class="highslide" onclick="return hs.expand(this)">
+		<img src="/images/kusovkymagicsmall/FUT/100.jpg" width = "60px" title="Click to enlarge"></a> 			
+		</td>
+		<td valign="bottom" colspan = "3" ><div title="Enchant creature you control
+Creatures you control have haste."><font style="font-weight : bolder;">Emblem of the Warmind</font></div></td>
+		<td valign="bottom"  align="right"><img src='/images/kusovky/1.gif'><img src='/images/kusovky/r.gif'>&nbsp;&nbsp;</td>	
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" colspan ="2" ><img src = "/images/kusovky/fut.gif"> Future Sight</td>
+		
+		<td align="right" colspan ="2" >Enchantment — Aura&nbsp;&nbsp;</td>
+		</tr>
+		
+		<tr bgcolor="#989883">
+		<td align="left" valign ="top" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">Uncommon</td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">7&nbsp;ks</font></td>
+		<td align="center" valign="center" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;"><font style="font-weight : bolder;">4&nbsp;Kč</font></td>
+		<td td align="right" valign="center" nowrap  width="2%" style="border-bottom-color : white; border-bottom-style : solid; border-bottom-width : 1px;">
+<form action="index.php3?akce=3&limit=0&jmenokarty=emblem&edice_magic=libovolna&poczob=30&foil=A&triditpodle=ceny&hledej_pouze_magic=1&submit=Vyhledej" method="post" name="objednejkusovku16166" onSubmit="if ( self.document.forms.objednejkusovku16166.kusu.value > 7 ) alert('Zadali jste množství větší, než je momentálně skladem. Do košíku se Vám vloží pouze 7 kusů.');return true;"onSubmit="return false;">			<input type=HIDDEN name="carovy_kod" value="316166">
+			<input type=HIDDEN name="databaze" value="kusovkymagic">
+				<input type="hidden" name="nakupzbozi" value="Pridat">
+			<a href="index.php3?akce=3&registracniudaje=1"><img src="/images/kosik.gif" border="0" onclick="registrujse()" alt="Vložit kartu do košíku"></a>
+&nbsp;</td></form></tr>
+</table></td></tr>
+</table></td>
+<td align="center" valign="top" bgcolor="#6D6D5E"><table width="135" align="center" cellpadding="0" cellspacing="0"><tr><td><img src="/images/spacer.gif" width = "100" height="5" border="0"><table width="130" cellspacing="5"  border="1" bordercolor="#000000"
+				bgcolor="#989883"><tr>
+<td align="center"><span class="kosikbold">NOVINKY V&nbsp;OBCHODĚ</span></td></tr><tr><td><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=100&sekce=whf&podsekce=&podpodsekce="><img src="/images/obchod/wd_20.jpg" height="100" width="100" border="0"></a></td></tr></table></td></tr><tr>
+				<td><a href="index.php3?akce=100&sekce=whf&podsekce=&podpodsekce=" class="novinkybold">White Dwarf 20/2014</a><br><a href="index.php3?akce=" class="novinkynormal">Cena : 79 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=100&sekce=deskovky&podsekce=coop&podpodsekce="><img src="/images/obchod/onfighter.jpg" height="100" width="100" border="0"></a></td></tr></table></td></tr><tr>
+				<td><a href="index.php3?akce=100&sekce=deskovky&podsekce=coop&podpodsekce=" class="novinkybold">Dungeon Fighter</a><br><a href="index.php3?akce=" class="novinkynormal">Cena : 949 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=100&sekce=pok&podsekce=gift&podpodsekce="><img src="/images/obchod/charibox.jpg" height="100" width="100" border="0"></a></td></tr></table></td></tr><tr>
+				<td><a href="index.php3?akce=100&sekce=pok&podsekce=gift&podpodsekce=" class="novinkybold">Pokémon - Charizard Box</a><br><a href="index.php3?akce=" class="novinkynormal">Cena : 649 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=100&sekce=deskovky&podsekce=munchkin&podpodsekce="><img src="/images/obchod/munlegends.jpg" height="100" width="100" border="0"></a></td></tr></table></td></tr><tr>
+				<td><a href="index.php3?akce=100&sekce=deskovky&podsekce=munchkin&podpodsekce=" class="novinkybold">Munchkin Legends</a><br><a href="index.php3?akce=" class="novinkynormal">Cena : 399 Kč</a></td></tr></table><img src="/images/spacer.gif" width = "100" height="5" border="0"><table width="130" cellspacing="5"  border="1" bordercolor="#000000"
+				bgcolor="#989883"><tr>
+<td align="center"><span class="kosikbold">TIP ČERNÉHO RYTÍŘE</span></td></tr><tr><td><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=100&sekce=whf&podsekce=skaven&podpodsekce="><img src="/images/obchod/WFB_SKavenBatt.jpg" height="100" width="100" border="0"></a></td></tr></table></td></tr><tr>
+				<td><a href="index.php3?akce=100&sekce=whf&podsekce=skaven&podpodsekce=" class="novinkybold">Skaven Battalion</a><br><a href="index.php3?akce=" class="novinkynormal">Cena : 2039 Kč</a></td></tr><tr><td><table border="3" bordercolorlight="#525252" bordercolordark="#FFFFFF"  align="center"
+						bgcolor="#000000" width="101" height="101"  cellpadding="0" cellspacing="0" ><tr><td width="100" height="100" align="center" valign="middle"><a href="index.php3?akce=100&sekce=deskovky&podsekce=cesky&podpodsekce="><img src="/images/obchod/eclipsee.jpg" height="100" width="100" border="0"></a></td></tr></table></td></tr><tr>
+				<td><a href="index.php3?akce=100&sekce=deskovky&podsekce=cesky&podpodsekce=" class="novinkybold">Eclipse (česká verze)</a><br><a href="index.php3?akce=" class="novinkynormal">Cena : 1399 Kč</a></td></tr></table></td></tr></table></td></tr>
+<tr><td bgcolor="#000000" colspan="3"><img src="/images/spacer.gif" width="500" height="3"></td></tr>
+<tr><td colspan="3" bgcolor="#999999"><table cellpadding="3" align="center"><tr><td>
+<span class="spodnilista"><a href = "http://www.cernyrytir.cz/index.php3?akce=896"><b>ON-LINE OBCHOD: </b></a> Za Poříčskou branou 21, 186 00 Praha 8, <span style="position:relative; top: 4;"><img src="images/email_eshop.gif"></span>,  tel. 731 164 496, ICQ 386-264-060.<br>
+<a href="index.php3?akce=899"><b>OBCHOD PRAHA: </b></a> Za Poříčskou branou 21,186 00 Praha 8, <span style="position:relative; top: 4;"><img src="images/email_praha.gif"></span>, tel. 733 517 617, ICQ 354-755-058, otevřeno po - ne 12 - 20.<br>
+<a href="index.php3?akce=897"><b>OBCHOD BRNO: </b></a> Chládkova 3, 616 00 Brno<span style="position:relative; top: 4;"><img src="images/email_brno.gif"></span>, tel. 733 517 608, ICQ 227-222-664, otevřeno po - so 12 - 18:30.</span></td></tr>
+</table></td></tr>
+</table>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-484566-14";
+urchinTracker();
+</script>
+
+
+</BODY>
+</HTML>
+

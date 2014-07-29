@@ -1,16 +1,16 @@
 # TODO ASAP
-KDYKOLIV - prepsat formular na zend form
+* KDYKOLIV - prepsat formular na zend form
 
-Pridat Rishadu
-Nasadit novou verzi
+* pri zobrazeni popup schovat listy
+* Napsat si sem wishlist od Filipa
 
+* Minimalizace jquery mobile - osekat o nepouzivanou funkcnost
+* Minimalizace kodu pomoci uglyfi
+* Nasadit novou verzi
 
-Minimalizace jquery mobile - osekat o nepouzivanou funkcnost
-Minimalizace kodu pomoci uglyfi
-Nasadit novou verzi
+* zalozit novou branch a zacit s prihlasovanim
 
-zalozit novou branch a zacit s prihlasovanim
-
+* Kuba - list of interest
 # Upload ASAP
 
 # Wishlist
