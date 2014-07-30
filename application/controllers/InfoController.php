@@ -14,4 +14,8 @@ class InfoController extends Baz_Controller_Action {
     public function tipsAction() {
         $this->view->pageId = 'page-info-tips';
     }
+
+    public function changelogAction() {
+        $this->view->pageId = 'page-info-changelog';
+    }
 }
