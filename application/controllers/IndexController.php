@@ -81,7 +81,11 @@ class IndexController extends Baz_Controller_Action {
      */
     public function testAction() {
         if (Zend_Registry::get('config')->mtgim->isTest == 1) {
-            $contactForm = new Application_Model_Form_Contact2();
+            $contactForm = new Application_Model_Form_Contact2(
+                array('mailerSettings' => Zend_Registry::get('config')->mtgim->toArray())
+            );
+            $contactForm->setAction('/index/test');
+
             $showForm = TRUE;
             // todo tohle udelat doopravdy - isPost neexistuje
             if ($this->_request->isPost()) {
