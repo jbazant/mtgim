@@ -1,30 +1,31 @@
 <?php
 
-// todo tohle tu nema co delat
-defined('TEST_ROOT_PATH')
-    || define('TEST_ROOT_PATH', __DIR__ . '/../../..');
-// nastaveni include path, potrebne pro spravne instancovani objektu
-set_include_path(implode(PATH_SEPARATOR, array(
-    realpath(TEST_ROOT_PATH . '/library'),
-    get_include_path(),
-)));
-
+/**
+ * Testy pro tridu Application_Model_Factory
+ * Class Model_FactoryTest
+ */
 class Model_FactoryTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * setup - include tridy
+     */
     public function setUp() {
-        require_once(TEST_ROOT_PATH . '/application/models/Factory.php');
+        require_once(APPLICATION_PATH . '/models/Factory.php');
     }
 
-    //todo predelat na data provider
     /**
      * Test vraceni adapteru pro CR
-     * @dataProvider _basicProvider
+     * @dataProvider basicProvider
      */
 	public function testAdapterBasic($adapterClass, $adapterName) {
         $this->assertInstanceOf($adapterClass, Application_Model_Factory::getModel($adapterName));
 	}
 
-    public function _basicProvider() {
+    /**
+     * Provider pro testAdapterBasic
+     * @return array
+     */
+    public function basicProvider() {
         return array(
             array('Application_Model_CernyRytir', 'cernyrytir'),
             array('Application_Model_MysticShop', 'mystic'),
@@ -32,4 +33,8 @@ class Model_FactoryTest extends PHPUnit_Framework_TestCase
             array('Application_Model_Rishada',    'rishada'),
         );
     }
+
+    //todo test na foil a regular
+
+    //todo test na lokalni adaptery
 }
