@@ -1,20 +1,75 @@
 <?php
-//todo kompletne komentare
 
+//todo testy - potrebuji k nim bootstrap zendu?
+require_once('Zend/Form.php');
+require_once('Zend/Form/Exception.php');
+
+
+/**
+ * Class Application_Model_Form_Contact2
+ *
+ * Pri vytvareni objektu se predpoklada, ze dostane v poli parametru atributy
+ *  array mailerSettings (from => nepovinne, to => povinne)
+ *  Zend_Mail mailer
+ *
+ * Pokud mailer neni uveden pouzije se Zend_Mail('UTF-8')
+ */
 class Application_Model_Form_Contact2 extends Zend_Form {
+
+    /**
+     * @var null|array
+     */
+    protected $_mailerSettings = NULL;
+
+    /**
+     * Adapter zajistujici odeslani emailu
+     * @var null|Zend_Mail
+     */
+    protected $_mailer = NULL;
+
+
+    /**
+     * Inicializace formulare
+     * @throws Zend_Form_Exception
+     */
     public function init() {
         $this
-            //todo tady potrebuji najit baseurl
-            ->setAction('/index/test')
             ->setMethod(self::METHOD_POST)
             ->setAttrib('id', 'contactform')
             ->_addElements()
         ;
+
+        if (!isset($this->_mailer)) {
+            require_once('Zend/Mail.php');
+            $this->_mailer = new Zend_Mail('UTF-8');
+        }
+
+        if (!isset($this->_mailerSettings)) {
+            throw new Zend_Form_Exception('Mailer settings are not set!', 101);
+        }
+
+        if (empty($this->_mailerSettings['contactEmail'])) {
+            throw new Zend_Form_Exception('Contact email is not set!', 102);
+        }
+        else {
+            $this->_mailer->addTo($this->_mailerSettings['contactEmail']);
+        }
+
+        if (!empty($this->_mailerSettings['fromEmail'])) {
+            $this->_mailer->setFrom($this->_mailerSettings['fromEmail']);
+        }
     }
 
+
+    /**
+     * Validace formulare
+     * @param array $data
+     * @return bool
+     */
     public function isValid($data) {
         if (parent::isValid($data)) {
-            //todo sem patri specialni logika validace
+            // sem patri specialni logika validace
+            // prozatim ovsem zadna neni potreba
             return TRUE;
         }
         else {
@@ -22,18 +77,49 @@ class Application_Model_Form_Contact2 extends Zend_Form {
         }
     }
 
-    //todo zpracovani formulare
+
+    /**
+     * Zpracovani formulare
+     * @param array $data
+     * @return string
+     */
     public function process($data) {
-        $res = $this->isValid($data);
+        if ($this->isValid($data)) {
+            return ($this->_validProcess()) ? 'sent' : 'error';
+        }
+        else {
+            return 'not_valid';
+        }
     }
+
 
     /**
      * Funkce se samotnou logikou formulare
      * Sestavi a odesle email
+     * @return bool
      */
     protected function _validProcess() {
+        $m = $this->_mailer;
 
+        $senderEmail = $this->getValue('f_user_email');
+
+        $m->setSubject('MtGiM - zprava od ' . $senderEmail);
+        $m->setBodyText(sprintf(
+            "Zpráva z webu MtGiM\n\nod: %s\n\ntelefon: %s\n\ntext:%s",
+            $senderEmail,
+            $this->getValue('f_user_phone'),
+            $this->getValue('f_message')
+        ));
+
+        try {
+            $m->send();
+            return TRUE;
+        }
+        catch (Exception $e) {
+            return FALSE;
+        }
     }
+
 
     /**
      * Inicializace elementu formulare vcetne validatoru
@@ -99,6 +185,7 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                         array('Label'),
                         array('HtmlTag', array('tag' => 'div', 'class' => 'anti_spam_holder')),
                     ),
+                    'validators' => array(), // todo kontrola, ze je vyplnen pozadovany text
                 ),
             ),
 
@@ -114,6 +201,43 @@ class Application_Model_Form_Contact2 extends Zend_Form {
                 ),
             ),
         ));
+
         return $this;
+    }
+
+
+    /**
+     * Protected mailer setter
+     * @param $mailer
+     */
+    protected function setMailer($mailer) {
+        $this->_mailer = $mailer;
+    }
+
+
+    /**
+     * Mailer getter
+     * @return Zend_Mail
+     */
+    public function getMailer() {
+        return $this->_mailer;
+    }
+
+
+    /**
+     * Protected mailerSettings setter
+     * @param $settings
+     */
+    protected function setMailerSettings($settings) {
+        $this->_mailerSettings = $settings;
+    }
+
+
+    /**
+     * Mailer settings getter
+     * @return array
+     */
+    public function getMailerSettings() {
+        return $this->_mailerSettings;
     }
 }

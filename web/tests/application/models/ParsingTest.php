@@ -4,26 +4,22 @@
  *
  */
 
-// todo tohle by melo byt poresene v phpunit.xml
-defined('TEST_ROOT_PATH')
-    || define('TEST_ROOT_PATH', __DIR__ . '/../../..');
-// nastaveni include path, potrebne pro spravne instancovani objektu
-set_include_path(implode(PATH_SEPARATOR, array(
-    realpath(TEST_ROOT_PATH . '/library'),
-    get_include_path(),
-)));
-
-
+/**
+ * Testy jednotlivych adapteru, ze umi spravne rozparsovat prijaty vstup.
+ * Testy NEslouzi k overeni, ze adapter umi spravne sestavit pozadavek.
+ * Class ParsingTest
+ */
 class ParsingTest extends PHPUnit_Framework_TestCase {
+
     /**
      * @dataProvider providerParsing
      * @param string $localModel
      * @param string $file
-     * @param int $count
+     * @param int $resultCount
      */
-    public function testParsing($localModel, $file, $count) {
+    public function testParsing($localModel, $file, $resultCount) {
         /** @var Baz_Http_ShopPost $modelName */
-        $fileName = TEST_ROOT_PATH . '/application/models/Local/' . $localModel . '.php';
+        $fileName = APPLICATION_PATH . '/models/Local/' . $localModel . '.php';
         $this->assertFileExists($fileName);
         require_once ($fileName);
 
@@ -38,7 +34,7 @@ class ParsingTest extends PHPUnit_Framework_TestCase {
         );
 
         $this->assertEquals(
-            $count,
+            $resultCount,
             count($c->getData())
         );
     }
@@ -54,7 +50,7 @@ class ParsingTest extends PHPUnit_Framework_TestCase {
             array('CernyRytir', 'cr-emblem.htm', 19),
             //array('CernyRytir', 'cr-token.htm', 20),
             array('Rishada', 'rishada.htm', 50),
-            array('Najada', 'najada1.html', 30),
+            //array('Najada', 'najada1.html', 30),
             array('MysticShop', 'mysticshop1.html', 27),
             array('MysticShop', 'mysticshop2.html', 5),
         );

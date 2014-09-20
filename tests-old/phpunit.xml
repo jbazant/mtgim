@@ -2,7 +2,10 @@
 	<testsuite name="hledam-magic">
 		<directory>./</directory>
 	</testsuite>
-	
+
+    <testsuite name="models">
+        <directory>./application/models/</directory>
+    </testsuite>
 	<filter>
 		<whitelist>
 			<directory suffix=".php">../application</directory>

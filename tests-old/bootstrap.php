@@ -2,11 +2,13 @@
 
 // Define path to application directory
 defined('APPLICATION_PATH')
-    || define('APPLICATION_PATH', __DIR__ . '/../../application');
+    || define('APPLICATION_PATH', realpath(__DIR__ . '/../../application/'))
+;
 
 // Define application environment
 defined('APPLICATION_ENV')
-    || define('APPLICATION_ENV', 'testing');
+    || define('APPLICATION_ENV', 'testing')
+;
 
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
@@ -14,9 +16,9 @@ set_include_path(implode(PATH_SEPARATOR, array(
     get_include_path(),
 )));
 
-/** Zend_Application */
+/* Zend_Application */
 require_once 'Zend/Application.php';
 
-/** Predci testu */ 
+/* Predci testu */
 require_once 'ControllerTestCase.php';
 require_once 'models/TestCase.php';

@@ -17,9 +17,12 @@ class Application_Model_Factory
      * @param string|null $foil
      * @return Baz_Http_ShopPost
 	 */
-	public static function getModel($server, $foil = NULL)
+	public static function getModel($server, $foil = NULL, $isTest = 0)
 	{
         /** @var Baz_Http_ShopPost $adapter */
+        if (!array_key_exists($server, self::getAvailableModels($isTest))) {
+            return NULL;
+        }
 
 		switch ($server) {
 			case 'cernyrytir':
@@ -62,7 +65,7 @@ class Application_Model_Factory
                 break;
 
 			default:
-				return null;
+				throw new Exception ('Unknown adapter server: ' . $server);
 		}
 
         if (!empty($foil)) {
@@ -76,6 +79,28 @@ class Application_Model_Factory
 
         return $adapter;
 	}
+
+    /**
+     * Specifikuje dostupne adaptery
+     * @param int $isTest
+     * @return array
+     */
+    public static function getAvailableModels($isTest = 0) {
+        $ret = array(
+            'cernyrytir' => 'Černý Rytíř',
+            'mystic' => 'Mystic Shop',
+            'najada' => 'Najáda',
+            'rishada' => 'Rishada',
+        );
+
+        if (1 == $isTest) {
+            $ret['fake'] = 'Fake Adapter';
+            $ret['fake_rishada'] = 'Fake Rishada';
+            $ret['fake_cr'] = 'Fake Černý Rytíř';
+        }
+
+        return $ret;
+    }
 
 }
 
