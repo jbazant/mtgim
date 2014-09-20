@@ -20,13 +20,15 @@ class SearchController extends Zend_Controller_Action {
      * Zakladni akce vyhledavani v obchode
      */
     public function basicAction() {
+        $isTest = Zend_Registry::get('config')->mtgim->isTest;
+
         $cardname = trim($this->_request->getParam('cardname'));
         $adapterName = $this->_request->getParam('adapter');
         $foilType = $this->_request->getParam('foil');
 
         if (!empty($cardname) && !empty($adapterName)) {
             //get adapter
-            $adapter = Application_Model_Factory::getModel($adapterName, $foilType);
+            $adapter = Application_Model_Factory::getModel($adapterName, $foilType, $isTest);
         }
 
         try {
@@ -44,7 +46,7 @@ class SearchController extends Zend_Controller_Action {
         catch (Exception $e) {
             $this->view->success = FALSE;
             $this->view->reason = 'PARSE_ERROR';
-            if (Zend_Registry::get('config')->mtgim->isTest == 1) {
+            if (1 == $isTest) {
                 $this->view->message = $e->getMessage();
                 $this->view->trace = $e->getTraceAsString();
             }
