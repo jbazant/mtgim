@@ -2,11 +2,17 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/public/js/searchResult.js" />
+        <item url="file://$PROJECT_DIR$/web/public/js/fullscreen.js" />
+        <item url="file://$PROJECT_DIR$/web/public/js/app.js" />
+        <item url="file://$PROJECT_DIR$/web/public/js/searchResult.js" />
+        <item url="file://$PROJECT_DIR$/web/public/js/searchPage.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/public/js/fullscreen.js" />
+      <root url="file://$PROJECT_DIR$/web/public/js/app.js" />
       <root url="file://$PROJECT_DIR$/web/public/js/searchResult.js" />
+      <root url="file://$PROJECT_DIR$/web/public/js/searchPage.js" />
     </CLASSES>
     <SOURCES />
   </library>
