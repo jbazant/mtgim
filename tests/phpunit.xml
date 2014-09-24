@@ -1,12 +1,17 @@
 <phpunit bootstrap="./application/bootstrap.php" colors="true">
-	<testsuite name="hledam-magic">
+	<testsuite name="wubrg">
 		<directory>./</directory>
 	</testsuite>
 
     <testsuite name="models">
         <directory>./application/models/</directory>
     </testsuite>
-	<filter>
+
+    <testsuite name="apiClient">
+        <directory>./api-client/</directory>
+    </testsuite>
+
+    <filter>
 		<whitelist>
 			<directory suffix=".php">../application</directory>
 			<exclude>
