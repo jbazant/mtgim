@@ -1,8 +1,8 @@
 <?php
 /**
- * @brief mtg-api-lib usage example
+ * @brief mtgim-api-lib usage example
  *
- * Simple example of usage mtg-api-lib.
+ * Simple example of usage mtgim-api-lib.
  * Shows basic usage of Mtgim_Api_Client class. There's not implemented any cacheing of results
  * (you should cache results of method Mtgim_Api_Client::shopsAvailable), nor advanced settings
  * of Adapter. For more information refer to documentation.
@@ -19,7 +19,7 @@ $secret = 'testSecret';
 
 // ----- usage example -----
 // include library
-require_once(__DIR__ . '/mtg-api-lib/Client.php');
+require_once(__DIR__ . '/mtgim-api-lib/Client.php');
 
 // instantiate library
 $mtgim = new Mtgim_Api_Client($apiKey, $secret);
@@ -66,11 +66,11 @@ if (isset($_POST['cardname']) && !empty($_POST['cardname'])) {
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Příklad použití mtg-api-lib</title>
+    <title>Příklad použití mtgim-api-lib</title>
 </head>
 
 <body>
-    <h1>Příklad použití mtg-api-lib</h1>
+    <h1>Příklad použití mtgim-api-lib</h1>
 
     <?php if (!empty($message)): ?>
         <div id="message-holder">
@@ -79,7 +79,7 @@ if (isset($_POST['cardname']) && !empty($_POST['cardname'])) {
     <?php endif; ?>
 
     <div id="form-holder">
-        <form action="mtg-api-example.php" method="post">
+        <form action="mtgim-api-example.php" method="post">
             <label for="cardname">Název karty:</label>
             <input type="text" id="cardname" name="cardname" value="<?= htmlspecialchars($cardname); ?>" placeholder="Název karty" />
 

@@ -6,7 +6,7 @@
  * Time: 8:20
  */
 
-require_once(__DIR__ . '/../../api-client/mtg-api-lib/Adapter/Curl.php');
+require_once(__DIR__ . '/../../api-client/mtgim-api-lib/Adapter/Curl.php');
 
 /**
  * Testy pro tridu Mtgim_Api_Adapter_Curl

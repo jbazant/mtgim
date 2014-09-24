@@ -6,7 +6,7 @@
  * Time: 19:14
  */
 
-require_once(__DIR__ . '/../../api-client/mtg-api-lib/Client.php');
+require_once(__DIR__ . '/../../api-client/mtgim-api-lib/Client.php');
 
 class Mtgim_Api_ClientTest extends PHPUnit_Framework_TestCase {
 
