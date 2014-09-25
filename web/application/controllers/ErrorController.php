@@ -18,6 +18,7 @@ class ErrorController extends Baz_Controller_Action
                 $this->getResponse()->setHttpResponseCode(404);
                 $this->view->message = 'Stránka nenalezena';
                 break;
+
             default:
                 // application error
                 $this->getResponse()->setHttpResponseCode(500);
@@ -41,13 +42,13 @@ class ErrorController extends Baz_Controller_Action
     public function getLog()
     {
         $bootstrap = $this->getInvokeArg('bootstrap');
+
         if (!$bootstrap->hasPluginResource('Log')) {
             return false;
         }
+
         $log = $bootstrap->getResource('Log');
+
         return $log;
     }
-
-
 }
-

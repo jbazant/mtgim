@@ -15,7 +15,9 @@ class Application_Model_Factory
 	 * 
 	 * @param string $server
      * @param string|null $foil
+     * @param int $isTest
      * @return Baz_Http_ShopPost
+     * @throws Exception on invalid $server
 	 */
 	public static function getModel($server, $foil = NULL, $isTest = 0)
 	{
