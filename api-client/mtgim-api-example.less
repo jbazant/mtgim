@@ -1,27 +1,123 @@
-
+@lightColor: white;
+@darkColor: black;
+@greyColor: #222;
 body {
-
+  background-color: #8c6239;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 10pt;
+  margin: 0;
+  padding: 0;
 }
 
-#form-holder, #message-holder, #result-holder {
-  margin: 5px 2%;
-  padding: 2%;
-  border: 1px solid #000000;
-  box-shadow: 0 0 5px grey;
+h1 {
+  font-size: 1.5em;
+  color: @lightColor;
+  text-align: center;
+  margin: 2%;
+  text-shadow: 2px 2px 0 @darkColor;
 }
 
-#form-holder {
+a {
+  color: #005599;
+  text-decoration: underline;
 
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-#message-holder {
+#content {
+  margin: auto;
+  min-width: 605px;
+  max-width: 1000px;
 
-}
+  #form-holder, #message-holder, #results-holder {
+    margin: 5px 2%;
+  }
 
-#result-holder {
+  #form-holder, #message-holder {
+    padding: 5px 2%;
+    border-radius: 5px;
+  }
 
+  #form-holder {
+    background-color: @lightColor;
+    border: 1px solid @greyColor;
+
+    label {
+      padding: 2px 5px 2px 10px;
+    }
+
+    input, select {
+      width: 100px;
+      height: 20px;
+      margin: 5px 0;
+    }
+  }
+
+  #message-holder {
+    border: 2px solid darkred;
+    background-color: indianred;
+    border-color: darkred;
+    color: @lightColor;
+    font-style: italic;
+  }
+
+  #results-holder {
+    padding: 5px 0;
+
+    table {
+      border-radius: 5px;
+      border-collapse: collapse;
+      width: 100%;
+      background-color: @lightColor;
+
+      td, th {
+        padding: 0.5em 1em;
+        border: 1px solid @greyColor + 20;
+      }
+
+      th {
+        font-weight: bold;
+        color: @lightColor;
+        background-color: @greyColor;
+        text-shadow: 1px 1px 0 @darkColor;
+      }
+
+      .num_field {
+        text-align: right;
+      }
+
+      .col2 {
+        width: 25%;
+      }
+
+      .col3 {
+        width: 15%;
+      }
+
+      .col4, .col5 {
+        width: 10%;
+      }
+    }
+  }
 }
 
 #footer {
+  position: absolute;
+  bottom: 0;
+  width: 96%;
 
+  color: @lightColor;
+  background-color: @greyColor;
+  margin: 0;
+  padding: 5px 2%;
+
+  p {
+    text-shadow: -1px -1px 0 @darkColor;
+  }
+  .copy {
+    float: right;
+    text-align: right;
+  }
 }
