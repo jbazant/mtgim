@@ -19,9 +19,12 @@ contactFormInit = (page) ->
 ##
 #  Callback po nacteni stranky pomoci jquery mobile
 pageShowCallback = ->
+  page = $.mobile.activePage
+  pageId = page.attr 'id'
+
   pageActions =
     'page-search': ->
-      currentPage = new SearchPage page activityTracker
+      currentPage = new SearchPage page, activityTracker
     'page-contact': ->
       contactFormInit page
     'page-index': ->
@@ -31,9 +34,8 @@ pageShowCallback = ->
 
   fbPageInit()
 
-  page = $.mobile.activePage
-  if pageActions[page]?
-    pageActions[page]()
+  if pageActions[pageId]?
+    pageActions[pageId]()
 
   return
 
