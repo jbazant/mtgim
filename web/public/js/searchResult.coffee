@@ -5,7 +5,8 @@ class window.SearchResult
   # Konstruktor
   # @param holder html collapsible div
   # @param form html form element
-  constructor: (@holder, @form) ->
+  # @param Tracking activityHolder
+  constructor: (@holder, @form, @activityTracker) ->
     ## pomocna promenna pro nastaveni rychlosti efektu
     @fadeSpeed = 'fast'
 
@@ -42,6 +43,9 @@ class window.SearchResult
   ##
   #  Obsluha pri rozbaleni collapsible
   expandCallback: () =>
+    # vzdy trackuju
+    @activityTracker.trackEvent 'SearchPage', 'Display results', @adapter, @searchText
+
     # pouze pokud jiz neni nacteny
     if not @loaded
       @loaded = true
@@ -70,6 +74,7 @@ class window.SearchResult
             @list.append @createLiItem value
 
         else
+          @activityTracker.trackEvent 'SearchPage', 'Display results data error', @adapter, @searchText
           @list.append @createLiDivider "Chyba! Opakujte požadavek později."
 
         @list.listview 'refresh'
@@ -78,6 +83,7 @@ class window.SearchResult
           @list.trigger 'resultsLoaded', @list
 
       ).fail =>
+        @activityTracker.trackEvent 'SearchPage', 'Display results connection error', @adapter, @searchText
         @list.empty()
         @list.append @createLiDivider "Chyba! Opakujte požadavek později."
         @list.listview 'refresh'

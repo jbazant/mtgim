@@ -3,8 +3,9 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.SearchPage = (function() {
-    function SearchPage(page) {
+    function SearchPage(page, activityTracker) {
       this.page = page;
+      this.activityTracker = activityTracker;
       this.tabsactivateCallback = __bind(this.tabsactivateCallback, this);
       this.initResultHolder = __bind(this.initResultHolder, this);
       this.shopChanged = __bind(this.shopChanged, this);
@@ -17,11 +18,14 @@
       this.lastActiveTabIndex = 0;
       this.lastShopResultHolder = null;
       this.fadeSpeed = 'fast';
-      this.initResultHolders();
+      this.initResultHolders(this.activityTracker);
       this.initTabs();
       this.initShopSelect();
       this.form.on('submit', function() {
-        $('#cardname', this).blur();
+        var cardInput;
+        cardInput = $('#cardname', this);
+        this.activityTracker.trackEvent('SearchPage', 'Form submit', cardInput.val());
+        cardInput.blur();
       });
       this.cardPreview = new CardDetailPopup($('#cardImgPopup'), this.page);
     }
@@ -82,18 +86,18 @@
       });
     };
 
-    SearchPage.prototype.initResultHolders = function() {
+    SearchPage.prototype.initResultHolders = function(activityTracker) {
       var callback;
       callback = this.initResultHolder;
       return this.typeResultsHolders.each(function() {
-        return callback(this);
+        return callback(this, activityTracker);
       });
     };
 
-    SearchPage.prototype.initResultHolder = function(holder) {
+    SearchPage.prototype.initResultHolder = function(holder, activityTracker) {
       var adapter, sr;
       adapter = $(holder).data('shop-id');
-      sr = new SearchResult(holder, this.form);
+      sr = new SearchResult(holder, this.form, activityTracker);
       if (typeof this.tabResults[adapter] === 'undefined') {
         this.tabResults[adapter] = [];
       }

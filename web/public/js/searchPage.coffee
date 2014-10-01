@@ -6,7 +6,9 @@ class window.SearchPage
   ##
   # Konstruktor
   # Nacte zajimave elementy z DOM
-  constructor: (@page) ->
+  # @param HtmlObject page
+  # @param Tracking activityHolder
+  constructor: (@page, @activityTracker) ->
     # Inicializace elementu
     @form = $ '#searchform', @page
     @shopSelect = $ '#shop-select', @page
@@ -22,7 +24,7 @@ class window.SearchPage
 
     # inicializace stavu stranky
     # inicializace seznamu s vysledky
-    @initResultHolders()
+    @initResultHolders @activityTracker
     # inicializace zalozek jednotlivych metod obchodu
     @initTabs()
     # inicializace vyberu obchodu a prislusnych zalozek
@@ -30,8 +32,11 @@ class window.SearchPage
 
     # pri odeslani chci zrusit focus na vyhledavacim inputu
     # tim se zavre softwarova klavesnice
+    # a take chci trackovat samotne odeslani formulare
     @form.on 'submit', ->
-      $('#cardname', @).blur()
+      cardInput = $ '#cardname', @
+      @activityTracker.trackEvent 'SearchPage', 'Form submit', cardInput.val()
+      cardInput.blur()
       return
 
     @cardPreview = new CardDetailPopup $('#cardImgPopup'), @page
@@ -118,19 +123,21 @@ class window.SearchPage
 
   ##
   # Inicializace jednotlivych seznamu s vysledky
-  initResultHolders: ->
+  # @param Tracking activityHolder
+  initResultHolders: (activityTracker) ->
     callback = @initResultHolder
     @typeResultsHolders.each ->
-      callback @
+      callback @, activityTracker
 
 
   ##
   # Vlastni callbac pro inicializaci jednoho seznamu s vysledkem vyhledavani
   # @param HtmlObject holder
-  initResultHolder: (holder) =>
+  # @param Tracking activityHolder
+  initResultHolder: (holder, activityTracker) =>
     adapter = $(holder).data 'shop-id'
     # objekt pro obsluhu daneho seznamu
-    sr = new SearchResult holder, @form
+    sr = new SearchResult holder, @form, activityTracker
 
     # pridani objektu do prislusneho pole vysledku
     if typeof @tabResults[adapter] == 'undefined' then @tabResults[adapter] = []

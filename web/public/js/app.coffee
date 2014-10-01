@@ -17,22 +17,33 @@ contactFormInit = (page) ->
 
 
 ##
-#  Inicializace zobrazeni stranky
-$(document).bind 'pageshow', ->
+#  Callback po nacteni stranky pomoci jquery mobile
+pageShowCallback = ->
+  pageActions =
+    'page-search': ->
+      currentPage = new SearchPage page activityTracker
+    'page-contact': ->
+      contactFormInit page
+    'page-index': ->
+      $('#cardname', page).focus()
+    'page-test': ->
+      contactFormInit page
+
   fbPageInit()
 
   page = $.mobile.activePage
-  switch page.attr 'id'
-    when 'page-search'
-      currentPage = new SearchPage page
+  if pageActions[page]?
+    pageActions[page]()
 
-    when 'page-contact'
-      contactFormInit page
-
-    when 'page-index'
-      $('#cardname', page).focus()
-
-    # todo pryc
-    when 'page-test'
-      contactFormInit page
   return
+
+
+# ----- END OF DEFINITIONS -----
+
+
+# inicializace trackovani
+# POZOR Nejaka logika je i v init.js, toto musi byt volano az pote!
+window.activityTracker = new Tracking()
+
+#  Inicializace zobrazeni stranky
+$(document).bind 'pageshow', pageShowCallback

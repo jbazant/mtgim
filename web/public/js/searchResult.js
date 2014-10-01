@@ -3,9 +3,10 @@
   var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
   window.SearchResult = (function() {
-    function SearchResult(holder, form) {
+    function SearchResult(holder, form, activityTracker) {
       this.holder = holder;
       this.form = form;
+      this.activityTracker = activityTracker;
       this.resetActive = __bind(this.resetActive, this);
       this.setActive = __bind(this.setActive, this);
       this.formSubmitCallback = __bind(this.formSubmitCallback, this);
@@ -24,6 +25,7 @@
     }
 
     SearchResult.prototype.expandCallback = function() {
+      this.activityTracker.trackEvent('SearchPage', 'Display results', this.adapter, this.searchText);
       if (!this.loaded) {
         this.loaded = true;
         this.list.append(this.createLiDivider('Načítám ...'));
@@ -46,6 +48,7 @@
                 return _this.list.append(_this.createLiItem(value));
               });
             } else {
+              _this.activityTracker.trackEvent('SearchPage', 'Display results data error', _this.adapter, _this.searchText);
               _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
             }
             _this.list.listview('refresh');
@@ -55,6 +58,7 @@
           };
         })(this)).fail((function(_this) {
           return function() {
+            _this.activityTracker.trackEvent('SearchPage', 'Display results connection error', _this.adapter, _this.searchText);
             _this.list.empty();
             _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
             _this.list.listview('refresh');
