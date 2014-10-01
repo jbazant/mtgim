@@ -2,7 +2,6 @@
 .idea/
 .buildpath
 .project
-.htaccess
 todo.md
 
 web/application/configs/application.ini
