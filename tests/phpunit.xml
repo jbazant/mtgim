@@ -13,9 +13,9 @@
 
     <filter>
 		<whitelist>
-			<directory suffix=".php">../application</directory>
+			<directory suffix=".php">./web/application</directory>
 			<exclude>
-				<directory suffix=".phtml">../application</directory>
+				<directory suffix=".phtml">./web/application</directory>
 			</exclude>
 		</whitelist>
 	</filter>

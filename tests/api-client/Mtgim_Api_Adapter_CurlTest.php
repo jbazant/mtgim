@@ -39,7 +39,7 @@ class Mtgim_Api_Adapter_CurlTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider invalidTimeoutProvider
-     * @expectedException Mtg_Api_Exception
+     * @expectedException Mtgim_Api_Exception
      */
     public function testTimeoutInvalid($val) {
         $o = new Mtgim_Api_Adapter_Curl();
@@ -52,7 +52,13 @@ class Mtgim_Api_Adapter_CurlTest extends PHPUnit_Framework_TestCase {
      * @return array
      */
     public function invalidTimeoutProvider() {
-        return array(0, -1, NULL, 'NON_INT_VALUE', 1.1);
+        return array(
+            array(0),
+            array(-1),
+            array(NULL),
+            array('NON_INT_VALUE'),
+            array(1.1)
+        );
     }
 
 
@@ -81,7 +87,7 @@ class Mtgim_Api_Adapter_CurlTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @dataProvider invalidApiUrlProvider
-     * @expectedException Mtg_Api_Exception
+     * @expectedException Mtgim_Api_Exception
      */
     public function testApiUrlInvalid($val) {
         $o = new Mtgim_Api_Adapter_Curl();
@@ -94,7 +100,11 @@ class Mtgim_Api_Adapter_CurlTest extends PHPUnit_Framework_TestCase {
      * @return array
      */
     public function invalidApiUrlProvider() {
-        return array(1, NULL, 'NON_URL_VALUE');
+        return array(
+            array(1),
+            array(NULL),
+            array('NON_URL_VALUE')
+        );
     }
 
 

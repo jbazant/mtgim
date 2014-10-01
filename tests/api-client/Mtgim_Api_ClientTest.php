@@ -63,10 +63,10 @@ class Mtgim_Api_ClientTest extends PHPUnit_Framework_TestCase {
                 $this->equalTo('find-price'),
                 $this->equalTo(array(
                     'AccessKey' => 'testKey',
-                    'Cardname' => 'Disenchant',
                     'Shop' => 'rishada',
                     'FoilType' => 'R',
                     'Signature' => 'fdfc0f4016a5d24ede15d610a7598c46e0d26a8a',
+                    'CardName' => 'Disenchant',
                 ))
             )
             ->willReturn($ret)
@@ -109,7 +109,7 @@ class Mtgim_Api_ClientTest extends PHPUnit_Framework_TestCase {
         $o = new Mtgim_Api_Client('testKey', 'testSecret');
 
         $this->assertEquals(
-            array('A' => 'Vše', 'R' => 'obyčejné', 'F' => 'foilové'),
+            array('A' => 'Vše', 'F' => 'Foilové', 'R' => 'Obyčejné'),
             $o->typesAvailable()
         );
     }

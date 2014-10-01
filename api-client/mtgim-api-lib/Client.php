@@ -24,11 +24,6 @@ class Mtgim_Api_Client {
      * @throws Mtgim_Api_Exception
      */
     public function __construct($accessKey, $secret, $adapter = NULL) {
-        // test that all needed extensions are available
-        if (!(extension_loaded('sha1'))) {
-            throw new Mtgim_Api_Exception('Extension sha1 must by loaded.');
-        }
-
         // set object properties
         $this->_accessKey = $accessKey;
         $this->_secret = $secret;
@@ -38,7 +33,7 @@ class Mtgim_Api_Client {
             $this->_adapter = new Mtgim_Api_Adapter_Curl();
         }
         else {
-            $this->_curlAdapter = $adapter;
+            $this->_adapter = $adapter;
         }
     }
 

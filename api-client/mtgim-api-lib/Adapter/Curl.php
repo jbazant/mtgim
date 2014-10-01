@@ -35,14 +35,14 @@ class Mtgim_Api_Adapter_Curl implements Mtgim_Api_Adapter_Interface {
     /**
      * Set timeout for curl calls.
      * @param int $timeout Timeout for curl calls in seconds. Should be positive integer.
-     * @throws Mtg_Api_Exception
+     * @throws Mtgim_Api_Exception
      */
     public function setTimeout($timeout) {
         if (is_int($timeout) && $timeout > 0) {
             $this->_timeout = $timeout;
         }
         else {
-            throw new Mtg_Api_Exception('Invalid timeout specified');
+            throw new Mtgim_Api_Exception('Invalid timeout specified');
         }
     }
 

@@ -1,8 +1,8 @@
 <?php
-
+ echo realpath(__DIR__ . '/../../web/application/');
 // Define path to application directory
 defined('APPLICATION_PATH')
-    || define('APPLICATION_PATH', realpath(__DIR__ . '/../../application/'))
+    || define('APPLICATION_PATH', realpath(__DIR__ . '/../../web/application/'))
 ;
 
 // Define application environment
