@@ -8,16 +8,16 @@
  * of Adapter. For more information refer to documentation.
  */
 
-// ----- user settings -----
+
+// ==========  SETTINGS  =========
 // these settings are testing ones - you will get only fake results
 // you can change them to your production settings
 // if you do not have production setting, contact us
 $apiKey = 'testKey';
 $secret = 'testSecret';
 
-// ---------- do not edit below this line ----------
+// ==========  MAGIC =========
 
-// ----- usage example -----
 // include library
 require_once(__DIR__ . '/mtgim-api-lib/Client.php');
 
@@ -59,7 +59,7 @@ if (isset($_POST['cardname']) && !empty($_POST['cardname'])) {
     }
 }
 
-// ----- render html page -----
+// ==========  HTML  =========
 ?>
 <!DOCTYPE HTML>
 <html>
