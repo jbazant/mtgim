@@ -22,6 +22,9 @@ class window.SearchPage
     @lastShopResultHolder = null
     @fadeSpeed = 'fast'
 
+    # inicializace formulare, vcetne nacteni hashe
+    @initForm()
+
     # inicializace stavu stranky
     # inicializace seznamu s vysledky
     @initResultHolders @activityTracker
@@ -30,16 +33,42 @@ class window.SearchPage
     # inicializace vyberu obchodu a prislusnych zalozek
     @initShopSelect()
 
+    #inicializace nahledu karty
+    @cardPreview = new CardDetailPopup $('#cardImgPopup'), @page
+
+  ##
+  # inicializace udalosti nad formularem
+  initForm: ->
+    ## nastavi hash s predanym nazvem karty
+    setCardHash = (card) ->
+      window.location.hash = 'find-card-' + encodeURIComponent card
+
+    ## vrati jmeno karty zadane ve formulari
+    getCardFormVal = ->
+      $('#cardname', @page).val()
+
+    # prectu hash a vlozim jej do formulare,
+    # pokud neni specifikovan presmeruji uzivatele na index
+    hash = window.location.hash.match /^#find-card-(.*)$/
+    if hash and hash[1]
+      @form.find('#cardname', @page).val decodeURIComponent hash[1]
+    else
+      card = getCardFormVal()
+      if (card)
+        setCardHash(card)
+      else
+        $.mobile.changePage '/'
+
     # pri odeslani chci zrusit focus na vyhledavacim inputu
     # tim se zavre softwarova klavesnice
     # a take chci trackovat samotne odeslani formulare
     @form.on 'submit', ->
-      cardInput = $ '#cardname', @
-      @activityTracker.trackEvent 'SearchPage', 'Form submit', cardInput.val()
-      cardInput.blur()
+      card = getCardFormVal()
+      @activityTracker.trackEvent 'SearchPage', 'Form submit', card
+      setCardHash(card)
+      $('#cardname', @).blur()
       return
 
-    @cardPreview = new CardDetailPopup $('#cardImgPopup'), @page
 
   ##
   # Inicializace vyberu obchodu vcetne otevreni vysledku
@@ -131,7 +160,7 @@ class window.SearchPage
 
 
   ##
-  # Vlastni callbac pro inicializaci jednoho seznamu s vysledkem vyhledavani
+  # Vlastni callback pro inicializaci jednoho seznamu s vysledkem vyhledavani
   # @param HtmlObject holder
   # @param Tracking activityHolder
   initResultHolder: (holder, activityTracker) =>

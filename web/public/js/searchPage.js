@@ -18,17 +18,39 @@
       this.lastActiveTabIndex = 0;
       this.lastShopResultHolder = null;
       this.fadeSpeed = 'fast';
+      this.initForm();
       this.initResultHolders(this.activityTracker);
       this.initTabs();
       this.initShopSelect();
-      this.form.on('submit', function() {
-        var cardInput;
-        cardInput = $('#cardname', this);
-        this.activityTracker.trackEvent('SearchPage', 'Form submit', cardInput.val());
-        cardInput.blur();
-      });
       this.cardPreview = new CardDetailPopup($('#cardImgPopup'), this.page);
     }
+
+    SearchPage.prototype.initForm = function() {
+      var card, getCardFormVal, hash, setCardHash;
+      setCardHash = function(card) {
+        return window.location.hash = 'find-card-' + encodeURIComponent(card);
+      };
+      getCardFormVal = function() {
+        return $('#cardname', this.page).val();
+      };
+      hash = window.location.hash.match(/^#find-card-(.*)$/);
+      if (hash && hash[1]) {
+        this.form.find('#cardname', this.page).val(decodeURIComponent(hash[1]));
+      } else {
+        card = getCardFormVal();
+        if (card) {
+          setCardHash(card);
+        } else {
+          $.mobile.changePage('/');
+        }
+      }
+      return this.form.on('submit', function() {
+        card = getCardFormVal();
+        this.activityTracker.trackEvent('SearchPage', 'Form submit', card);
+        setCardHash(card);
+        $('#cardname', this).blur();
+      });
+    };
 
     SearchPage.prototype.initShopSelect = function() {
       this.shopSelect.change(this.shopChanged);
