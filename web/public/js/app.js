@@ -29,9 +29,7 @@
       },
       'page-index': function() {
         var c;
-        c = $('#cardname', page);
-        c.attr('type', 'search');
-        return c.focus();
+        return c = $('#cardname', page).focus();
       },
       'page-test': function() {
         return contactFormInit(page);
@@ -45,7 +43,7 @@
 
   window.activityTracker = new Tracking();
 
-  $(document).bind('pageshow', pageShowCallback);
+  $(document).on('pageshow', pageShowCallback);
 
 }).call(this);
 

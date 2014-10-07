@@ -28,9 +28,7 @@ pageShowCallback = ->
     'page-contact': ->
       contactFormInit page
     'page-index': ->
-      c = $('#cardname', page)
-      c.attr('type', 'search')
-      c.focus()
+      c = $('#cardname', page).focus()
     'page-test': ->
       contactFormInit page
 
@@ -50,4 +48,4 @@ pageShowCallback = ->
 window.activityTracker = new Tracking()
 
 #  Inicializace zobrazeni stranky
-$(document).bind 'pageshow', pageShowCallback
+$(document).on 'pageshow', pageShowCallback

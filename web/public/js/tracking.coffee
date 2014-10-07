@@ -12,7 +12,7 @@ class window.Tracking
   ##
   # Zaznamena zmenu stranky
   trackPage: ->
-    _gaq.push ['_trackPageview', $.mobile.activePage]
+    _gaq.push ['_trackPageview', $.mobile.activePage.data 'url']
 
   ##
   # Vraci funkci, ktera
@@ -21,7 +21,7 @@ class window.Tracking
     t = @
     ->
       l = $ @
-      t.trackEvent 'External link', l.attr('title'), l.attr('href'), l.attr('href')
+      t.trackEvent 'External link', l.attr('title'), l.attr('href')
 
   ##
   # zaznamena custom event
