@@ -28,7 +28,9 @@ pageShowCallback = ->
     'page-contact': ->
       contactFormInit page
     'page-index': ->
-      $('#cardname', page).focus()
+      c = $('#cardname', page)
+      c.attr('type', 'search')
+      c.focus()
     'page-test': ->
       contactFormInit page
 

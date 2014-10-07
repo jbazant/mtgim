@@ -26,22 +26,16 @@ class IndexController extends Baz_Controller_Action {
     public function searchAction() {
         $cardname = $this->_request->getParam('cardname');
 
-        if (!empty($cardname)) {
-            //get adapter
-            $adapters = array();
-            $availableAdapters = Application_Model_Factory::getAvailableModels(Zend_Registry::get('config')->mtgim->isTest);
+        //get adapter
+        $adapters = array();
+        $availableAdapters = Application_Model_Factory::getAvailableModels(Zend_Registry::get('config')->mtgim->isTest);
 
-            foreach ($availableAdapters as $key => $name) {
-                $adapters[] = $this->_getSearchResultArr($key, $name);
-            }
-
-            $this->view->cardname = $cardname;
-            $this->view->adapters = $adapters;
-        }
-        else {
-            $this->getHelper('redirector')->goto('index', 'index');
+        foreach ($availableAdapters as $key => $name) {
+            $adapters[] = $this->_getSearchResultArr($key, $name);
         }
 
+        $this->view->cardname = $cardname;
+        $this->view->adapters = $adapters;
         $this->view->pageId = 'page-search';
     }
 

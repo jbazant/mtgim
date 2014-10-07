@@ -28,7 +28,10 @@
         return contactFormInit(page);
       },
       'page-index': function() {
-        return $('#cardname', page).focus();
+        var c;
+        c = $('#cardname', page);
+        c.attr('type', 'search');
+        return c.focus();
       },
       'page-test': function() {
         return contactFormInit(page);
