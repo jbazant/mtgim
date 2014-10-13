@@ -10,7 +10,7 @@ $cardnameVal = isset($this->cardname) ? htmlentities($this->cardname) : '';
         <h1><?php echo $this->appName ?></h1>
     <?php else: ?>
         <div class="ui-block">
-            <form id="searchform" method="POST" action="<?php echo $this->baseUrl('/index/search') ?>">
+            <form id="searchform" method="GET" action="<?php echo $this->baseUrl('/index/find') ?>">
                 <input type="search" name="cardname"
                        id="cardname" placeholder="Hledat"
                        value="<?php echo $cardnameVal ?>" data-transition="fade"

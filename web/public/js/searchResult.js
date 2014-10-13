@@ -25,7 +25,7 @@
     }
 
     SearchResult.prototype.expandCallback = function() {
-      this.activityTracker.trackEvent('SearchPage', 'Display results', this.adapter + '-' + this.searchText);
+      this.activityTracker.trackEvent('SearchPage', 'Display results', this.adapter + '-' + this.foil);
       if (!this.loaded) {
         this.loaded = true;
         this.list.append(this.createLiDivider('Načítám ...'));
@@ -48,7 +48,7 @@
                 return _this.list.append(_this.createLiItem(value));
               });
             } else {
-              _this.activityTracker.trackEvent('SearchPage', 'Display results data error', _this.adapter + '-' + _this.searchText);
+              _this.activityTracker.trackEvent('SearchPage', 'Display results data error', _this.adapter + '-' + _this.foil + '-' + _this.searchText);
               _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
             }
             _this.list.listview('refresh');
@@ -58,7 +58,7 @@
           };
         })(this)).fail((function(_this) {
           return function() {
-            _this.activityTracker.trackEvent('SearchPage', 'Display results connection error', _this.adapter + '-' + _this.searchText);
+            _this.activityTracker.trackEvent('SearchPage', 'Display results connection error', _this.adapter + '-' + _this.foil + '-' + _this.searchText);
             _this.list.empty();
             _this.list.append(_this.createLiDivider("Chyba! Opakujte požadavek později."));
             _this.list.listview('refresh');
