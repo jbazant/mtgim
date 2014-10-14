@@ -17,10 +17,24 @@ contactFormInit = (page) ->
 
 
 ##
+# Standardni obsluha vyhledavaciho formulare
+searchFormCallback = (e) ->
+  e.preventDefault()
+  cardname = $('#cardname', page).val()
+  $.mobile.changePage $(this).attr('action') + '#find-card-' + encodeURIComponent(cardname)
+  return
+
+
+##
 #  Callback po nacteni stranky pomoci jquery mobile
+#
+#  Zajistuje obsluhu vyhledavaciho formulare a inicializaci jednotlivych stranek
 pageShowCallback = ->
   page = $.mobile.activePage
   pageId = page.attr 'id'
+
+  if pageId != 'page-index'
+    $('#searchform', page).on 'submit', pageShowCallback
 
   pageActions =
     'page-search': ->
@@ -40,12 +54,11 @@ pageShowCallback = ->
   return
 
 
-# ----- END OF DEFINITIONS -----
+##
+#  Uprava nastaveni jqm
+mobileInitCallback = ->
+  $.mobile.ajaxFormsEnabled = false;
+  $.mobile.hashListeningEnabled = false;
+  #$.mobile.pushStateEnabled = false;
+  return
 
-
-# inicializace trackovani
-# POZOR Nejaka logika je i v init.js, toto musi byt volano az pote!
-window.activityTracker = new Tracking()
-
-#  Inicializace zobrazeni stranky
-$(document).on 'pageshow', pageShowCallback

@@ -41,12 +41,22 @@ class window.SearchPage
   initForm: ->
     at = @activityTracker
 
+    # prectu hash a vlozim jej do formulare,
+    # pokud neni specifikovan presmeruji uzivatele na index
+    hash = window.location.hash.match /^#find-card-(.*)$/
+    if hash and hash[1]
+      @form.find('#cardname', @page).val decodeURIComponent hash[1]
+    else
+      $.mobile.changePage '/'
+
     # pri odeslani chci zrusit focus na vyhledavacim inputu
     # tim se zavre softwarova klavesnice
     # a take chci trackovat samotne odeslani formulare
     @form.on 'submit', ->
       c = $('#cardname', @)
-      at.trackEvent 'SearchPage', 'Form submit', c.val()
+      card = c.val()
+      at.trackEvent 'SearchPage', 'Form submit', card
+      window.location.hash = 'find-card-' + encodeURIComponent card
       c.blur()
       return
 

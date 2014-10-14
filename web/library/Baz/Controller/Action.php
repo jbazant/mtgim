@@ -37,13 +37,13 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
         $i = $this->view;
 
         if (TRUE || $config->isTest) {
-        // basic stylesheets
-        $i->headLink()
-            ->appendStylesheet($i->baseUrl('/css/jquery.mobile-1.4.2.min.css'))
-            ->appendStylesheet($i->baseUrl('/css/jb.min.css'))
-            ->appendStylesheet($i->baseUrl('/css/jquery.mobile.icons.min.css'))
-            ->appendStylesheet($i->baseUrl('/css/web.css?v=' . $v))
-        ;
+            // basic stylesheets
+            $i->headLink()
+                ->appendStylesheet($i->baseUrl('/css/jquery.mobile-1.4.2.min.css'))
+                ->appendStylesheet($i->baseUrl('/css/jb.min.css'))
+                ->appendStylesheet($i->baseUrl('/css/jquery.mobile.icons.min.css'))
+                ->appendStylesheet($i->baseUrl('/css/web.css?v=' . $v))
+            ;
         }
         else {
             //todo include real minified version
@@ -72,14 +72,16 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
                 ->appendFile($i->baseUrl('/js/tracking.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/searchPage.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/searchResult.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/app.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/init.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/jquery.mobile-1.4.2.min.js'))
-                ->appendFile($i->baseUrl('/js/app.js?v=' . $v))
             ;
         }
         else {
             $i->headScript()
+                ->appendFile($i->baseUrl('/js/jquery-1.11.0.min.js'))
                 ->appendFile($i->baseUrl('/js/app.min.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/jquery.mobile-1.4.2.min.js'))
             ;
         }
     }
