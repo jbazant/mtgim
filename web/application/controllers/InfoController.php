@@ -18,4 +18,8 @@ class InfoController extends Baz_Controller_Action {
     public function changelogAction() {
         $this->view->pageId = 'page-info-changelog';
     }
+
+    public function termsAction() {
+        $this->view->pageId = 'page-info-terms';
+    }
 }
