@@ -19,7 +19,7 @@
     var cardname;
     e.preventDefault();
     cardname = $('#cardname', page).val();
-    $.mobile.changePage($(this).attr('action') + '#find-card-' + encodeURIComponent(cardname));
+    $.mobile.changePage(baseUrl + '/index/search#find-card-' + encodeURIComponent(cardname));
   };
 
   pageShowCallback = function() {

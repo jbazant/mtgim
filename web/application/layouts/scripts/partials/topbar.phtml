@@ -1,22 +1,20 @@
-<?php
-
-$cardnameVal = isset($this->cardname) ? htmlentities($this->cardname) : '';
-
-?>
-
 <div data-role="header" data-position="fixed">
-    <a href="<?php echo $this->baseUrl('/') ?>" id="bar-logo" data-transition="slide" data-direction="reverse"><span>Úvod</span></a>
+    <a href="<?php echo $this->baseUrl('/') ?>" id="bar-logo" data-transition="slide" data-direction="reverse">
+        <span>Úvod</span>
+    </a>
+
     <?php if('page-index' == $this->pageId): ?>
         <h1><?php echo $this->appName ?></h1>
     <?php else: ?>
         <div class="ui-block">
-            <form id="searchform" method="GET" action="<?php echo $this->baseUrl('/index/search') ?>">
+            <form id="searchform" method="GET" action="<?php echo $this->baseUrl('/index/find') ?>">
                 <input type="search" name="cardname"
                        id="cardname" placeholder="Hledat"
-                       value="<?php echo $cardnameVal ?>" data-transition="fade"
+                       data-transition="fade" accesskey="f" tabindex="0"
                 />
             </form>
         </div>
     <?php endif; ?>
+
     <a href="#menubar" data-icon="bars" data-iconpos="notext">Menu</a>
 </div>

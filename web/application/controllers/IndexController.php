@@ -12,12 +12,18 @@ class IndexController extends Baz_Controller_Action {
      * Uvodni stranka aplikace
      */
     public function indexAction() {
-        $this->view->pageId = 'page-index';
+        $r = $this->_request;
 
-        $this->view->showOldAlert =
-            isset($_SERVER['HTTP_REFERER'])
-            && FALSE !== strpos($_SERVER['HTTP_REFERER'], 'magic.plasticport.cz')
-        ;
+        if (1 == $r->getParam('acceptCookie', 0)) {
+            //set cookie for one year
+            setcookie('cookie_accepted', '1', time()+60*60*24*365, '/');
+            $this->view->showCookiesInfo = FALSE;
+        }
+        else {
+            $this->view->showCookiesInfo = (0 == $r->getCookie('cookie_accepted', 0));
+        }
+
+        $this->view->pageId = 'page-index';
     }
 
     /**
@@ -38,13 +44,17 @@ class IndexController extends Baz_Controller_Action {
     }
 
 
+    /**
+     * Akce urcena vyhradne pro vyhledavani pres vyhledavaci pole prohlizece.
+     * Jine akce by sem nemely smerovat
+     */
     public function findAction() {
+        // todo log access
         $cardname = $this->_request->getParam('cardname');
         if (empty($cardname)) {
             $this->getHelper('redirector')->goto('index', 'index');
         }
         else {
-            //todo refactor?
             $this->getHelper('redirector')->gotoUrl('/index/search#find-card-' . urlencode($cardname));
         }
     }
