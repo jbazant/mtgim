@@ -43,11 +43,11 @@ class window.SearchPage
 
     # prectu hash a vlozim jej do formulare,
     # pokud neni specifikovan presmeruji uzivatele na index
-    hash = window.location.hash.match /^#find-card-(.*)$/
-    if hash and hash[1]
-      @form.find('#cardname', @page).val decodeURIComponent hash[1]
+    cardmatch = window.location.href.match /\/card\/(.*)$/
+    if cardmatch and cardmatch[1]
+      @form.find('#cardname', @page).val decodeURIComponent cardmatch[1]
     else
-      $.mobile.changePage '/'
+      $.mobile.changePage jsParams.baseUrl
 
     # pri odeslani chci zrusit focus na vyhledavacim inputu
     # tim se zavre softwarova klavesnice
@@ -56,7 +56,7 @@ class window.SearchPage
       c = $('#cardname', @)
       card = c.val()
       at.trackEvent 'SearchPage', 'Form submit', card
-      window.location.hash = 'find-card-' + encodeURIComponent card
+      window.history.pushState  {id: card}, '', encodeURIComponent card
       c.blur()
       return
 

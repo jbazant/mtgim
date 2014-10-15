@@ -14,13 +14,13 @@ class IndexController extends Baz_Controller_Action {
     public function indexAction() {
         $r = $this->_request;
 
-        if (1 == $r->getParam('acceptCookie', 0)) {
+        if (1 == $r->getParam('cookieAccept', 0)) {
             //set cookie for one year
-            setcookie('cookie_accepted', '1', time()+60*60*24*365, '/');
+            setcookie('cookies_accepted', '1', time()+60*60*24*365, '/');
             $this->view->showCookiesInfo = FALSE;
         }
         else {
-            $this->view->showCookiesInfo = (0 == $r->getCookie('cookie_accepted', 0));
+            $this->view->showCookiesInfo = (0 == $r->getCookie('cookies_accepted', 0));
         }
 
         $this->view->pageId = 'page-index';

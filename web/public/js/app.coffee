@@ -20,8 +20,8 @@ contactFormInit = (page) ->
 # Standardni obsluha vyhledavaciho formulare
 searchFormCallback = (e) ->
   e.preventDefault()
-  cardname = $('#cardname', page).val()
-  $.mobile.changePage baseUrl + '/index/search#find-card-' + encodeURIComponent(cardname)
+  cardname = $('#cardname', this).val()
+  $.mobile.changePage jsParams.baseUrl + '/index/search/card/' + encodeURIComponent cardname
   return
 
 
@@ -29,12 +29,12 @@ searchFormCallback = (e) ->
 #  Callback po nacteni stranky pomoci jquery mobile
 #
 #  Zajistuje obsluhu vyhledavaciho formulare a inicializaci jednotlivych stranek
-pageShowCallback = ->
+window.pageShowCallback = ->
   page = $.mobile.activePage
   pageId = page.attr 'id'
 
-  if pageId != 'page-index'
-    $('#searchform', page).on 'submit', pageShowCallback
+  if pageId != 'page-search'
+    $('#searchform', page).on 'submit', searchFormCallback
 
   pageActions =
     'page-search': ->
@@ -43,6 +43,8 @@ pageShowCallback = ->
       contactFormInit page
     'page-index': ->
       c = $('#cardname', page).focus()
+      $('#cookies-agree', page).on 'click', ->
+        window.activityTracker.trackEvent 'IndexPage', 'cookies-agree', 'click'
     'page-test': ->
       contactFormInit page
 
@@ -52,13 +54,3 @@ pageShowCallback = ->
     pageActions[pageId]()
 
   return
-
-
-##
-#  Uprava nastaveni jqm
-mobileInitCallback = ->
-  $.mobile.ajaxFormsEnabled = false;
-  $.mobile.hashListeningEnabled = false;
-  #$.mobile.pushStateEnabled = false;
-  return
-

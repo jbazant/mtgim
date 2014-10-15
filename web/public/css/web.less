@@ -97,19 +97,24 @@
 }
 
 // styly paticky
-.footer-copyw {
-  text-align: right;
-  padding: 0.5em;
-  margin: 0;
-  text-shadow: -1px -1px 0 black;
-  font-weight: normal;
-}
+.ui-footer {
+  .footer-copyw {
+    text-align: right;
+    padding: 0.5em;
+    margin: 0;
+    text-shadow: -1px -1px 0 black;
+    a, a:hover, a:visited {
+      color: white;
+      font-weight: normal;
+    }
+  }
 
-.footer-fb {
-  float: left;
-  padding: 0.3em;
-  height: 20px;
-  width: 60px;
+  .footer-fb {
+    float: left;
+    padding: 0.3em;
+    height: 20px;
+    width: 60px;
+  }
 }
 
 //uvodni stranka
@@ -192,4 +197,9 @@
 
 #cardImgPopup-screen {
   background-color: black;
+}
+
+.ui-content, .ui-header #searchform {
+  max-width: 600px;
+  margin: auto;
 }

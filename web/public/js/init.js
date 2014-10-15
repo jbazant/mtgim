@@ -19,5 +19,4 @@ var _gaq = _gaq || [];
 window.activityTracker = new Tracking();
 
 // jqm init
-$(document).bind('mobileinit', mobileInitCallback);
 $(document).on('pageshow', pageShowCallback);
