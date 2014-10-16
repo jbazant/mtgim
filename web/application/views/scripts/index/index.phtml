@@ -1,5 +1,5 @@
 <?php if ($this->showCookiesInfo): ?>
-    <div class="ui-body ui-body-b ui-corner-all warning-box ui-overlay-shadow">
+    <div id="cookie-accept-block" class="ui-body ui-body-b ui-corner-all warning-box ui-overlay-shadow">
         <p>Aplikace používá cookies. Pokud nesouhlasíte s používáním souborů cookies, opusťte tuto stránku</p>
         <p>Více o používání cookies naleznete na stránce "Podmínky používání webu".</p>
         <p class="ui-mini">
@@ -16,6 +16,25 @@
     <input type="submit" name="find" id="find" value="Hledej" data-transition="slide" data-icon="search" />
 </form>
 
+<?php if ($this->showNews): ?>
+    <div id="news-block" data-role="collapsible" data-collapsed="false">
+        <h4>Novinky v&nbsp;aplikaci</h4>
+        <ul>
+            <li>Nyní je možné uložit si výsledek hledání do&nbsp;záložek, nebo poslat odkaz na&nbsp;výsledek kamarádovi.</li>
+            <li>Nově je možné označit pole hledání karty jako vyhledávač (Chrome, Firefox).</li>
+            <li>Lze použít klávesovou zkratku <strong>Alt + f</strong> pro&nbsp;přechod do&nbsp;vyhledávacího pole. Podrobněji na stránce tipy a triky.</li>
+            <li>Upraveno uživatelské rozhraní pro&nbsp;velké displeje.</li>
+        </ul>
+
+        <p>Více informací o novinkách naleznete v&nbsp;sekci tipy a triky.</p>
+
+        <p class="ui-mini">
+            <a class="ui-btn ui-btn-b ui-btn-icon-left ui-icon-delete ui-corner-all"
+               href="<?php echo $this->baseUrl('/?hideNews=1') ?>" id="news-hide">Skrýt</a>
+        </p>
+    </div>
+<?php endif; ?>
+
 <div class="front-info">
     <p>Aplikace slouží pro&nbsp;vyhledávání karet v&nbsp;internetových MtG obchodech z&nbsp;pohodlí vašeho mobilu.</p>
     <p>Můžete vyhledávat v těchto obchodech:</p>
@@ -30,20 +49,8 @@
         <a class="ui-btn ui-btn-icon-left ui-icon-star ui-corner-all"
            href="<?php echo $this->baseUrl('/info/tips') ?>"
            data-transition="slide"
-            >
+        >
             Tipy a triky
         </a>
     </p>
-
-    <div data-role="collapsible" data-collapsed="false">
-        <h4>Novinky v aplikaci</h4>
-        <ul>
-            <li>Nyní je možné uložit si výsledek hledání do&nbsp;záložek, nebo poslat odkaz na&nbsp;výsledek kamarádovi.</li>
-            <li>Nově je možné označit pole hledání karty jako vyhledávač (Chrome, Firefox).</li>
-            <li>Lze použít klávesovou zkratku <strong>ALT&nbsp;+&nbsp;f</strong> pro&nbsp;přechod do&nbsp;vyhledávacího pole.</li>
-            <li>Upraveno uživatelské rozhraní pro&nbsp;velké displeje.</li>
-        </ul>
-
-        <p>Více informací o novinkách naleznete v sekci tipy a triky.</p>
-    </div>
 </div>

@@ -32,23 +32,20 @@ searchFormCallback = (e) ->
 window.pageShowCallback = ->
   page = $.mobile.activePage
   pageId = page.attr 'id'
-
-  if pageId != 'page-search'
-    $('#searchform', page).on 'submit', searchFormCallback
-
   pageActions =
     'page-search': ->
       currentPage = new SearchPage page, activityTracker
     'page-contact': ->
       contactFormInit page
     'page-index': ->
-      c = $('#cardname', page).focus()
-      $('#cookies-agree', page).on 'click', ->
-        window.activityTracker.trackEvent 'IndexPage', 'cookies-agree', 'click'
+      currentPage = new IndexPage page, activityTracker
     'page-test': ->
       contactFormInit page
 
   fbPageInit()
+
+  if pageId != 'page-search'
+    $('#searchform', page).on 'submit', searchFormCallback
 
   if pageActions[pageId]?
     pageActions[pageId]()

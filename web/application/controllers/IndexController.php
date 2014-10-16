@@ -13,34 +13,52 @@ class IndexController extends Baz_Controller_Action {
      */
     public function indexAction() {
         $r = $this->_request;
+        $settingsModel = new Application_Model_CookieSettings($r, $this->view->appVersion);
 
+        // odsouhlaseni pouziti cookies
         if (1 == $r->getParam('cookieAccept', 0)) {
-            //set cookie for one year
-            setcookie('cookies_accepted', '1', time()+60*60*24*365, '/');
+            $settingsModel->submitCookieDialog();
             $this->view->showCookiesInfo = FALSE;
         }
         else {
-            $this->view->showCookiesInfo = (0 == $r->getCookie('cookies_accepted', 0));
+            $this->view->showCookiesInfo = $settingsModel->shouldShowCookieDialog();
         }
 
+        // skryti aktualnich novinek
+        if (1 == $r->getParam('hideNews')) {
+            $settingsModel->hideNews();
+            $this->view->showNews = FALSE;
+        }
+        else {
+            $this->view->showNews = $settingsModel->shouldShowNews();
+        }
+
+        // nastaveni id stranky
         $this->view->pageId = 'page-index';
     }
+
 
     /**
      * Stranka pro vyhledavani
      */
     public function searchAction() {
-        //get adapter
-        $adapters = array();
-        $availableAdapters = Application_Model_Factory::getAvailableModels(Zend_Registry::get('config')->mtgim->isTest);
-
-        foreach ($availableAdapters as $key => $name) {
-            $adapters[] = $this->_getSearchResultArr($key, $name);
+        $cardname = $this->_request->getParam('card');
+        if (empty($cardname)) {
+            $this->getHelper('redirector')->goto('index', 'index');
         }
+        else {
+            //get adapter
+            $adapters = array();
+            $availableAdapters = Application_Model_Factory::getAvailableModels(Zend_Registry::get('config')->mtgim->isTest);
 
-        $this->view->adapters = $adapters;
+            foreach ($availableAdapters as $key => $name) {
+                $adapters[] = $this->_getSearchResultArr($key, $name);
+            }
 
-        $this->view->pageId = 'page-search';
+            $this->view->adapters = $adapters;
+
+            $this->view->pageId = 'page-search';
+        }
     }
 
 
@@ -55,7 +73,7 @@ class IndexController extends Baz_Controller_Action {
             $this->getHelper('redirector')->goto('index', 'index');
         }
         else {
-            $this->getHelper('redirector')->gotoUrl('/index/search#find-card-' . urlencode($cardname));
+            $this->getHelper('redirector')->gotoUrl('/index/search/card/' . rawurlencode($cardname));
         }
     }
 
@@ -80,6 +98,7 @@ class IndexController extends Baz_Controller_Action {
 
         $this->view->pageId = 'page-contact';
     }
+
 
     /**
      * Testovaci akce
@@ -109,6 +128,7 @@ class IndexController extends Baz_Controller_Action {
             $this->getHelper('redirector')->goto('index', 'index');
         }
     }
+
 
     /**
      * Pomocna funkce pro sestaveni pole s konfiguraci vysledku vyhledavani

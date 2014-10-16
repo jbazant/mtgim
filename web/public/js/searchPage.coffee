@@ -47,7 +47,7 @@ class window.SearchPage
     if cardmatch and cardmatch[1]
       @form.find('#cardname', @page).val decodeURIComponent cardmatch[1]
     else
-      $.mobile.changePage jsParams.baseUrl
+      $.mobile.changePage jsParams.baseUrl + '/'
 
     # pri odeslani chci zrusit focus na vyhledavacim inputu
     # tim se zavre softwarova klavesnice
