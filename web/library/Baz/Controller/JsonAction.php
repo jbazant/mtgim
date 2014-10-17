@@ -1,5 +1,11 @@
 <?php
 
+require_once(__DIR__ . '/Action.php');
+
+/**
+ * Predek pro json radice
+ * Class Baz_Controller_JsonAction
+ */
 abstract class Baz_Controller_JsonAction extends Zend_Controller_Action {
 
     /**
@@ -21,22 +27,6 @@ abstract class Baz_Controller_JsonAction extends Zend_Controller_Action {
      * @var int
      */
     protected $_response_code = 404;
-
-
-    /**
-     * Pokusi se rozparsovat telo pozadavku a ulozit jej
-     */
-    public function preDispatch() {
-        $body = $this->getRequest()->getRawBody();
-        try {
-            $data = Zend_Json::decode($body);
-            $this->_request_data = $data;
-        }
-        catch (Exception $e) {
-            $this->_forward('invalid-params');
-            return;
-        }
-    }
 
 
     /**
@@ -69,9 +59,27 @@ abstract class Baz_Controller_JsonAction extends Zend_Controller_Action {
      * @param string $error popis chyby
      * @param int $code Cislo HTTP odpovedi
      */
-    private function _invalidResponse($error, $code = 400) {
+    protected function _invalidResponse($error, $code = 400) {
         $this->_response_data = array('error' => $error);
         $this->_response_code = $code;
     }
+
+
+    /**
+     * Pokusi se rozparsovat telo pozadavku a ulozit jej
+     * @return bool
+     */
+    protected function _parseJsonRequest() {
+        $body = $this->getRequest()->getRawBody();
+        try {
+            $data = Zend_Json::decode($body);
+            $this->_request_data = $data;
+            return TRUE;
+        }
+        catch (Exception $e) {
+            return FALSE;
+        }
+    }
+
 
 }

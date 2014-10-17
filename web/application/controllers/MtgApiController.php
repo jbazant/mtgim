@@ -115,11 +115,7 @@ class MtgApiController extends Baz_Controller_JsonAction {
     public function preDispatch() {
         $actionName = $this->getRequest()->getActionName();
         if ('denied' != $actionName && !preg_match('/^invalid/', $actionName)) {
-            $body = $this->getRequest()->getRawBody();
-            try {
-                $data = Zend_Json::decode($body);
-            }
-            catch (Exception $e) {
+            if (!$this->_parseJsonRequest()) {
                 $this->_forward('invalid-params');
                 return;
             }
@@ -129,35 +125,19 @@ class MtgApiController extends Baz_Controller_JsonAction {
                 $this->_forward('invalid-method');
             }
 
-            elseif (!$this->_isValidToken($data['AccessKey'])) {
+            elseif (!$this->_isValidToken($this->_request_data['AccessKey'])) {
                 $this->_forward('denied');
-            }
-
-            else {
-                $this->_request_data = $data;
             }
         }
     }
 
 
     /**
-     * Vrati vsechny akce radice
+     * Vrati povolene metody
      * @return array
      */
     private function _getActions() {
         return array('shops-available', 'find-price');
-
-        //todo predelat
-        $methods = get_class_methods($this);
-
-        $out = array();
-        foreach ($methods as $method) {
-            if (preg_match('/^(.+)Action$/', $method, $matches)) {
-                $out[] = $matches[1];
-            }
-        }
-
-        return $out;
     }
 
 

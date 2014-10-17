@@ -23,7 +23,7 @@ final class JsonController extends Baz_Controller_JsonAction {
      */
     public function submitcookiesAction() {
         $this->_getSettingsModel()->submitCookieDialog();
-        $this->_response_data = array('result' => 'OK');
+        $this->_okResponse(array('result' => 'OK'));
     }
 
 
@@ -32,7 +32,7 @@ final class JsonController extends Baz_Controller_JsonAction {
      */
     public function hidenewsAction() {
         $this->_getSettingsModel()->hideNews();
-        $this->_response_data = array('result' => 'OK');
+        $this->_okResponse(array('result' => 'OK'));
     }
 
 
@@ -51,5 +51,16 @@ final class JsonController extends Baz_Controller_JsonAction {
         }
 
         return $this->_settingsModel;
+    }
+
+
+    /**
+     * Sestavi ok odpoved a nastavi hlavicky
+     *
+     * @param array $data
+     */
+    private function _okResponse($data) {
+        $this->_response_data = array('result' => 'OK');
+        $this->_response_code = 200;
     }
 }

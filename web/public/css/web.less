@@ -203,3 +203,28 @@
   max-width: 600px;
   margin: auto;
 }
+
+#page-info-changelog {
+
+  table {
+    color: #333333;
+    border-collapse: collapse;
+
+    td, th {
+      border: 1px solid #333333;
+      border-bottom: 3px double #333333;
+      padding: 0.5em 1em;
+
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    th {
+      border-top: none;
+    }
+  }
+}

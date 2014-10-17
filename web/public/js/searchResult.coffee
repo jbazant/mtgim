@@ -279,6 +279,7 @@ class window.CardDetailPopup
 
     p.promise()
 
+
   ##
   # Pomocna funkce nastavujici obsah popup a jeho pozici
   popupSetData: (data) ->

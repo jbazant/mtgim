@@ -2,6 +2,7 @@
 ##
 # Trida pro trackovani aktivity uzivatele na strankach
 class window.Tracking
+
   constructor: ->
     _gaq.push(['_setAccount', jsParams.gaCode]);
     $(document).bind 'pageshow', @trackPage
@@ -9,10 +10,12 @@ class window.Tracking
       .addClass '.trackInitialized'
       .click @trackExternalLinkFunc()
 
+
   ##
   # Zaznamena zmenu stranky
   trackPage: ->
     _gaq.push ['_trackPageview', $.mobile.activePage.data 'url']
+
 
   ##
   # Vraci funkci, ktera
@@ -22,6 +25,7 @@ class window.Tracking
     ->
       l = $ @
       t.trackEvent 'External link', l.attr('title'), l.attr('href')
+
 
   ##
   # zaznamena custom event
