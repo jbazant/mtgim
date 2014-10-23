@@ -36,7 +36,7 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
         $v = $config->version;
         $i = $this->view;
 
-        if (TRUE || $config->isTest) {
+        if ($config->isTest) {
             // basic stylesheets
             $i->headLink()
                 ->appendStylesheet($i->baseUrl('/css/jquery.mobile-1.4.2.min.css'))
@@ -66,23 +66,21 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
             ->appendScript('var jsParams = ' . json_encode($i->jsParams) . ';')
         ;
 
-        if (TRUE || $config->isTest) {
+        if ($config->isTest) {
             $i->headScript()
-                ->appendFile($i->baseUrl('/js/jquery-1.11.0.min.js'))
-                ->appendFile($i->baseUrl('/js/tracking.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/indexPage.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/searchPage.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/searchResult.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/app.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/init.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/jquery.mobile-1.4.2.min.js'))
+                ->appendFile($i->baseUrl('/js/lib/jquery-1.11.0.min.js'))
+                ->appendFile($i->baseUrl('/js/src/tracking.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/indexPage.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/searchPage.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/searchResult.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/app.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/init.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/lib/jquery.mobile-1.4.2.min.js'))
             ;
         }
         else {
             $i->headScript()
-                ->appendFile($i->baseUrl('/js/jquery-1.11.0.min.js'))
                 ->appendFile($i->baseUrl('/js/app.min.js?v=' . $v))
-                ->appendFile($i->baseUrl('/js/jquery.mobile-1.4.2.min.js'))
             ;
         }
     }

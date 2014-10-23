@@ -1,0 +1,26 @@
+{
+  "name": "mtgim",
+  "version": "1.2.6",
+  "description": "Vyhledavani cen Mtg karet v ceskych obchodech.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbazant/mtgim.git"
+  },
+  "author": "Jiri Bazant",
+  "bugs": {
+    "url": "https://github.com/jbazant/mtgim/issues"
+  },
+  "homepage": "https://github.com/jbazant/mtgim",
+  "devDependencies": {
+    "gulp": "^3.8.9",
+    "gulp-concat": "^2.4.1",
+    "gulp-jshint": "^1.8.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1"
+  }
+}

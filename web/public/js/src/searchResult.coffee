@@ -88,6 +88,7 @@ class window.SearchResult
         @list.append @createLiDivider "Chyba! Opakujte požadavek později."
         @list.listview 'refresh'
         @loaded = false
+        return
 
       return
 
@@ -164,6 +165,7 @@ class window.SearchResult
       @loaded = false
       @list.empty()
       @searchText = @searchInput.val()
+      return
 
     if @isActive
       @jHolder.fadeOut @fadeSpeed, () =>
@@ -180,13 +182,14 @@ class window.SearchResult
   setActive: () =>
     @isActive = true
     @expandCallback()
+    return
 
 
   ##
   # Zrusi priznak "aktivni" pro tento vypis vysledku
   resetActive: () =>
     @isActive = false
-
+    return
 
 
 ##

@@ -81,7 +81,7 @@ class window.SearchPage
     # obsluha skryti stareho vysledku
     oldCallback = =>
       # vytvorim deferred, abych mohl navazovat obsluhy
-      p = new $.Deferred
+      p = new $.Deferred()
 
       # skryji prave zobrazeny vysledek
       # ale pouze pokud jej znam a pokud je jiny nez soucasny
@@ -173,13 +173,13 @@ class window.SearchPage
     # pokud je event vyvolan pro stejnou zalozku jako je jiz prave zobrazena,
     # tak nic nedelam
     if @lastActiveTab
-      if @lastActiveTab == newTab
-        return
-      else
+      if @lastActiveTab != newTab
         # pripadne deaktivuji soucasnou
         @lastActiveTab.resetActive()
+      return
 
     # aktivuji novou zalozku a poznamenam si ji jako prave aktivni
     @lastActiveTab = newTab
     @lastActiveTab.setActive()
     @lastActiveTabIndex = index
+    return

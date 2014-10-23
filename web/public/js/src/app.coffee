@@ -35,12 +35,16 @@ window.pageShowCallback = ->
   pageActions =
     'page-search': ->
       currentPage = new SearchPage page, activityTracker
+      return
     'page-contact': ->
       contactFormInit page
+      return
     'page-index': ->
       currentPage = new IndexPage page, activityTracker
+      return
     'page-test': ->
       contactFormInit page
+      return
 
   fbPageInit()
 
