@@ -6,85 +6,77 @@
     <h4>Spouštěč - Android</h4>
     <ol>
         <li>Otevřte si úvodní <a href="<?php echo $this->baseUrl('/'); ?>" >stránku aplikace</a>.</li>
-        <li>Stiskněte talčítko pro&nbsp;vyvolání <strong>menu</strong>. Obvykle bývá umístěno vpravo pod&nbsp;displayem telefonu.</li>
+        <li>Stiskněte tlačítko pro&nbsp;vyvolání <strong>menu</strong>. Obvykle bývá umístěno vpravo
+            pod&nbsp;displayem telefonu.</li>
         <li>Zvolte "<strong>Uložit do&nbsp;záložek</strong>".</li>
         <li>V&nbsp;nabídce "<strong>Přidat do&nbsp;složky</strong>" zvolte "<strong>Úvodní obrazovka</strong>".</li>
-        <li>Nyní můžete aplikace pouštět přímo ze&nbsp;své plochy.</li>
+        <li>Nyní můžete aplikaci spouštět přímo ze&nbsp;své úvodní obrazovky.</li>
     </ol>
 </div>
 
 <div data-role="collapsible">
     <h4>Horní panel</h4>
-    <ul>
-        <li>Díky hornímu panelu můžete vyhledávat karty z&nbsp;libovolné stránky aplikace.</li>
-        <li>Logo vlevo slouží také k&nbsp;přechodu na&nbsp;úvodní stránku.</li>
-        <li>Pravé logo vyvolává postranní panel s&nbsp;navigací.</li>
-    </ul>
+    <p>Díky hornímu panelu můžete vyhledávat karty z&nbsp;libovolné stránky aplikace.</p>
+    <p>Logo vlevo slouží také k&nbsp;přechodu na&nbsp;úvodní stránku.</p>
+    <p>Pravé logo vyvolává postranní panel s&nbsp;navigací.</p>
 </div>
 
 <div data-role="collapsible">
     <h4>Výsledky hledání</h4>
+    <p>Výsledky hledání jsou vždy omezeny na&nbsp;jeden obchod.
+        Název aktuálního obchodu je zobrazen v&nbsp;prvním tlačítku na stránce.
+    </p>
+    <p>Změnit obchod lze kliknutím na&nbsp;tlačítko s&nbsp;právě zobrazeným obchodem a
+        vybráním jiného obchodu ze&nbsp;seznamu.
+    </p>
+    <p>Pro&nbsp;kažadý obchod lze zvolit, zda-li chcete zobrazit pouze not-foil (obyčejné), nebo pouze foil karty.</p>
+    <p>Pro&nbsp;kartu v&nbsp;seznamu lze zobrazit její obrázek kliknutím na&nbsp;tlačítko v&nbsp;pravé části.</p>
     <ul>
-        <li>Výsledky hledání jsou vždy omezeny na&nbsp;jeden obchod. Název aktuálního obchodu je zobrazen v&nbsp;prvním tlačítku na stránce.</li>
-        <li>Změnit obchod lze kliknutím na&nbsp;tlačítko s&nbsp;právě zobrazeným obchodem a vybráním jiného obchodu ze&nbsp;seznamu.</li>
-        <li>Pro&nbsp;kažadý obchod lze zvolit, zda-li chcete zobrazit pouze not-foil (obyčejné), nebo pouze foil karty.</li>
         <li>
-            Pro&nbsp;kartu v&nbsp;seznamu lze zobrazit její obrázek kliknutím na&nbsp;tlačítko v&nbsp;pravé části.
-            <ul>
-                <li>
-                    Karta je hledána podle zobrazeného názvu. Pokud obchod obsahuje v&nbsp;názvu karty nějaké další informace
-                    (například "emblem" nebo "token") nemusí se obrázek zobrazit vůbec.
-                </li>
-                <li>
-                    Na&nbsp;zlepšování zobrazení těchto případů průbežně pracujeme. Pokud víte o nějaké chybě zobrazení,
-                    neváhejte nás <a href="<?php echo $this->baseUrl('/index/contact') ?>" >kontaktovat</a>.
-                </li>
-                <li>Pro&nbsp;zobrazování obrázků karet je použit projekt <a class="external" href="http://mtgimage.com/">MTG Image</a>.</li>
-            </ul>
+            Karta je hledána podle zobrazeného názvu. Pokud obchod obsahuje v&nbsp;názvu karty nějaké další informace
+            (například "emblem" nebo "token") nemusí se obrázek zobrazit vůbec.
         </li>
+        <li>
+            Na&nbsp;zlepšování zobrazení těchto případů průbežně pracujeme. Pokud víte o nějaké chybě zobrazení,
+            neváhejte nás <a href="<?php echo $this->baseUrl('/index/contact') ?>" >kontaktovat</a>.
+        </li>
+        <li>Pro&nbsp;zobrazování obrázků karet je použit projekt <a class="external" href="http://mtgimage.com/">MTG Image</a>.</li>
     </ul>
 </div>
 
 <div data-role="collapsible">
     <h4>Skrytí panelů</h4>
-    <ul>
-        <li>
-            Na&nbsp;dlouhých stránkách (obsah stránky se nevejde&nbsp;na jeden monitor vašeho zařízení)
-            lze skrýt vrchní a spodní panel aplikace a to jednoduchým kliknutím kdekoliv do&nbsp;aplikace.
-            Tedy samozřejmě s&nbsp;výjimkou tlačítek a odkazů.
-        </li>
-        <li>
-            Skryté panely lze stejným způsobem zobrazit.
-        </li>
-    </ul>
+    <p>
+        Na&nbsp;dlouhých stránkách (obsah stránky se nevejde&nbsp;na jeden monitor vašeho zařízení)
+        lze skrýt vrchní a spodní panel aplikace a to jednoduchým kliknutím kdekoliv do&nbsp;aplikace.
+        Tedy samozřejmě s&nbsp;výjimkou tlačítek a odkazů.
+    </p>
+    <p>Skryté panely lze stejným způsobem zobrazit.</p>
 </div>
 
 <p>
     Přestože je aplikace určena primárně pro&nbsp;mobilní zařízení, snažíme se podporovat i&nbsp;uživatele,
     kteří aplikaci používají na&nbsp;"něčem větším".
 </p>
+
 <div data-role="collapsible">
     <h4>Nastavení stránky jako vyhledávače</h4>
+    <p>
+        Některé prohlížeče umožňují vyhledávat pomocí adresního řádku. Aplikace
+        <a href="<?php echo $this->baseUrl('/'); ?>">mtgim.cz</a> je s&nbsp;touto vlastností kompatibilní.
+    </p>
+    <p><strong>Jak na&nbsp;to:</strong></p>
     <ul>
+        <li>Přejděte na&nbsp;<a href="/">úvodní stránku aplikace.</a></li>
+        <li>Klikněte pravým tlačítkem na&nbsp;vyhledávací pole.</li>
         <li>
-            Některé prohlížeče umožňují vyhledávat pomocí adresního řádku. Aplikace
-            <a href="<?php echo $this->baseUrl('/'); ?>">mtgim.cz</a> je s touto vlastností kompatibilní.
+            Zvolte <i>"Přidat jako vyhledávač..."</i> (v&nbsp;Chrome), respektive <i>"K&nbsp;vyhledávání přiřadit
+            klíčové slovo"</i> (pro&nbsp;Firefox).
         </li>
+        <li>V&nbsp;nabídce nastavte požadované klíčové slovo (nebo jen&nbsp;písmeno, například "m").</li>
         <li>
-            <strong>Jak na&nbsp;to:</strong>
-            <ul>
-                <li>Přejděte na&nbsp;<a href="/">úvodní stránku aplikace.</a></li>
-                <li>Klikněte pravým tlačítkem na&nbsp;vyhledávací pole.</li>
-                <li>
-                    Zvolte <i>"Přidat jako vyhledávač..."</i> (v&nbsp;Chrome), respektive <i>"K vyhledávání přiřadit
-                    klíčové slovo"</i> (pro&nbsp;Firefox).
-                </li>
-                <li>V&nbsp;nabídce nastavte požadované klíčové slovo (nebo jen&nbsp;písmeno, například "m").</li>
-                <li>
-                    Následně můžete vyhledávat karty pomocí adresního řádku. Například "m&nbsp;jin" by Vám mělo zobrazit
-                    <a href="<?php echo $this->baseUrl('/index/search/card/jin'); ?>">tento výsledek</a>.
-                </li>
-            </ul>
+            Následně můžete vyhledávat karty pomocí adresního řádku. Například "m&nbsp;jin" by Vám mělo zobrazit
+            <a href="<?php echo $this->baseUrl('/index/search/card/jin'); ?>">tento výsledek</a>.
         </li>
     </ul>
 </div>
@@ -92,8 +84,8 @@
 <div data-role="collapsible">
     <h4>Klávesové zkratky</h4>
     <p>
-        Klávesové zkratky jsou podporovány v jednotlivých prohlížečích různě. Níže popsány kontrolní klávesy
-        pro nejpoužívanější prohlížeče.
+        Klávesové zkratky jsou podporovány v&nbsp;jednotlivých prohlížečích různě. Níže jsou popsány kontrolní klávesy
+        pro&nbsp;nejpoužívanější prohlížeče.
     </p>
     <ul>
         <li>Internet Explorer: <strong>Alt</strong></li>

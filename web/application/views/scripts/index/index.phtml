@@ -1,7 +1,10 @@
 <?php if ($this->showCookiesInfo): ?>
     <div id="cookies-accept-block" class="ui-body ui-body-b ui-corner-all warning-box ui-overlay-shadow">
-        <p>Aplikace používá cookies. Pokud nesouhlasíte s používáním souborů cookies, opusťte tuto stránku</p>
-        <p>Více o používání cookies naleznete na stránce "Podmínky používání webu".</p>
+        <p>
+            Aplikace používá cookies. Používáním aplikace dáváte souhlas s&nbsp;ukládáním souborů cookies na&nbsp;vašem
+            zařízení. Pokud s&nbsp;ukládáním cookies nesouhlasíte, opusťtě aplikaci.
+        </p>
+        <p>Více o&nbsp;používání cookies naleznete na&nbsp;stránce "Podmínky užívání webu".</p>
         <p class="ui-mini">
             <a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-alert ui-corner-all"
                href="<?php echo $this->baseUrl('/info/terms') ?>">Podmínky užívání</a>
@@ -22,15 +25,16 @@
             <a class="ui-btn ui-btn-icon-notext ui-icon-delete ui-btn-inline ui-btn-corner-all ui-btn-right"
                href="<?php echo $this->baseUrl('/?hideNews=1') ?>" id="news-hide-1">Skrýt</a>
         </h4>
-        <ul>
-            <li>Možnost skrytí tohoto boxu. Nové novinky se zobrazí opět s novou verzí.</li>
-            <li>Nyní je možné uložit si výsledek hledání do&nbsp;záložek, nebo poslat odkaz na&nbsp;výsledek kamarádovi.</li>
-            <li>Nově je možné označit pole hledání karty jako vyhledávač (Chrome, Firefox).</li>
-            <li>Lze použít klávesovou zkratku <strong>Alt + f</strong> pro&nbsp;přechod do&nbsp;vyhledávacího pole. Podrobněji na stránce tipy a triky.</li>
-        </ul>
+        <p>Zrychleno načítání stránek.</p>
+        <p>Zrevidovány texty.</p>
+        <p>Je možné označit pole pro&nbsp;hledání karty jako vyhledávač (Chrome, Firefox).</p>
+        <p>Zavedena klávesová zkratka <strong>Alt&nbsp;+&nbsp;f</strong>. Více v&nbsp;sekci
+            <a href="<?php echo $this->baseUrl('/info/tips') ?>">Tipy a triky</a>.
+        </p>
 
-        <p>Více informací o novinkách naleznete v&nbsp;sekci tipy a triky.</p>
-
+        <p>Více informací o&nbsp;novinkách naleznete v&nbsp;sekci
+            <a href="<?php echo $this->baseUrl('/info/tips') ?>">Tipy a triky</a>.
+        </p>
         <p class="ui-mini">
             <a class="ui-btn ui-btn-b ui-btn-icon-left ui-icon-delete ui-corner-all"
                href="<?php echo $this->baseUrl('/?hideNews=1') ?>" id="news-hide-2">Skrýt</a>

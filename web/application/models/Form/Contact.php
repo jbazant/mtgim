@@ -85,9 +85,10 @@ class Application_Model_Form_Contact {
 
         $senderEmail = $this->_request->getParam('f_user_email');
 
+        $m->setReplyTo($senderEmail);
         $m->setSubject('MtGiM - zprava od ' . $senderEmail);
         $m->setBodyText(sprintf(
-            "Zpráva z webu MtGiM\n\nod: %s\n\ntelefon: %s\n\ntext:%s",
+            "Zpráva z webu MtGiM\n\nAutor: %s (tel: %s)\n\nText:\n%s",
             $senderEmail,
             $this->_request->getParam('f_user_phone'),
             $this->_request->getParam('f_message')
