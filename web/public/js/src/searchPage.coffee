@@ -173,10 +173,11 @@ class window.SearchPage
     # pokud je event vyvolan pro stejnou zalozku jako je jiz prave zobrazena,
     # tak nic nedelam
     if @lastActiveTab
-      if @lastActiveTab != newTab
+      if @lastActiveTab == newTab
+        return
+      else
         # pripadne deaktivuji soucasnou
         @lastActiveTab.resetActive()
-      return
 
     # aktivuji novou zalozku a poznamenam si ji jako prave aktivni
     @lastActiveTab = newTab

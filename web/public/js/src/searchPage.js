@@ -124,10 +124,11 @@
       var newTab;
       newTab = this.tabResults[holder.data('shop-id')][index];
       if (this.lastActiveTab) {
-        if (this.lastActiveTab !== newTab) {
+        if (this.lastActiveTab === newTab) {
+          return;
+        } else {
           this.lastActiveTab.resetActive();
         }
-        return;
       }
       this.lastActiveTab = newTab;
       this.lastActiveTab.setActive();
