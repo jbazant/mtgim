@@ -22,4 +22,8 @@ class InfoController extends Baz_Controller_Action {
     public function termsAction() {
         $this->view->pageId = 'page-info-terms';
     }
+
+    public function apiAction() {
+        $this->view->pageId = 'page-info-api';
+    }
 }
