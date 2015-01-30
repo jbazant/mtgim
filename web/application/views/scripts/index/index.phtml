@@ -1,15 +1,14 @@
 <?php if ($this->showCookiesInfo): ?>
     <div id="cookies-accept-block" class="ui-body ui-body-b ui-corner-all warning-box ui-overlay-shadow">
-        <p>
-            Aplikace používá cookies. Používáním aplikace dáváte souhlas s&nbsp;ukládáním souborů cookies na&nbsp;vašem
-            zařízení. Pokud s&nbsp;ukládáním cookies nesouhlasíte, opusťtě aplikaci.
-        </p>
-        <p>Více o&nbsp;používání cookies naleznete na&nbsp;stránce "Podmínky užívání webu".</p>
-        <p class="ui-mini">
-            <a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-alert ui-corner-all"
-               href="<?php echo $this->baseUrl('/info/terms') ?>">Podmínky užívání</a>
-            <a class="ui-btn ui-btn-icon-left ui-icon-check ui-corner-all"
-               href="<?php echo $this->baseUrl('/?cookieAccept=1') ?>" id="cookies-agree">Souhlasím</a>
+        <p class="last">
+            Používáním aplikace dáváte souhlas s&nbsp;ukládáním souborů cookies na&nbsp;vašem
+            zařízení.<br />
+            <span class="ui-mini">
+                <a class="ui-btn ui-btn-a ui-btn-icon-left ui-icon-alert ui-corner-all ui-btn-inline"
+                   href="<?php echo $this->baseUrl('/info/terms') ?>">Více</a>
+                <a class="ui-btn ui-btn-icon-left ui-icon-check ui-corner-all ui-btn-inline"
+                   href="<?php echo $this->baseUrl('/?cookieAccept=1') ?>" id="cookies-agree">Souhlasím</a>
+            </span>
         </p>
     </div>
 <?php endif; ?>
