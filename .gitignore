@@ -6,3 +6,6 @@ todo.md
 
 web/application/configs/application.ini
 web/library/Zend
+
+node_modules
+*.mwb.bak
