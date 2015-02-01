@@ -70,6 +70,8 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
             $i->headScript()
                 ->appendFile($i->baseUrl('/js/lib/jquery-1.11.0.min.js'))
                 ->appendFile($i->baseUrl('/js/src/tracking.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/utils/Popup.js?v=' . $v))
+                ->appendFile($i->baseUrl('/js/src/utils/CardDetailPopup.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/src/indexPage.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/src/searchPage.js?v=' . $v))
                 ->appendFile($i->baseUrl('/js/src/searchResult.js?v=' . $v))

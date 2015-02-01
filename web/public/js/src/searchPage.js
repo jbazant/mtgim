@@ -22,7 +22,7 @@
       this.initResultHolders(this.activityTracker);
       this.initTabs();
       this.initShopSelect();
-      this.cardPreview = new CardDetailPopup($('#cardImgPopup'), this.page);
+      this.cardPreview = new CardDetailPopup(this.page);
     }
 
     SearchPage.prototype.initForm = function() {

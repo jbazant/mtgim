@@ -235,3 +235,36 @@
     }
   }
 }
+
+// popup plugin styles
+#popup-holder {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  #popup {
+    margin: 5vh auto;
+    text-align: center;
+
+    p {
+      display: block;
+      width: 200px;
+      background-color: #404040;
+
+      margin: 100px auto 0;
+      padding: 1em;
+      border: 1px solid #bbb;
+      border-radius: 0.5em
+    }
+
+    img {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+  }
+}

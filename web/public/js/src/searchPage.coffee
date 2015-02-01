@@ -34,7 +34,7 @@ class window.SearchPage
     @initShopSelect()
 
     #inicializace nahledu karty
-    @cardPreview = new CardDetailPopup $('#cardImgPopup'), @page
+    @cardPreview = new CardDetailPopup @page
 
   ##
   # inicializace udalosti nad formularem

@@ -20,6 +20,7 @@ gulp.task('scripts', function() {
     return gulp.src([
             'web/public/js/lib/jquery-1.11.0.min.js',
             'web/public/js/src/tracking.js',
+            'web/public/js/src/utils/*.js',
             'web/public/js/src/*Page.js',
             'web/public/js/src/searchResult.js',
             'web/public/js/src/app.js',

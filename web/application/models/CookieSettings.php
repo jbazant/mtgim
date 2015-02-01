@@ -64,8 +64,6 @@ class Application_Model_CookieSettings {
      * @return bool
      */
     public function shouldShowNews() {
-        // temporary disable news (they are really old)
-        return false;
         return $this->_appVersion != $this->_request->getCookie($this->getNewsCookieName());
     }
 

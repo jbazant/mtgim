@@ -94,8 +94,6 @@
         'text': item.expansion
       }));
       cardActions = $('<a />', {
-        'href': '#cardImgPopup',
-        'data-rel': 'popup',
         'data-cardname': item.name,
         'data-cardset': item.expansion,
         'alt': 'Zobrazit obrázek karty',
@@ -146,96 +144,6 @@
     };
 
     return SearchResult;
-
-  })();
-
-  window.CardDetailPopup = (function() {
-    function CardDetailPopup(holder, page) {
-      var onLinkClick, t;
-      this.holder = holder;
-      this.showCard = __bind(this.showCard, this);
-      t = this;
-      this.cardname = null;
-      this.cardset = null;
-      this.loadToken = 0;
-      this.loadingTag = $('<p />', {
-        'text': 'Nahrávám ...'
-      });
-      this.errorTag = $('<p />', {
-        'text': 'Kartu nelze zobrazit'
-      });
-      this.holder.popup('option', 'positionTo', 'window');
-      onLinkClick = function() {
-        var cardname, cardset, l;
-        l = $(this);
-        cardname = l.data('cardname');
-        cardset = l.data('cardset');
-        if (cardname !== t.cardname || cardset !== t.cardset) {
-          t.cardname = cardname;
-          t.cardset = cardset;
-          return t.showCard(cardname, cardset);
-        }
-      };
-      page.on('resultsLoaded', (function(_this) {
-        return function(e, list) {
-          return $('.detail-button', list).on('click', onLinkClick);
-        };
-      })(this));
-    }
-
-    CardDetailPopup.prototype.showCard = function(cardname, cardset) {
-      this.cardname = cardname;
-      this.cardset = cardset;
-      this.popupSetData(this.loadingTag);
-      return $.when(this.loadCard(++this.loadToken, this.cardname, this.cardset)).then(null, (function(_this) {
-        return function() {
-          return _this.loadCard(_this.loadToken, _this.cardname);
-        };
-      })(this)).then(null, (function(_this) {
-        return function() {
-          return _this.popupSetData(_this.errorTag);
-        };
-      })(this));
-    };
-
-    CardDetailPopup.prototype.loadCard = function(token, name, set) {
-      var encName, encSet, img, p, uri;
-      p = new $.Deferred();
-      encName = encodeURIComponent(name.replace('´', "'").split('//')[0].trim());
-      if (set) {
-        encSet = encodeURIComponent(set);
-        uri = "setname/" + encSet + "/" + encName + ".jpg";
-      } else {
-        uri = "card/" + encName + ".jpg";
-      }
-      img = $('<img />').load((function(_this) {
-        return function() {
-          if (token === _this.loadToken) {
-            _this.popupSetData(img);
-          }
-          return p.resolve();
-        };
-      })(this)).error((function(_this) {
-        return function() {
-          return p.reject();
-        };
-      })(this)).attr('src', 'http://mtgimage.com/' + uri);
-      return p.promise();
-    };
-
-    CardDetailPopup.prototype.popupSetData = function(data) {
-      var old;
-      old = this.holder.children().eq(1);
-      if (old) {
-        old.remove();
-      }
-      this.holder.append(data);
-      return this.holder.popup('reposition', {
-        y: '20px'
-      });
-    };
-
-    return CardDetailPopup;
 
   })();
 
