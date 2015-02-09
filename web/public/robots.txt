@@ -6,3 +6,5 @@ Allow: /info/
 
 Disallow: /index/
 Disallow: /search/
+
+Allow: /index/contact

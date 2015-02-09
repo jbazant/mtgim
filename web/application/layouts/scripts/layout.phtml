@@ -15,14 +15,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <?php echo $this->headLink() ?>
-
-    <title><?php echo $this->appName ?></title>
-
-    <link rel="shortcut icon" href="<?php echo $this->baseUrl('/images/icons/favicon.ico') ?>" type="image/x-icon">
-
-    <?php echo $this->PartialLoop('partials/appleTouch.phtml', $apple) ?>
+    <meta name="author" content="Jiří Bažant">
+    <meta name="keywords" content="MtGiM, Magic v Mobilu, Vyhledávání cen karet v obchodech, MtG, Magic: the Gathering">
+    <meta name="description" content="Vyhledávání karet sběratelské hry Magic: the Gathering v&nbsp;českých internetových obchodech z&nbsp;pohodlí vašeho mobilu.">
+    <meta name="robots" content="index,follow">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Vyhledávání cen MtG karet z mobilu">
@@ -34,7 +30,13 @@
 
     <meta property="fb:app_id" content="<?php echo $this->fbAppId ?>">
 
-    <meta name="description" content="Vyhledávání karet sběratelské hry Magic: the Gathering v&nbsp;českých internetových obchodech z&nbsp;pohodlí vašeho mobilu.">
+    <title><?php echo $this->appName ?></title>
+
+    <?php echo $this->headLink() ?>
+
+    <link rel="shortcut icon" href="<?php echo $this->baseUrl('/images/icons/favicon.ico') ?>" type="image/x-icon">
+
+    <?php echo $this->PartialLoop('partials/appleTouch.phtml', $apple) ?>
 </head>
 <body>
 <div id="fb-root"></div>

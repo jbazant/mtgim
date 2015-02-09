@@ -6,6 +6,7 @@
     <?php if('page-index' == $this->pageId): ?>
         <h1><?php echo $this->appName ?></h1>
     <?php else: ?>
+        <h1 class="hidden"><?php echo $this->appName ?></h1>
         <div class="ui-block">
             <form id="searchform" method="GET" action="<?php echo $this->baseUrl('/index/find') ?>">
                 <input type="search" name="cardname"

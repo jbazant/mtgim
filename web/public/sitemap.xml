@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+    <url>
+        <loc>http://mtgim.cz/</loc>
+        <priority>1.0</priority>
+        <changefreq>Yearly</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/info/about</loc>
+        <priority>0.5</priority>
+        <changefreq>Never</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/info/tips</loc>
+        <priority>0.5</priority>
+        <changefreq>Yearly</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/info/changelog</loc>
+        <priority>0.5</priority>
+        <changefreq>Monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/info/contact</loc>
+        <priority>0.3</priority>
+        <changefreq>Never</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/info/api</loc>
+        <priority>0.2</priority>
+        <changefreq>Never</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/info/terms</loc>
+        <priority>0.1</priority>
+        <changefreq>Never</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/download/mtgim-json-api-1_0.pdf</loc>
+        <lastmod>2014-10-01T21:34:41+00:00</lastmod>
+        <priority>0.1</priority>
+        <changefreq>Yearly</changefreq>
+    </url>
+    <url>
+        <loc>http://mtgim.cz/download/mtgim-json-lib-1_0.pdf</loc>
+        <lastmod>2014-10-01T21:34:41+00:00</lastmod>
+        <priority>0.1</priority>
+        <changefreq>Yearly</changefreq>
+    </url>
+</urlset>
