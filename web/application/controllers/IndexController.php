@@ -51,7 +51,7 @@ class IndexController extends Baz_Controller_Action {
         else {
             $this->view->meta['robots']['content'] = 'noindex,nofollow';
             $this->view->meta['keywords']['content'] = 'Magic v mobilu, Výsledky hledání ceny karty ' . htmlspecialchars($cardname);
-            $this->view->meta['description']['content'] = 'Výsledky hledání ceny karty "' . htmlspecialchars($cardname) . '" v MtGiM.cz';
+            $this->view->meta['description']['content'] = 'Výsledky hledání ceny karty \'' . htmlspecialchars($cardname) . '\' v MtGiM.cz';
 
             //get adapter
             $adapters = array();
