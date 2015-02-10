@@ -25,6 +25,9 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
 
         $this->_initCss($c);
         $this->_initJs($c);
+        $this->_initMeta($c);
+        $this->_initOg($c);
+        $this->_initAppletouch($c);
     }
 
 
@@ -32,7 +35,7 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
      * Zakladni inicializace CSS
      * @param Zend_Config $config
      */
-    private function _initCss($config) {
+    protected function _initCss($config) {
         $v = $config->version;
         $i = $this->view;
 
@@ -58,7 +61,7 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
      * Zakladni inicializace JS
      * @param Zend_Config $config
      */
-    private function _initJs($config) {
+    protected function _initJs($config) {
         $v = $config->version;
         $i = $this->view;
 
@@ -85,5 +88,41 @@ abstract class Baz_Controller_Action extends Zend_Controller_Action {
                 ->appendFile($i->baseUrl('/js/app.min.js?v=' . $v))
             ;
         }
+    }
+
+    protected function _initMeta($config) {
+        $this->view->meta = array(
+            'viewport' => array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1'),
+            'author' => array('name' => 'author', 'content' => 'Jiří Bažant'),
+            'keywords' => array('name' => 'keywords', 'content' => 'MtGiM, Magic v Mobilu, Vyhledávání cen karet v obchodech, MtG, Magic: the Gathering'),
+            'description' => array('name' => 'description', 'content' => 'Vyhledávání karet sběratelské hry Magic: the Gathering v&nbsp;českých internetových obchodech z&nbsp;pohodlí vašeho mobilu.'),
+            'robots' => array('name' => 'robots', 'content' => 'index,follow'),
+        );
+    }
+
+    protected function _initOg($config) {
+        $this->view->og = array(
+            array('property' => 'og:type', 'content' => 'website'),
+            array('property' => 'og:title', 'content' => 'Vyhledávání cen MtG karet z mobilu'),
+            array('property' => 'og:description', 'content' => 'Vyhledávání karet sběratelské hry Magic: the Gathering v&nbsp;českých internetových obchodech z&nbsp;pohodlí vašeho mobilu.'),
+            array('property' => 'og:locale', 'content' => 'cs_CZ'),
+            array('property' => 'og:site_name', 'content' => $config->applicationName),
+            array('property' => 'og:url', 'content' => 'http://' . $_SERVER['SERVER_NAME']),
+            array('property' => 'og:image', 'content' => 'http://' . $_SERVER['SERVER_NAME'] . $this->view->baseUrl('/images/cards-black-fb.png')),
+        );
+    }
+
+
+    protected function _initAppletouch($config) {
+        $this->view->apple = array(
+            array('size' => ''),
+            array('size' => '57'),
+            array('size' => '72'),
+            array('size' => '76'),
+            array('size' => '114'),
+            array('size' => '120'),
+            array('size' => '144'),
+            array('size' => '152'),
+        );
     }
 }

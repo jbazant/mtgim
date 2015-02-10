@@ -43,10 +43,16 @@ class IndexController extends Baz_Controller_Action {
      */
     public function searchAction() {
         $cardname = $this->_request->getParam('card');
+
+
         if (empty($cardname)) {
             $this->getHelper('redirector')->goto('index', 'index');
         }
         else {
+            $this->view->meta['robots']['content'] = 'noindex,nofollow';
+            $this->view->meta['keywords']['content'] = 'Magic v mobilu, Výsledky hledání ceny karty ' . htmlspecialchars($cardname);
+            $this->view->meta['description']['content'] = 'Výsledky hledání ceny karty "' . htmlspecialchars($cardname) . '" v MtGiM.cz';
+
             //get adapter
             $adapters = array();
             $availableAdapters = Application_Model_Factory::getAvailableModels(Zend_Registry::get('config')->mtgim->isTest);
@@ -82,6 +88,8 @@ class IndexController extends Baz_Controller_Action {
      * Stranka kontaktniho formulare
      */
     public function contactAction() {
+        $this->view->meta['keywords']['content'] = 'MtGiM kontakt, napište nám';
+        $this->view->meta['description']['content'] = 'Máte připomínky nebo dotazy? Chcete s námi spolupracovat? Kontaktujte nás!';
 
         $request = $this->getRequest();
         $isPost = $request->isPost();
