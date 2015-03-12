@@ -50,15 +50,13 @@ class window.CardDetailPopup
 
   ##
   # Logika nacitani a zobrazovani obrazku karty
+  # pres gatherer nejsem schopen nahravat podle edice - logika odstranena
   showCard: (@cardname, @cardset) =>
     @popup.setContent @loadingTag
     @popup.show()
 
     # zkusim nahrat presnou moznost
-    $.when @loadCard ++@loadToken, @cardname, @cardset
-    .then null, =>
-      # zkusim nahrat jen podle nazvu
-      @loadCard(@loadToken, @cardname)
+    $.when @loadCard ++@loadToken, @cardname
     .then null, =>
       @popup.setContent @errorTag
 
@@ -66,19 +64,10 @@ class window.CardDetailPopup
   ##
   # Samotne sestaveni url nacitane karty a jeji nacteni
   # @return $.Deferred.promise
-  loadCard: (token, name, set) ->
+  loadCard: (token, name) ->
     p = new $.Deferred()
 
-    # pokud to je pulena karta, tak budu obrazek vyhledavat podle nazvu prni z nich
-    # pokud to pulena karta neni, tak mam nazev take v prvni polozce
-    # dale prekoduji spatne apostrofy na spravne
-    encName = encodeURIComponent name.replace('´', "'").split('//')[0].trim()
-
-    if set
-      encSet = encodeURIComponent set
-      uri = "setname/#{encSet}/#{encName}.jpg"
-    else
-      uri = "card/#{encName}.jpg"
+    encName = encodeURIComponent name.trim()
 
     img = $ '<img />'
     .load =>
@@ -87,6 +76,6 @@ class window.CardDetailPopup
       p.resolve()
     .error =>
       p.reject()
-    .attr('src', 'http://mtgimage.com/' + uri)
+    .attr 'src', 'http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=' + encName
 
     p.promise()

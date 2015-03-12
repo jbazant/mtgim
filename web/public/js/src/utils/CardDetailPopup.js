@@ -43,27 +43,17 @@
       this.cardset = cardset;
       this.popup.setContent(this.loadingTag);
       this.popup.show();
-      return $.when(this.loadCard(++this.loadToken, this.cardname, this.cardset)).then(null, (function(_this) {
-        return function() {
-          return _this.loadCard(_this.loadToken, _this.cardname);
-        };
-      })(this)).then(null, (function(_this) {
+      return $.when(this.loadCard(++this.loadToken, this.cardname)).then(null, (function(_this) {
         return function() {
           return _this.popup.setContent(_this.errorTag);
         };
       })(this));
     };
 
-    CardDetailPopup.prototype.loadCard = function(token, name, set) {
-      var encName, encSet, img, p, uri;
+    CardDetailPopup.prototype.loadCard = function(token, name) {
+      var encName, img, p;
       p = new $.Deferred();
-      encName = encodeURIComponent(name.replace('´', "'").split('//')[0].trim());
-      if (set) {
-        encSet = encodeURIComponent(set);
-        uri = "setname/" + encSet + "/" + encName + ".jpg";
-      } else {
-        uri = "card/" + encName + ".jpg";
-      }
+      encName = encodeURIComponent(name.trim());
       img = $('<img />').load((function(_this) {
         return function() {
           if (token === _this.loadToken) {
@@ -75,7 +65,7 @@
         return function() {
           return p.reject();
         };
-      })(this)).attr('src', 'http://mtgimage.com/' + uri);
+      })(this)).attr('src', 'http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=' + encName);
       return p.promise();
     };
 

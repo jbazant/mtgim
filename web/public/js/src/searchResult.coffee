@@ -132,16 +132,16 @@ class window.SearchResult
       )
 
     # todo tohle by bylo o moc hezci, kdyby si to popup pridaval sam
-#    cardActions = $ '<a />',
-#      'data-cardname': item.name
-#      'data-cardset': item.expansion
-#      'alt': 'Zobrazit obrázek karty'
-#      'title': 'Zobrazit obrázek karty'
-#      'text': 'Zobrazit kartu'
-#      'class': 'detail-button ui-btn ui-btn-icon-notext ui-icon-info ui-mini ui-corner-all ui-btn-b'
+    cardActions = $ '<a />',
+      'data-cardname': item.name
+      'data-cardset': item.expansion
+      'alt': 'Zobrazit obrázek karty'
+      'title': 'Zobrazit obrázek karty'
+      'text': 'Zobrazit kartu'
+      'class': 'detail-button ui-btn ui-btn-icon-notext ui-icon-info ui-mini ui-corner-all ui-btn-b'
 
     $('<li />')
-      .append($ '<div />', 'class': 'cardActions') # here was adding of cardActions
+      .append $('<div />', 'class': 'cardActions').append cardActions
       .append($ '<div />',
           'class': 'cardInfo'
         .append cardInfoLine1
