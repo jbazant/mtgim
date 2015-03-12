@@ -426,7 +426,7 @@
     };
 
     SearchResult.prototype.createLiItem = function(item) {
-      var cardActions, cardInfoLine1, cardInfoLine2, colorClass, displayedName;
+      var cardInfoLine1, cardInfoLine2, colorClass, displayedName;
       colorClass = item.amount === 0 ? 'empty' : item.amount < 4 ? 'low' : 'ok';
       displayedName = item.name + (item.quality ? ' - ' + item.quality : '');
       cardInfoLine1 = $('<p />').append($('<span />', {
@@ -443,17 +443,9 @@
         'class': 'expansion',
         'text': item.expansion
       }));
-      cardActions = $('<a />', {
-        'data-cardname': item.name,
-        'data-cardset': item.expansion,
-        'alt': 'Zobrazit obrázek karty',
-        'title': 'Zobrazit obrázek karty',
-        'text': 'Zobrazit kartu',
-        'class': 'detail-button ui-btn ui-btn-icon-notext ui-icon-info ui-mini ui-corner-all ui-btn-b'
-      });
       return $('<li />').append($('<div />', {
         'class': 'cardActions'
-      }).append(cardActions)).append($('<div />', {
+      })).append($('<div />', {
         'class': 'cardInfo'
       }).append(cardInfoLine1).append(cardInfoLine2)).append($('<div />', {
         'class': 'clear'

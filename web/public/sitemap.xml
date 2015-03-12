@@ -27,7 +27,7 @@
         <changefreq>Monthly</changefreq>
     </url>
     <url>
-        <loc>http://mtgim.cz/info/contact</loc>
+        <loc>http://mtgim.cz/index/contact</loc>
         <priority>0.3</priority>
         <changefreq>Never</changefreq>
     </url>
