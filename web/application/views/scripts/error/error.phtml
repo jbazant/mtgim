@@ -1,16 +1,22 @@
 <h2><?php echo $this->message ?></h2>
 
+<h3>Tuhle kartu jste určitě hledat nechtěli.</h3>
+
+<p>Z&nbsp;této stránky můžete pokračovat:</p>
 <a href="<?php echo $this->baseUrl('/') ?>" data-role="button" data-transition="slide" data-direction="reverse">Zpět na&nbsp;úvod</a>
 
+<p> nebo, pokud si myslíte, že je to chyba, nám o&nbsp;tom můžete napsat:</p>
+<a href="<?php echo $this->baseUrl('/index/contact') ?>" data-role="button" data-transition="slide">Přes tento formulář</a>
+
 <?php if (isset($this->exception)): ?>
-    <h4>Exception information:</h4>
+    <h4>Informace o chybě:</h4>
     <p>
-        <b>Message:</b> <?php echo $this->exception->getMessage() ?>
+        <b>Zpráva:</b> <?php echo $this->exception->getMessage() ?>
     </p>
 
     <h4>Stack trace:</h4>
     <pre><?php echo $this->exception->getTraceAsString() ?></pre>
 
-    <h4>Request Parameters:</h4>
+    <h4>Parametery požadavku:</h4>
     <pre><?php echo var_export($this->request->getParams(), true) ?></pre>
 <?php endif ?>
