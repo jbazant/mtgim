@@ -47,7 +47,7 @@ final class JsonController extends Baz_Controller_JsonAction {
         $c = Zend_Registry::get('config')->mtgim;
 
         if (empty($this->_settingsModel)) {
-            $this->_settingsModel = new Application_Model_CookieSettings($r, $c->version);
+            $this->_settingsModel = new Application_Model_CookieSettings($r, $c->version, strtotime($c->newsTo));
         }
 
         return $this->_settingsModel;

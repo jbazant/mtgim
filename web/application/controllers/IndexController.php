@@ -13,7 +13,9 @@ class IndexController extends Baz_Controller_Action {
      */
     public function indexAction() {
         $r = $this->_request;
-        $settingsModel = new Application_Model_CookieSettings($r, $this->view->appVersion);
+        $c = Zend_Registry::get('config')->mtgim;
+
+        $settingsModel = new Application_Model_CookieSettings($r, $c->version, strtotime($c->newsTo));
 
         // odsouhlaseni pouziti cookies
         if (1 == $r->getParam('cookieAccept', 0)) {

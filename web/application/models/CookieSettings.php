@@ -13,14 +13,18 @@ class Application_Model_CookieSettings {
     /** @var  string application version string */
     protected $_appVersion;
 
+    /** @var  int Unix timestamp to which news should be shown */
+    protected $_newsTo;
+
 
     /**
      * @param Zend_Controller_Request_Http $request
      * @param string $version
      */
-    public function __construct($request, $version) {
+    public function __construct($request, $version, $newsTo) {
         $this->_request = $request;
         $this->_appVersion = $version;
+        $this->_newsTo = $newsTo;
     }
 
 
@@ -64,7 +68,7 @@ class Application_Model_CookieSettings {
      * @return bool
      */
     public function shouldShowNews() {
-        return $this->_appVersion != $this->_request->getCookie($this->getNewsCookieName());
+        return time() < $this->_newsTo && $this->_appVersion != $this->_request->getCookie($this->getNewsCookieName());
     }
 
 

@@ -67,8 +67,7 @@ class window.CardDetailPopup
   loadCard: (token, name) ->
     p = new $.Deferred()
 
-    encName = encodeURIComponent name.trim()
-
+    encName = encodeURIComponent name.trim().replace '´', '\''
     img = $ '<img />'
     .load =>
       if (token == @loadToken)
